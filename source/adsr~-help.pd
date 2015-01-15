@@ -1,0 +1,137 @@
+#N canvas 0 22 679 602 10;
+#X obj 13 564 cnv 15 660 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 12 8 cnv 15 660 40 empty \$0-pddp.cnv.header adsr~ 3 12 0 18
+-204280 -1 0;
+#X obj 11 264 cnv 3 660 3 empty \$0-pddp.cnv.inlets inlets 15 12 0
+13 -228856 -1 0;
+#N canvas 52 467 342 269 META 0;
+#X text 11 23 LICENSE SIBSD;
+#X text 11 77 INLET_1 float;
+#X text 11 90 INLET_2 float;
+#X text 11 102 INLET_3 float;
+#X text 12 190 LIBRARY IntrinsicAudio;
+#X text 12 208 AUTHOR Chris Penny;
+#X text 13 225 RELEASE_DATE 2014;
+#X text 13 245 HELP_PATCH_AUTHORS Chris Penny;
+#X text 10 5 Created by Chris Penny;
+#X text 12 159 OUTLET_0 signal;
+#X text 11 43 DESCRIPTION adsr - Traditional Envelope Controls;
+#X text 11 63 INLET_0 float;
+#X text 11 115 INLET_4 float;
+#X text 11 128 INLET_5 bang;
+#X text 11 142 INLET_6 toggle;
+#X text 12 172 OUTLET_1 float;
+#X restore 624 566 pd META;
+#X obj 11 438 cnv 3 660 3 empty empty outlets 15 12 0 13 -228856 -1
+0;
+#X obj 11 510 cnv 3 660 3 empty empty argument 15 12 0 13 -228856 -1
+0;
+#X obj 80 284 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 462 11 pddp/dsp;
+#X obj 80 304 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 80 324 cnv 17 3 20 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X obj 80 344 cnv 17 3 20 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X obj 80 364 cnv 17 3 20 empty empty 4 5 9 0 16 -228856 -162280 0
+;
+#X obj 81 463 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 81 483 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 595 30 Chris Penny;
+#X text 111 565 See also:;
+#X text 17 30 Traditional envelope controls - en.wikipedia.org/wiki/ADSR
+;
+#X obj 175 566 *~;
+#X obj 95 196 *~;
+#X obj 95 216 *~ 0.5;
+#X msg 105 115 0;
+#X msg 44 114 127;
+#X text 54 83 Velocity:;
+#X floatatom 186 90 5 0 0 2 Attack_time_(ms) - -;
+#X floatatom 293 91 5 0 0 2 Decay_time_(ms) - -;
+#X floatatom 388 92 5 0 0 2 Sustain_Volume_(0-1) - -;
+#X floatatom 516 92 5 0 0 2 Release_time_(ms) - -;
+#X obj 446 129 bng 15 250 50 0 empty empty Kill_Note_Immediately 17
+7 0 10 -262144 -1 -1;
+#X obj 445 148 tgl 15 0 empty empty Toggle_Print/Debug_Statements 17
+7 0 10 -262144 -1 -1 0 1;
+#X obj 500 54 loadfloat 3000;
+#X obj 376 53 loadfloat 0.1;
+#X obj 162 53 loadfloat 500;
+#X obj 274 53 loadfloat 500;
+#X text 30 96 Note-On;
+#X text 93 96 Note-Off;
+#X msg 128 54 1;
+#X text 14 54 Shorter Attack ->;
+#X msg 626 75 1;
+#X floatatom 158 225 5 0 0 0 - - -;
+#X obj 158 199 view~;
+#X text 21 216 Max Vol. ->;
+#X text 110 283 FLOAT - MIDI Velocity: 0 -> Note Off \, 1-127 -> Note
+On;
+#X text 110 303 FLOAT - Note Attack Time (in ms);
+#X text 110 323 FLOAT - Note Decay Time (in ms);
+#X text 110 343 FLOAT - Sustain Volume (0-1);
+#X text 110 362 FLOAT - Note Release Time (in ms);
+#X obj 80 384 cnv 17 3 20 empty empty 5 5 9 0 16 -228856 -162280 0
+;
+#X text 110 382 BANG - Kill/Silence note immediately;
+#X obj 80 404 cnv 17 3 20 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 110 403 FLOAT - Toggle Print/Debug Statements (0 - off \, 1
+- on);
+#X text 495 419 PD & iOS;
+#X text 160 419 Useful for tracking down stuck notes and debugging
+with;
+#X text 84 535 None - The argument above provides spacing between the
+;
+#X text 413 535 inlets so it's easier to use.;
+#X text 111 462 SIGNAL - Volume Multiplier;
+#X text 111 482 FLOAT - Note Indicator (1 if note is playing \, 0 if
+off);
+#X obj 254 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 208 566 line~;
+#X obj 253 566 vline~;
+#X obj 302 566 pack;
+#X obj 29 114 cnv 15 15 15 empty empty empty 20 12 0 14 -3201 -66577
+0;
+#X obj 90 115 cnv 15 15 15 empty empty empty 20 12 0 14 -184321 -66577
+0;
+#X text 296 178 Traditional ADSR interface. A note-on velocity (any
+number other than 0) causes the object to output a signal from 0 to
+1 that can be multiplied with an audio object. A note-off velocity
+(0) triggers the release of the note. See en.wikipedia.org/wiki/ADSR
+for more info.;
+#X obj 65 167 osc~ 440;
+#X obj 606 13 adsr~;
+#X obj 84 242 dac~;
+#X obj 131 167 adsr~ _______________;
+#X text 456 30 PD for Libpd;
+#X connect 18 0 19 0;
+#X connect 19 0 65 0;
+#X connect 19 0 65 1;
+#X connect 20 0 66 0;
+#X connect 21 0 66 0;
+#X connect 23 0 66 1;
+#X connect 24 0 66 2;
+#X connect 25 0 66 3;
+#X connect 26 0 66 4;
+#X connect 27 0 66 5;
+#X connect 28 0 66 6;
+#X connect 29 0 26 0;
+#X connect 30 0 25 0;
+#X connect 31 0 23 0;
+#X connect 32 0 24 0;
+#X connect 35 0 23 0;
+#X connect 37 0 26 0;
+#X connect 39 0 38 0;
+#X connect 63 0 18 0;
+#X connect 66 0 18 1;
+#X connect 66 0 39 0;
+#X connect 66 1 56 0;

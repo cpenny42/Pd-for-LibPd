@@ -1,0 +1,200 @@
+#N canvas 246 23 666 781 10;
+#X obj 3 740 cnv 15 660 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 -2 cnv 15 660 40 empty \$0-pddp.cnv.header autospectrum~ 3
+12 0 18 -204280 -1 0;
+#X obj 2 430 cnv 3 660 3 empty \$0-pddp.cnv.inlets inlets 15 12 0 13
+-228856 -1 0;
+#N canvas 52 467 353 208 META 0;
+#X text 11 23 LICENSE SIBSD;
+#X text 11 77 INLET_1 float;
+#X text 11 90 INLET_2 float;
+#X text 12 127 LIBRARY IntrinsicAudio;
+#X text 12 145 AUTHOR Chris Penny;
+#X text 13 162 RELEASE_DATE 2014;
+#X text 13 182 HELP_PATCH_AUTHORS Chris Penny;
+#X text 10 5 Created by Chris Penny;
+#X text 11 63 INLET_0 signal;
+#X text 11 102 INLET_3 message;
+#X text 11 43 DESCRIPTION autospectrum~ - Easy spectral/FFT graphing
+;
+#X restore 614 742 pd META;
+#X obj 1 587 cnv 3 660 3 empty empty outlets 15 12 0 13 -228856 -1
+0;
+#X obj 1 620 cnv 3 660 3 empty empty arguments 15 12 0 13 -228856 -1
+0;
+#X obj 70 450 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 310 9 pddp/dsp;
+#X obj 70 470 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 70 490 cnv 17 3 20 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X obj 70 510 cnv 17 3 20 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 566 20 Chris Penny;
+#X text 101 741 See also:;
+#X obj 40 136 gswitch~;
+#X obj 7 88 osc~ 440;
+#X obj 62 88 phasor~ 440;
+#X obj 85 113 tgl 15 0 empty empty empty 17 7 0 10 -261234 -1 -1 0
+1;
+#X floatatom 62 67 5 0 0 0 - - -;
+#X floatatom 229 124 5 0 0 2 Gain - -;
+#X floatatom 276 125 5 0 0 2 Zoom_on_Low_Freqs. - -;
+#N canvas 0 22 591 259 (subpatch) 0;
+#X array autospectrum-help 256 float 1;
+#A 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1;
+#X coords 0 1 255 -1 200 140 1;
+#X restore 457 82 graph;
+#X floatatom 7 66 5 0 0 0 - - -;
+#X obj 21 381 dac~;
+#X obj 21 350 *~ 0.4;
+#X obj 284 43 loadbang;
+#X obj 284 64 t b b b;
+#X msg 323 143 autospectrum-help;
+#X text 102 112 <- Select Waveform;
+#X msg 207 90 3;
+#X text 99 449 SIGNAL - Signal for plotting spectrum;
+#X text 100 490 FLOAT - Signal Gain before graphing (for easier viewing
+of;
+#X text 453 490 quiet signals);
+#X text 100 510 FLOAT - Zoom Multiplier at Low Frequencies: 1 -> default
+\, 2;
+#X text 461 510 -> bottom half of spectrum \, etc.;
+#X text 326 126 Table for plotting:;
+#X obj 68 649 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 108 408 See: https://en.wikipedia.org/wiki/Fast_Fourier_transform
+;
+#X text 456 408 for more info.;
+#X obj 164 742 fft~;
+#X obj 197 742 ifft~;
+#X obj 236 742 rfft~;
+#X obj 274 742 rifft~;
+#X obj 370 742 tabwrite~;
+#X obj 319 742 biquad~;
+#X text 90 215 autospectrum~ gives a simple interface for good-looking
+spectrum graphs. To plot \, a table for plotting must first be specified
+(such as autospectrum-help in this example).;
+#X msg 123 149 128;
+#X text 134 132 Block Size:;
+#X floatatom 351 167 5 0 0 1 Framerate - -;
+#X msg 151 150 4096;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array autospectrum-help2 1024 float 1;
+#A 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1;
+#A 1000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1;
+#X coords 0 1 1023 -1 200 140 1 0 0;
+#X restore 456 244 graph;
+#X text 89 267 The first argument is the receiving array for plotting.
+The second argument is the FFT block size.;
+#X text 91 308 It uses 4096 by default if the block size is unspecified.
+;
+#X floatatom 112 356 5 0 0 2 Block_Size - -;
+#X floatatom 182 356 5 0 0 2 Gain - -;
+#X floatatom 222 356 5 0 0 2 Zoom - -;
+#X obj 119 175 autospectrum~;
+#X obj 68 670 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 97 650 SYMBOL - Array for plotting the spectrum;
+#X text 7 20 Easy Spectrum Graphing;
+#X text 100 530 MESSAGE - Table to plot spectrum.;
+#X msg 254 91 8;
+#X text 420 9 PD For Libpd;
+#X text 99 470 FLOAT - Number of points in FFT;
+#X text 88 591 (none);
+#X obj 70 530 cnv 17 3 20 empty empty 4 5 9 0 16 -228856 -162280 0
+;
+#X obj 70 550 cnv 17 3 20 empty empty 5 5 9 0 16 -228856 -162280 0
+;
+#X text 101 551 FLOAT - Framerate (number of times per second to plot
+the;
+#X text 449 551 points);
+#X text 98 672 FLOAT - Number of points in FFT. Often a power;
+#X text 380 672 of two for efficiency \, but can be any number.;
+#X text 296 686 Larger numbers provide more frequency resolution \,
+smaller numbers provide more time resolution. 512 \, 1024 \, 2048 \,
+and 4096 are good standard choices.;
+#X obj 557 3 autospectrum~;
+#X obj 92 383 autospectrum~ autospectrum-help2;
+#X connect 13 0 23 0;
+#X connect 13 0 55 0;
+#X connect 13 0 72 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 1;
+#X connect 16 0 13 2;
+#X connect 17 0 15 0;
+#X connect 18 0 55 2;
+#X connect 19 0 55 3;
+#X connect 21 0 14 0;
+#X connect 23 0 22 0;
+#X connect 23 0 22 1;
+#X connect 24 0 25 0;
+#X connect 25 0 28 0;
+#X connect 25 1 60 0;
+#X connect 25 2 26 0;
+#X connect 26 0 55 4;
+#X connect 28 0 18 0;
+#X connect 45 0 55 1;
+#X connect 47 0 55 5;
+#X connect 48 0 55 1;
+#X connect 52 0 72 1;
+#X connect 53 0 72 2;
+#X connect 54 0 72 3;
+#X connect 60 0 19 0;
