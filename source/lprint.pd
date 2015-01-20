@@ -1,0 +1,16 @@
+#N canvas 292 305 177 147 10;
+#X obj -12 8 inlet;
+#X obj -12 32 list trim;
+#X obj 63 10 loadbang;
+#X obj 63 31 dollarg;
+#X obj 70 113 print \$1;
+#X obj -12 74 gate2;
+#X obj 102 57 + 1;
+#X obj -12 113 print lprint;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 1 6 0;
+#X connect 5 0 7 0;
+#X connect 5 1 4 0;
+#X connect 6 0 5 1;

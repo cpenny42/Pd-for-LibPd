@@ -1,0 +1,103 @@
+#N canvas 269 22 795 790 10;
+#X obj 334 712 dac~;
+#X obj 481 527 vsl 15 128 0 1 0 1 empty \$0-volume empty 0 -9 0 10
+-262144 -1 -1 9500 1;
+#X obj 499 672 hsl 128 15 0 100 0 1 empty \$0-pan empty -2 -8 0 10
+-262144 -1 -1 6057 1;
+#X obj 332 579 normalize~;
+#X obj 332 553 remove_dc_offset~;
+#X obj 332 687 volume~;
+#X obj 332 662 panner~;
+#X obj 371 643 tgl 15 0 empty empty Panner_off/on 17 7 0 10 -262144
+-1 -1 0 1;
+#X floatatom 361 623 5 0 0 1 Panner_depth - -;
+#X floatatom 351 603 5 0 0 1 Panner_rate - -;
+#X obj 332 491 synth~;
+#X obj 354 455 pack 50 100 0.6 250;
+#X floatatom 354 355 5 0 0 1 Attack - -;
+#X obj 391 438 t b f;
+#X obj 428 438 t b f;
+#X obj 465 438 t b f;
+#X floatatom 391 375 5 0 0 1 Decay - -;
+#X floatatom 428 396 5 0 0 1 Sustain - -;
+#X floatatom 465 417 5 0 0 1 Release - -;
+#X obj 564 446 bng 15 250 50 0 empty empty Note_Flush 17 7 0 10 -262144
+-1 -1;
+#X obj 215 321 sine_table;
+#X obj 108 338 triangle_table;
+#X obj 61 469 square_table;
+#X obj 61 408 sawtooth_table;
+#X obj 215 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 108 317 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 61 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 61 389 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 142 389 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 130 448 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 189 317 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 380 77 450 300 audio_effects 0;
+#X obj 24 11 inlet~;
+#X obj 24 263 outlet~;
+#X text 127 142 Your own audio effects go here;
+#X connect 0 0 1 0;
+#X restore 332 520 pd audio_effects;
+#X obj 74 81 piano;
+#X obj 332 281 r MIDI_IN;
+#X text 87 288 Wavetables:;
+#X obj 85 250 s MIDI_IN;
+#X obj 354 311 loadfloat 40;
+#X obj 390 335 loadfloat 300;
+#X obj 442 357 loadfloat 0.2;
+#X obj 475 379 loadfloat 4000;
+#X text 471 504 Volume:;
+#X text 545 652 Pan:;
+#X connect 1 0 5 1;
+#X connect 1 0 5 3;
+#X connect 2 0 5 2;
+#X connect 3 0 6 0;
+#X connect 3 0 6 1;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 6 0 5 0;
+#X connect 6 1 5 4;
+#X connect 7 0 6 4;
+#X connect 8 0 6 3;
+#X connect 9 0 6 2;
+#X connect 10 0 31 0;
+#X connect 11 0 10 2;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X connect 13 1 11 1;
+#X connect 14 0 11 0;
+#X connect 14 1 11 2;
+#X connect 15 0 11 0;
+#X connect 15 1 11 3;
+#X connect 16 0 13 0;
+#X connect 17 0 14 0;
+#X connect 18 0 15 0;
+#X connect 19 0 10 3;
+#X connect 20 0 10 1;
+#X connect 21 0 10 1;
+#X connect 22 0 10 1;
+#X connect 23 0 10 1;
+#X connect 24 0 20 0;
+#X connect 25 0 21 0;
+#X connect 26 0 22 0;
+#X connect 27 0 23 0;
+#X connect 28 0 23 1;
+#X connect 29 0 22 1;
+#X connect 30 0 21 1;
+#X connect 31 0 4 0;
+#X connect 32 0 35 0;
+#X connect 33 0 10 0;
+#X connect 36 0 12 0;
+#X connect 37 0 16 0;
+#X connect 38 0 17 0;
+#X connect 39 0 18 0;

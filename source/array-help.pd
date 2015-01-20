@@ -1,0 +1,62 @@
+#N canvas 550 27 670 501 10;
+#X obj 167 317 array;
+#X msg 205 161 2 66;
+#X text 215 139 Set indeces:;
+#X floatatom 113 195 5 0 0 0 Get_Index: - -;
+#X obj 335 292 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
+-1 -1;
+#X obj 244 273 bng 15 250 50 0 empty empty Output_All_used_Indeces_to_right_outlet
+17 7 0 10 -262144 -1 -1;
+#X text 223 337 <- send all used indeces back to the array object.
+;
+#X obj 58 287 loadbang;
+#X text 507 21 PD for Libpd;
+#X text 508 34 Chris Penny;
+#X msg 69 235 view;
+#X msg 152 137 1 foo;
+#X msg 168 160 1 bar;
+#X obj 194 339 lfor;
+#X obj 167 453 lprint FROM_ARRAY;
+#X obj 167 430 list prepend;
+#X obj 236 389 list prepend index;
+#X obj 236 410 lapp :;
+#X text 241 350 This will output all the values to the left outlet.
+;
+#X obj 113 219 t f f;
+#X text 349 391 <- Print index along with the array contents;
+#X msg 241 161 3 this is what is stored at index 3;
+#X msg 243 186 4 [array]: An array that binds any list to an index.
+To set an index send a message with the index and the value you wish
+to set that index to. To get the value at an index send the index you
+would like to get.;
+#X msg 245 249 5 osc~ 220;
+#X obj 208 364 t f f;
+#X text 25 2 [array]: An array that binds any list to an index. To
+set an index \, send a message with the index and the value you wish
+to set that index to. To get the value at an index \, send the index
+you would like to get. The array will save its state the next time
+you open a patch unless you clear it (so ignore any PD alerts about
+discarding changes to the array patch - if you're filling & clearing
+it programatically you don't need to worry about it). Send the message
+[view( to the left inlet to view its contents.;
+#X connect 0 0 15 0;
+#X connect 0 1 13 0;
+#X connect 1 0 0 0;
+#X connect 3 0 19 0;
+#X connect 4 0 0 2;
+#X connect 5 0 0 1;
+#X connect 7 0 0 2;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 2 24 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 1;
+#X connect 19 0 0 0;
+#X connect 19 1 16 0;
+#X connect 21 0 0 0;
+#X connect 22 0 0 0;
+#X connect 23 0 0 0;
+#X connect 24 0 0 0;
+#X connect 24 1 16 0;

@@ -1,5 +1,0 @@
-#N canvas 386 113 450 300 10;
-#X obj 157 75 autospectrum~;
-#X obj 251 74 ggate;
-#X obj 28 76 adsr~ ___________;
-#X obj 304 77 view~;

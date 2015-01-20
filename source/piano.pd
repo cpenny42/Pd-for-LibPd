@@ -1,0 +1,255 @@
+#N canvas 528 435 696 164 10;
+#X obj 84 72 bng 66 250 50 0 \$0-C \$0-C_ empty 17 7 0 10 -262144 -162280
+-1;
+#X obj 150 72 bng 66 250 50 0 \$0-D \$0-D_ empty 17 7 0 10 -262144
+-162280 -1;
+#X obj 216 72 bng 66 250 50 0 \$0-E \$0-E_ empty 17 7 0 10 -262144
+-162280 -1;
+#X obj 282 72 bng 66 250 50 0 \$0-F \$0-F_ empty 17 7 0 10 -262144
+-162280 -1;
+#X obj 115 6 bng 66 250 50 0 \$0-Csharp \$0-Csharp_ empty 17 7 0 10
+-1 -162280 -1;
+#X obj 348 72 bng 66 250 50 0 \$0-G \$0-G_ empty 17 7 0 10 -262144
+-162280 -1;
+#X obj 414 72 bng 66 250 50 0 \$0-A \$0-A_ empty 17 7 0 10 -262144
+-162280 -1;
+#X obj 480 72 bng 66 250 50 0 \$0-B \$0-B_ empty 17 7 0 10 -262144
+-162280 -1;
+#X obj 183 6 bng 66 250 50 0 \$0-Dsharp \$0-Dsharp_ empty 17 7 0 10
+-1 -162280 -1;
+#X obj 314 5 bng 66 250 50 0 \$0-Fsharp \$0-Fsharp_ empty 17 7 0 10
+-1 -162280 -1;
+#X obj 382 5 bng 66 250 50 0 \$0-Gsharp \$0-Gsharp_ empty 17 7 0 10
+-1 -162280 -1;
+#X obj 450 5 bng 66 250 50 0 \$0-Asharp \$0-Asharp_ empty 17 7 0 10
+-1 -162280 -1;
+#X obj 9 7 bng 66 250 50 0 \$0-octave-up \$0-octave-up_ empty 17 7
+0 10 -261682 -162280 -1;
+#X obj 9 72 bng 66 250 50 0 \$0-octave-down \$0-octave-down_ empty
+17 7 0 10 -204800 -162280 -1;
+#X text 14 31 Octave Up;
+#X text 8 96 Octave Down;
+#X obj 557 70 hsl 100 30 1 127 0 0 \$0-velocity empty empty -2 -8 0
+10 -138095 -1 -1 7200 1;
+#X text 581 77 Velocity;
+#X obj 558 107 hsl 100 30 30 1500 0 0 \$0-duration empty empty -2 -8
+0 10 -125184 -1 -1 5600 1;
+#X text 582 114 Duration;
+#X obj 609 15 bng 40 250 50 0 \$0-flush empty empty 17 7 0 10 -228856
+-75776 -1;
+#X text 613 26 Flush;
+#X obj 260 39 outlet;
+#N canvas 349 43 1203 452 guts 0;
+#X obj -14 60 r \$0-C;
+#X obj -14 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 29 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 29 60 r \$0-Csharp;
+#X obj 103 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 146 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 103 60 r \$0-D;
+#X obj 146 60 r \$0-Dsharp;
+#X obj 219 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 262 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 305 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 377 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 219 61 r \$0-E;
+#X obj 262 61 r \$0-F;
+#X obj 305 62 r \$0-Fsharp;
+#X obj 377 63 r \$0-G;
+#X obj 419 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 462 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 505 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 577 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 462 63 r \$0-A;
+#X obj 505 64 r \$0-Asharp;
+#X obj 577 65 r \$0-B;
+#X msg -14 108 0;
+#X msg 29 106 1;
+#X msg 103 104 2;
+#X msg 146 104 3;
+#X msg 219 104 4;
+#X msg 262 104 5;
+#X msg 305 104 6;
+#X msg 377 105 7;
+#X msg 419 105 8;
+#X msg 462 106 9;
+#X msg 505 106 10;
+#X msg 578 107 11;
+#X obj -141 200 iterator;
+#X obj -182 85 loadbang;
+#X msg -251 138 4;
+#X obj -182 107 t b b;
+#X msg -216 136 0;
+#X msg -189 136 9;
+#X obj -96 179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -141 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -141 132 r \$0-octave-down;
+#X obj -96 156 r \$0-octave-up;
+#X obj -141 223 * 12;
+#X obj 209 240 +;
+#X obj 330 240 r \$0-duration;
+#X obj 243 240 r \$0-velocity;
+#X obj 210 328 pack 0 0;
+#X obj 210 382 outlet;
+#X obj 210 355 noteflush;
+#X obj 274 312 r \$0-flush;
+#X obj 274 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 242 264 5 0 0 0 - - -;
+#X floatatom 331 262 5 0 0 0 - - -;
+#X obj 419 63 r \$0-Gsharp;
+#X floatatom -219 4 5 0 0 0 - - -;
+#X obj -13 -4 sel 97;
+#X obj 30 -4 sel 119;
+#X obj 104 -4 sel 115;
+#X obj 147 -4 sel 101;
+#X obj 220 -3 sel 100;
+#X obj 263 -3 sel 102;
+#X obj 306 -3 sel 116;
+#X obj 377 -2 sel 103;
+#X obj 420 -2 sel 121;
+#X obj 463 -2 sel 104;
+#X obj 506 -2 sel 117;
+#X obj 578 -2 sel 106;
+#X obj -172 4 sel 44;
+#X obj -115 4 sel 46;
+#X obj -172 -44 key;
+#X obj -145 -44 r \$0-keyboard;
+#X obj -172 -21 ggate;
+#X obj -13 27 s \$0-C_;
+#X obj 30 26 s \$0-Csharp_;
+#X obj 104 26 s \$0-D_;
+#X obj 147 25 s \$0-Dsharp_;
+#X obj 220 25 s \$0-E_;
+#X obj 263 25 s \$0-F_;
+#X obj 306 25 s \$0-Fsharp_;
+#X obj 377 25 s \$0-G_;
+#X obj 420 25 s \$0-Gsharp_;
+#X obj 463 25 s \$0-A_;
+#X obj 506 25 s \$0-Asharp_;
+#X obj 578 25 s \$0-B_;
+#X text 631 -2 <- Sends bang to note buttons (visual feedback);
+#X text 621 65 <- Receives bang from notes (to play);
+#X obj -172 26 s \$0-octave-down_;
+#X obj -115 48 s \$0-octave-up_;
+#X obj 149 246 loadbang;
+#X msg 149 267 80;
+#X msg 176 267 400;
+#X obj 210 307 makenote;
+#X connect 0 0 1 0;
+#X connect 1 0 23 0;
+#X connect 2 0 24 0;
+#X connect 3 0 2 0;
+#X connect 4 0 25 0;
+#X connect 5 0 26 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 27 0;
+#X connect 9 0 28 0;
+#X connect 10 0 29 0;
+#X connect 11 0 30 0;
+#X connect 12 0 8 0;
+#X connect 13 0 9 0;
+#X connect 14 0 10 0;
+#X connect 15 0 11 0;
+#X connect 16 0 31 0;
+#X connect 17 0 32 0;
+#X connect 18 0 33 0;
+#X connect 19 0 34 0;
+#X connect 20 0 17 0;
+#X connect 21 0 18 0;
+#X connect 22 0 19 0;
+#X connect 23 0 46 0;
+#X connect 24 0 46 0;
+#X connect 25 0 46 0;
+#X connect 26 0 46 0;
+#X connect 27 0 46 0;
+#X connect 28 0 46 0;
+#X connect 29 0 46 0;
+#X connect 30 0 46 0;
+#X connect 31 0 46 0;
+#X connect 32 0 46 0;
+#X connect 33 0 46 0;
+#X connect 34 0 46 0;
+#X connect 35 0 45 0;
+#X connect 36 0 38 0;
+#X connect 37 0 35 2;
+#X connect 38 0 35 1;
+#X connect 38 1 37 0;
+#X connect 38 1 39 0;
+#X connect 38 1 40 0;
+#X connect 39 0 35 3;
+#X connect 40 0 35 4;
+#X connect 41 0 35 5;
+#X connect 42 0 35 0;
+#X connect 43 0 42 0;
+#X connect 44 0 41 0;
+#X connect 45 0 46 1;
+#X connect 46 0 94 0;
+#X connect 47 0 55 0;
+#X connect 47 0 94 2;
+#X connect 48 0 54 0;
+#X connect 48 0 94 1;
+#X connect 49 0 51 0;
+#X connect 51 0 50 0;
+#X connect 52 0 53 0;
+#X connect 53 0 51 1;
+#X connect 56 0 16 0;
+#X connect 58 0 75 0;
+#X connect 58 1 59 0;
+#X connect 59 0 76 0;
+#X connect 59 1 60 0;
+#X connect 60 0 77 0;
+#X connect 60 1 61 0;
+#X connect 61 0 78 0;
+#X connect 61 1 62 0;
+#X connect 62 0 79 0;
+#X connect 62 1 63 0;
+#X connect 63 0 80 0;
+#X connect 63 1 64 0;
+#X connect 64 0 81 0;
+#X connect 64 1 65 0;
+#X connect 65 0 82 0;
+#X connect 65 1 66 0;
+#X connect 66 0 83 0;
+#X connect 66 1 67 0;
+#X connect 67 0 84 0;
+#X connect 67 1 68 0;
+#X connect 68 0 85 0;
+#X connect 68 1 69 0;
+#X connect 69 0 86 0;
+#X connect 70 0 89 0;
+#X connect 70 1 71 0;
+#X connect 71 0 90 0;
+#X connect 72 0 74 0;
+#X connect 73 0 74 1;
+#X connect 74 0 57 0;
+#X connect 74 0 58 0;
+#X connect 74 0 70 0;
+#X connect 91 0 92 0;
+#X connect 91 0 93 0;
+#X connect 92 0 94 1;
+#X connect 93 0 94 2;
+#X connect 94 0 49 0;
+#X connect 94 1 49 1;
+#X restore 260 17 pd guts;
+#X obj 555 15 tgl 40 0 \$0-keyboard empty empty 17 7 0 10 -228265 -1
+-1 0 1;
+#X text 561 18 Keys;
+#X text 556 32 On/Off;
+#X connect 23 0 22 0;
+#X coords 0 -1 1 1 675 144 2 0 0;

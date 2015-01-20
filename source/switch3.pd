@@ -1,0 +1,57 @@
+#N canvas 88 105 609 182 10;
+#X obj -177 -81 spigot;
+#X obj -110 -80 spigot;
+#X msg -169 -105 0;
+#X msg -141 -105 1;
+#X msg -83 -104 0;
+#X msg -55 -104 1;
+#X obj -18 -169 <= 0;
+#X obj -18 -149 sel 1;
+#X obj -177 -56 outlet;
+#X obj -177 -212 inlet;
+#X obj -69 -211 inlet;
+#X obj 44 -207 cnv 15 365 150 empty empty switch3: 6 10 1 18 -204800
+-1 0;
+#X obj -139 -212 inlet;
+#X text 53 -178 Left Inlet - Inlet 0 thru;
+#X text 53 -164 Middle Inlet - Inlet 1 thru;
+#X obj -69 -191 sel 1 2 3;
+#X obj -46 -79 spigot;
+#X msg -19 -103 0;
+#X msg 9 -103 1;
+#X text 53 -149 Right Inlet - Set active inlet (<= 0 \, 1 \, >= 3)
+;
+#X text 50 -120 switch3 provides a switch for any input. Both inlets
+are off when a number < or == 0 is recieved ar the right inlet. 1 turns
+on the left inlet \, 3 or greater turns on the right outlet.;
+#X obj -104 -212 inlet;
+#X connect 0 0 8 0;
+#X connect 1 0 8 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 1;
+#X connect 4 0 1 1;
+#X connect 5 0 1 1;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 7 0 4 0;
+#X connect 7 0 17 0;
+#X connect 7 1 2 0;
+#X connect 7 1 4 0;
+#X connect 7 1 18 0;
+#X connect 9 0 0 0;
+#X connect 10 0 15 0;
+#X connect 12 0 1 0;
+#X connect 15 0 3 0;
+#X connect 15 0 4 0;
+#X connect 15 0 17 0;
+#X connect 15 1 2 0;
+#X connect 15 1 5 0;
+#X connect 15 1 17 0;
+#X connect 15 2 4 0;
+#X connect 15 2 2 0;
+#X connect 15 2 18 0;
+#X connect 15 3 6 0;
+#X connect 16 0 8 0;
+#X connect 17 0 16 1;
+#X connect 18 0 16 1;
+#X connect 21 0 16 0;

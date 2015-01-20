@@ -1,0 +1,22 @@
+#N canvas 669 261 424 231 10;
+#X msg 54 114 3 foo;
+#X obj 94 180 print from_array_node;
+#X text 258 2 PD for LIBPD;
+#X text 259 14 Chris Penny;
+#X msg 94 114 3;
+#X obj 94 151 array_node 3;
+#X text -52 36 [array_node] takes a list with the index & value to
+set the stored value. The index it responds to is defined by the creation
+argument made in the patch. To get the stored value \, send the index.
+Used to implement the [array] object.;
+#X text -56 2 [array_node];
+#X msg 211 113 4;
+#X msg 172 113 4 bar;
+#X text 238 113 <- won't work;
+#X msg 15 114 3 bar;
+#X connect 0 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 11 0 5 0;

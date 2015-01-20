@@ -1,0 +1,31 @@
+#N canvas 926 73 511 411 10;
+#X obj -56 1 cnv 15 508 408 empty empty Keyboard_Shortcuts: 6 12 1
+18 -204800 -1 0;
+#X obj 179 61;
+#X text -14 62 Command-1: Create a new object;
+#X text -14 83 Command-2: Create a new message;
+#X msg 179 85;
+#X text -14 104 Command-3: Create a new float;
+#X floatatom 177 106 5 0 0 0 - - -;
+#X text -14 126 Command-4: Create a new symbol;
+#X symbolatom 177 127 10 0 0 0 - - -;
+#X text -36 27 For Windows \, substitute ctrl for Command;
+#X text -15 208 Command-Shift-B: Create a new Button;
+#X obj 218 209 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -15 230 Command-Shift-T: Create a new Toggle;
+#X obj 217 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 258 208 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text -14 273 Command-Shift-U: Create a levels meter;
+#X obj 287 215 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X text -14 251 Command-Shift-V: Create a vertical slider;
+#X text -13 295 Command-Shift-C: Create a canvas:;
+#X obj 62 324 cnv 15 165 55 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 67 329 Right-click the top-left;
+#X text 72 343 of the canvas to change;
+#X text 72 356 its properties;
+#X text -15 152 Command-5: Create a new comment. Note that pure data
+is weird with preserving new lines when the patch is reopened.;

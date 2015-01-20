@@ -1,0 +1,32 @@
+#N canvas 727 91 467 136 10;
+#X floatatom -301 -181 1 0 0 0 - - -;
+#X obj -261 -128 spigot;
+#X obj -301 -151 == 0;
+#X obj -214 -196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj -334 -218 inlet;
+#X obj -214 -218 inlet;
+#X obj -287 -105 outlet;
+#X obj -334 -129 spigot;
+#X text -165 -171 The toggle switch activates the spigot;
+#X obj -168 -215 cnv 15 285 125 empty empty gswitch: 6 10 1 18 -204800
+-1 0;
+#X text -164 -138 The toggle switch sets the gate of the spigot;
+#X text -163 -124 while the [== 0] ensures each spigot is;
+#X text -163 -109 opposite the other.;
+#X text -86 -213 Named after equivalent Max object;
+#X obj -261 -218 inlet;
+#X text -164 -189 Left Inlet - Inlet 0 thru;
+#X text -164 -175 Middle Inlet - Inlet 1 thru;
+#X text -164 -160 Right Inlet - Set active inlet (0/1);
+#X obj -244 -171 loadbang;
+#X connect 0 0 2 0;
+#X connect 0 0 1 1;
+#X connect 1 0 6 0;
+#X connect 2 0 7 1;
+#X connect 3 0 0 0;
+#X connect 4 0 7 0;
+#X connect 5 0 3 0;
+#X connect 7 0 6 0;
+#X connect 14 0 1 0;
+#X connect 18 0 0 0;

@@ -1,0 +1,25 @@
+#N canvas 614 378 468 291 10;
+#X text 5 0 [anything];
+#X text 331 4 PD for LIBPD;
+#X text 336 17 Chris Penny;
+#X obj 128 211 anything;
+#X floatatom 165 110 5 0 0 0 - - -;
+#X symbolatom 199 110 10 0 0 0 - - -;
+#X msg 205 131 one two three four five six seven;
+#X floatatom 216 161 5 0 0 0 - - -;
+#X obj 73 157 bng 15 250 50 0 empty empty Output_Value 17 7 0 10 -262144
+-1 -1;
+#X text 182 89 Store a value:;
+#X obj 128 233 print from_anything;
+#X text 24 37 [anything] stores any number \, symbol \, list \, or
+anything else for later use. Set the stored value with the right inlet
+\, send a bang to output the value at the left inlet.;
+#X obj 216 181 cadd 1 2;
+#X text 269 181 <- add 1 + 2i (Complex Number);
+#X connect 3 0 10 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 1;
+#X connect 6 0 3 1;
+#X connect 7 0 12 0;
+#X connect 8 0 3 0;
+#X connect 12 0 3 1;
