@@ -10,7 +10,7 @@
 #X obj 390 -70 inlet KILL;
 #X obj 1 104 outlet~;
 #X obj 307 108 hsl 100 15 0 22050 0 1 \$0-to_center \$0-gui_center
-Center_Frequency 3 8 0 10 -262144 -1 -1 6900 1;
+Center_Frequency 3 8 0 10 -262144 -1 -1 3800 1;
 #X obj 305 167 bng 15 250 50 0 \$0-lowpass empty lowpass 17 7 0 10
 -262144 -1 -1;
 #X obj 305 184 bng 15 250 50 0 \$0-highpass empty highpass 17 7 0 10
@@ -39,10 +39,10 @@ Center_Frequency 3 8 0 10 -262144 -1 -1 6900 1;
 #X obj 51 41 r \$0-type;
 #X obj 64 60 r \$0-kill;
 #X obj 307 126 hsl 100 15 0 5 0 1 \$0-to_q \$0-gui_q Q 48 8 0 10 -262144
--1 -1 1500 1;
+-1 -1 1700 1;
 #X floatatom 411 126 7 0 0 0 - #0-to_q #0-q;
-#X obj 307 144 hsl 100 15 -3 3 0 1 \$0-to_gain \$0-gui_gain Peak_Gain
-25 8 0 10 -262144 -1 -1 4943 1;
+#X obj 307 144 hsl 100 15 -12 5 0 1 \$0-to_gain \$0-gui_gain Peak_Gain
+25 8 0 10 -262144 -1 -1 0 1;
 #X floatatom 411 144 7 0 0 0 - #0-to_gain #0-gain;
 #X obj 115 -12 r \$0-lowpass;
 #X obj 192 -12 r \$0-highpass;
