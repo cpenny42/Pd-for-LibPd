@@ -26,7 +26,7 @@ will be converted into complex numbers with the imaginary part == 0
 #X text 210 116 <- build complex numbers;
 #X text 15 160 x + 0i ->;
 #X text 15 122 2 + 4i ->;
-#N canvas 51 243 403 263 META 1;
+#N canvas 51 243 403 263 META 0;
 #X text 12 25 LICENSE SIBSD;
 #X text 12 5 KEYWORDS complex math;
 #X text 12 45 DESCRIPTION add complex numbers;
