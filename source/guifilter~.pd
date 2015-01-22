@@ -1,16 +1,16 @@
-#N canvas 705 23 659 323 10;
-#X obj -81 -70 inlet~;
+#N canvas 301 90 777 431 10;
+#X obj -81 -83 inlet~;
 #X obj 1 83 autobiquad~;
-#X obj 413 -50 loadfloat 1;
+#X obj 413 -63 loadfloat 1;
 #X obj 100 100 biquad_response;
-#X obj -36 -70 inlet FILTER_CENTER;
-#X obj 84 -70 inlet FILTER_Q;
-#X obj 174 -70 inlet FILTER_GAIN;
-#X obj 282 -70 inlet FILTER_TYPE;
-#X obj 390 -70 inlet KILL;
+#X obj -36 -83 inlet FILTER_CENTER;
+#X obj 84 -83 inlet FILTER_Q;
+#X obj 174 -83 inlet FILTER_GAIN;
+#X obj 282 -83 inlet FILTER_TYPE;
+#X obj 390 -83 inlet KILL;
 #X obj 1 104 outlet~;
 #X obj 307 108 hsl 100 15 0 22050 0 1 \$0-to_center \$0-gui_center
-Center_Frequency 3 8 0 10 -262144 -1 -1 3800 1;
+Center_Frequency 3 8 0 10 -262144 -1 -1 5900 1;
 #X obj 305 167 bng 15 250 50 0 \$0-lowpass empty lowpass 17 7 0 10
 -262144 -1 -1;
 #X obj 305 184 bng 15 250 50 0 \$0-highpass empty highpass 17 7 0 10
@@ -26,23 +26,23 @@ Center_Frequency 3 8 0 10 -262144 -1 -1 3800 1;
 #X obj 375 201 bng 15 250 50 0 \$0-highshelf empty highshelf 17 7 0
 10 -262144 -1 -1;
 #X floatatom 411 108 7 0 0 0 - #0-to_center #0-center;
-#X obj -36 -46 s \$0-gui_center;
+#X obj -36 -59 s \$0-gui_center;
 #X obj 13 -16 r \$0-center;
-#X obj 84 -45 s \$0-gui_q;
-#X obj 174 -46 s \$0-gui_gain;
-#X obj 282 -46 s \$0-gui_type;
+#X obj 84 -58 s \$0-gui_q;
+#X obj 174 -59 s \$0-gui_gain;
+#X obj 282 -59 s \$0-gui_type;
 #X obj 375 218 tgl 15 0 \$0-kill \$0-gui_kill DSP_ON 17 7 0 10 -262144
 -1 -1 1 1;
-#X obj 389 -27 s \$0-gui_kill;
+#X obj 389 -40 s \$0-gui_kill;
 #X obj 26 3 r \$0-q;
 #X obj 38 22 r \$0-gain;
 #X obj 51 41 r \$0-type;
 #X obj 64 60 r \$0-kill;
-#X obj 307 126 hsl 100 15 0 5 0 1 \$0-to_q \$0-gui_q Q 48 8 0 10 -262144
--1 -1 1700 1;
+#X obj 307 126 hsl 100 15 0 32 0 0 \$0-to_q \$0-gui_q Q 48 8 0 10 -262144
+-1 -1 278 1;
 #X floatatom 411 126 7 0 0 0 - #0-to_q #0-q;
-#X obj 307 144 hsl 100 15 -12 5 0 1 \$0-to_gain \$0-gui_gain Peak_Gain
-25 8 0 10 -262144 -1 -1 0 1;
+#X obj 307 144 hsl 100 15 -24 15 0 1 \$0-to_gain \$0-gui_gain Peak_Gain
+25 8 0 10 -262144 -1 -1 4800 1;
 #X floatatom 411 144 7 0 0 0 - #0-to_gain #0-gain;
 #X obj 115 -12 r \$0-lowpass;
 #X obj 192 -12 r \$0-highpass;
@@ -51,14 +51,14 @@ Center_Frequency 3 8 0 10 -262144 -1 -1 3800 1;
 #X msg 192 11 highpass;
 #X msg 275 10 bandpass;
 #X obj 129 65 s \$0-type;
-#X msg 247 58 notch;
-#X msg 324 58 peak;
-#X msg 391 57 lowshelf;
-#X obj 247 35 r \$0-notch;
-#X obj 324 35 r \$0-peak;
-#X obj 391 34 r \$0-lowshelf;
-#X obj 477 35 r \$0-highshelf;
-#X msg 477 58 highshelf;
+#X msg 369 8 notch;
+#X msg 446 8 peak;
+#X msg 513 7 lowshelf;
+#X obj 369 -15 r \$0-notch;
+#X obj 446 -15 r \$0-peak;
+#X obj 513 -16 r \$0-lowshelf;
+#X obj 599 -15 r \$0-highshelf;
+#X msg 599 8 highshelf;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 1 1 3 0;

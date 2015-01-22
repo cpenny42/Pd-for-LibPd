@@ -1,0 +1,81 @@
+#N canvas 259 50 932 436 10;
+#X text 833 5 Pd for LibPd;
+#X text 836 21 Chris Penny;
+#N canvas 802 551 365 271 META 0;
+#X text 8 29 LICENSE SIBSD;
+#X text 7 156 LIBRARY Pd for LibPd;
+#X text 7 176 AUTHOR Chris Penny;
+#X text 7 236 HELP_PATCH_AUTHORS Chris Penny. Patch updated for the
+Pd for LibPd framework.;
+#X text 7 196 WEBSITE http://www.intrinsic-audio.com;
+#X text 7 216 RELEASE_DATE 2015;
+#X text 8 9 KEYWORDS key value bindings;
+#X text 8 49 DESCRIPTION implementation of variables and constants
+;
+#X text 6 69 INLET_0 list symbol;
+#X text 6 89 INLET_1 list;
+#X text 6 106 INLET_2 bang;
+#X text 8 121 OUTLET_0 list symbol float;
+#X text 7 137 OUTLET_1 list symbol float;
+#X restore 877 412 pd META;
+#X text 6 6 [var] - Key : Value bindings;
+#X obj 633 354 var;
+#X obj 735 327 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
+-1 -1;
+#X obj 537 399 print VALUE;
+#X obj 726 399 print NO_MATCH;
+#X text 241 8 [var] stores Key : Value pairs for later retrieval. These
+can be declared as a constant or as a variable. The values can be any
+list \, symbol \, float \, or anything else.;
+#X text 10 103 INLETS:;
+#X text 93 136 A List of length 1 (any symbol or float) will attempt
+to get the value associated with that input \, variable or constant.
+If there is a value \, it will be sent out the left outlet. Otherwise
+\, the input key will be sent through the right outlet.;
+#X text 94 206 A List of length > 1 will attempt to store that value
+with the key being the first item in the list. If it doesn't yet exist
+\, a new variable will be declared. If it does \, it will either update
+the stored value or do nothing if the key was declared as a constant.
+;
+#X text 93 290 These values will never change until the object is cleared.
+To declare a constant \, send a list of length > 1 The first item in
+the list will be the key \, the rest will be the value.;
+#X text 91 365 Deletes all the stored key-value pairs and goes back
+to the initial state.;
+#X text 14 351 2 (Right) - Clear object (bang).;
+#X text 14 277 1 (Center) - Set Constant (list).;
+#X text 25 122 0 (Left) - Set Variable or Get value (list/symbol/float).
+;
+#X text 481 107 OUTLETS:;
+#X text 506 130 0 (Left) -;
+#X text 570 130 Value output when the associated key is input into
+the left inlet.;
+#X text 508 171 1 (Right) -;
+#X text 579 173 Output for all keys that don't match any values in
+the object.;
+#X msg 719 256 constant_one This is a constant!;
+#X msg 701 230 constant_one;
+#X msg 727 284 constant_one try to overwrite;
+#X text 234 80 BUG - Weird Error messages. Ignore them \, patch still
+works.;
+#X msg 521 258 variable_one 42;
+#X msg 554 282 variable_one 17.2313;
+#X msg 484 232 variable_one;
+#X text 246 59 The patch is initialized with the constant "NULL" ==
+0;
+#X msg 472 349 variable_two bar;
+#X msg 471 325 variable_two foo;
+#X msg 469 303 variable_two;
+#X connect 4 0 6 0;
+#X connect 4 1 7 0;
+#X connect 5 0 4 2;
+#X connect 22 0 4 1;
+#X connect 23 0 4 0;
+#X connect 24 0 4 0;
+#X connect 24 0 4 1;
+#X connect 26 0 4 0;
+#X connect 27 0 4 0;
+#X connect 28 0 4 0;
+#X connect 30 0 4 0;
+#X connect 31 0 4 0;
+#X connect 32 0 4 0;

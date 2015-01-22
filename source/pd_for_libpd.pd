@@ -1,0 +1,10 @@
+#N canvas 745 324 450 300 10;
+#X obj 183 180 print FALSE;
+#X obj 118 183 print TRUE;
+#X obj 118 98 if == 0;
+#X floatatom 118 62 5 0 0 0 - - -;
+#X floatatom 159 61 5 0 0 0 - - -;
+#X connect 2 0 1 0;
+#X connect 2 1 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;

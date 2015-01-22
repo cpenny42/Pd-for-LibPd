@@ -1,3 +1,0 @@
-#N canvas 446 256 450 300 10;
-#X obj 74 33 t a a;
-#X obj 84 104 lbuilder;

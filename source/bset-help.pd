@@ -1,0 +1,51 @@
+#N canvas 392 434 466 357 10;
+#X text 379 5 PD for LIBPD;
+#X text 384 17 Chris Penny;
+#X obj 77 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 77 132 bset;
+#X text 40 43 Sends a bang and then a "set" message. When connected
+to a message object \, it will output the contents and then reset the
+message.;
+#X text 4 4 [bset];
+#X obj 77 154 print BANG_SET;
+#X msg 116 266;
+#X msg 18 210 one;
+#X msg 46 210 two;
+#X msg 74 210 three;
+#X obj 130 227 bset;
+#X obj 130 208 bng 15 250 50 0 empty empty Click_to_Output 17 7 0 10
+-262144 -1 -1;
+#X obj 283 186 bng 15 250 50 0 empty empty Click_to_set 17 7 0 10 -262144
+-1 -1;
+#X obj 116 300 print MESSAGE_1;
+#X obj 283 302 print MESSAGE_2;
+#X msg 303 207 bar;
+#X obj 253 227 bset;
+#X obj 253 171 bng 15 250 50 0 empty empty Click_to_output 17 7 0 10
+-262144 -1 -1;
+#X text 292 112 Related Objects:;
+#X obj 332 133 ladd2;
+#X obj 369 133 ladd;
+#X msg 283 268;
+#X obj 301 133 lset;
+#X obj 65 238 lset;
+#X obj 283 245 lset foo;
+#X msg 339 208 testing bset.pd;
+#X text 13 192 Click to set:;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 7 0 14 0;
+#X connect 8 0 24 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 7 0;
+#X connect 12 0 11 0;
+#X connect 13 0 25 0;
+#X connect 16 0 25 0;
+#X connect 17 0 22 0;
+#X connect 18 0 17 0;
+#X connect 22 0 15 0;
+#X connect 24 0 7 0;
+#X connect 25 0 22 0;
+#X connect 26 0 25 0;

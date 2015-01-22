@@ -1,6 +1,6 @@
 #N canvas 657 455 241 127 10;
 #X obj 10 8 inlet W;
-#X text 69 7 e^(j * W) = cos(W) + sin(W);
+#X text 58 30 e^(j * W) = cos(W) + sin(W);
 #X obj 10 80 pack 0 0;
 #X obj 10 57 cos;
 #X obj 55 57 sin;

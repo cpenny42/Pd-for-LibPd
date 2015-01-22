@@ -1,0 +1,68 @@
+#N canvas 364 23 960 454 10;
+#X text 843 15 Pd for LibPd;
+#X text 846 31 Chris Penny;
+#N canvas 802 551 365 295 META 0;
+#X text 8 29 LICENSE SIBSD;
+#X text 7 172 LIBRARY Pd for LibPd;
+#X text 7 192 AUTHOR Chris Penny;
+#X text 7 252 HELP_PATCH_AUTHORS Chris Penny. Patch updated for the
+Pd for LibPd framework.;
+#X text 7 212 WEBSITE http://www.intrinsic-audio.com;
+#X text 7 232 RELEASE_DATE 2015;
+#X text 6 106 INLET_2 bang;
+#X text 8 137 OUTLET_0 list symbol float;
+#X text 7 153 OUTLET_1 list symbol float;
+#X text 8 9 KEYWORDS stack lifo;
+#X text 8 49 DESCRIPTION implementation of a stack;
+#X text 6 121 INLET_3 bang;
+#X text 6 89 INLET_1 bang;
+#X text 6 69 INLET_0 list symbol float;
+#X restore 887 422 pd META;
+#X text 20 113 INLETS:;
+#X text 491 117 OUTLETS:;
+#X text 516 140 0 (Left) -;
+#X text 518 165 1 (Right) -;
+#X text 16 16 [stack];
+#X obj 637 315 stack;
+#X obj 734 372 print ITEM_NUMBER;
+#X obj 539 373 print POPPED_OFF_STACK;
+#X text 35 132 0 (Left) - Push any item onto the stack.;
+#X text 24 156 1 (Center-Left) - Pop an item off the top of the stack.
+;
+#X text 24 185 2 (Center-Right) - Rewind to the top of the stack.;
+#X text 138 199 Only works if the stack has not been reset (attempting
+to pop after everything's already been popped will reset the stack).
+;
+#X text 30 248 3 (Right) - Clear the stack.;
+#X text 101 265 Deletes everything and resets to the initial state.
+;
+#X text 580 140 Value popped off the stack;
+#X text 589 167 Item number. One less than this is the # of items remaining
+in the stack.;
+#X msg 538 206 This will be pushed.;
+#X msg 568 226 So will this;
+#X msg 589 247 warbgarble 33;
+#X msg 609 263 push some more;
+#X floatatom 542 264 5 0 0 0 - - -;
+#X text 463 262 Dangerous ->;
+#X obj 745 241 bng 15 250 50 0 empty empty Pop 17 7 0 10 -262144 -1
+-1;
+#X obj 747 261 bng 15 250 50 0 empty empty Rewind 17 7 0 10 -262144
+-1 -1;
+#X obj 747 283 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
+-1 -1;
+#X text 262 17 [stack] is an implementation of a traditional stack.
+You can push any item onto it and pop it off again. You can rewind
+to the top of the stack unless the stack has been cleared.;
+#X text 55 318 Rewind is currently buggy. Push \, Pop \, and Clear
+work though.;
+#X connect 8 0 10 0;
+#X connect 8 1 9 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 0;
+#X connect 21 0 8 0;
+#X connect 22 0 8 0;
+#X connect 23 0 8 0;
+#X connect 25 0 8 1;
+#X connect 26 0 8 2;
+#X connect 27 0 8 3;

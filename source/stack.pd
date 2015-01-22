@@ -1,4 +1,4 @@
-#N canvas 464 370 438 346 10;
+#N canvas 275 256 438 346 10;
 #X obj 147 37 iterator;
 #X floatatom 148 58 5 0 0 0 - - -;
 #X obj 20 -34 inlet PUSH;
@@ -38,7 +38,7 @@
 #X obj 267 -34 inlet REWIND;
 #X obj 0 19 loadfloat 0;
 #X obj 108 279 outlet POPPED;
-#X obj 108 259 array \$1;
+#X obj 108 259 larray stack;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 1 0 17 0;
