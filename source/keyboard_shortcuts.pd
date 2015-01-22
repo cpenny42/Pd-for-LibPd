@@ -1,6 +1,6 @@
 #N canvas 251 214 511 409 10;
 #X obj -56 1 cnv 15 508 408 empty empty Keyboard_Shortcuts: 6 12 1
-18 -204800 -1 0;
+18 -245566 -1 0;
 #X obj 179 61;
 #X text -14 62 Command-1: Create a new object;
 #X text -14 83 Command-2: Create a new message;
