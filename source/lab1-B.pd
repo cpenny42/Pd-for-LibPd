@@ -585,7 +585,7 @@
 #X text 538 151 // Your Waveform Goes Here;
 #X obj 99 590 volume~;
 #X obj 137 566 hsl 128 15 0 1 0 0 empty empty Volume 45 8 0 10 -262144
--1 -1 6200 1;
+-1 -1 0 1;
 #X obj 105 616 dac~;
 #X text 331 149 // Your Sequence Goes Here;
 #X obj 99 374 tabosc4~ wavetable;
