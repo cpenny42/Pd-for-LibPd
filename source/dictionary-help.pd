@@ -1,0 +1,65 @@
+#N canvas 432 222 667 518 10;
+#X obj 210 295 dictionary;
+#X obj 238 324 print ALL;
+#X obj 165 324 print MATCH;
+#X obj 299 324 print NO_MATCH;
+#X obj 360 226 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
+-1 -1;
+#X obj 331 208 bng 15 250 50 0 empty empty Output_All_Keys_&_Values
+17 7 0 10 -262144 -1 -1;
+#X obj 295 405 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
+-1 -1;
+#X obj 266 387 bng 15 250 50 0 empty empty Output_All_Keys_&_Values
+17 7 0 10 -262144 -1 -1;
+#X obj 266 457 print ALL2;
+#X obj 332 457 print NO_MATCH2;
+#X obj 188 457 print MATCH2;
+#X msg 78 209 test a b c;
+#X msg 223 217 test;
+#X msg 217 195 key1;
+#X obj 238 428 dictionary;
+#X msg 126 227 answer 42;
+#X msg 231 241 answer;
+#X msg 111 392 test;
+#X msg 190 392 key1;
+#X msg 146 391 answer;
+#X text -33 -10 [dictionary] - Store Key-Value Pairs;
+#X text 515 -12 Pd for LibPd;
+#X text 518 2 Chris Penny;
+#X text 7 20 [dictionary] allows you to associate a value to a key.
+A list of length > 1 will use the first item as the key and then store
+the rest of the list as the value.;
+#X text 10 65 A list of length == 1 (symbol) will look for the value
+associated with that key \, outputting it to the left outlet if found
+and the right inlet if there's no match.;
+#X text 10 156 Delete all stored values with the right inlet.;
+#X text 10 109 You can output all the key-value pairs in the middle
+inlet. This will send each pair individually as a list through the
+middle outlet. You can use this to copy dictionaries.;
+#X text 244 350 <- all the values in the dictionary above will be copied
+to the dictionary below.;
+#X msg 9 189 key1 foo bar;
+#X msg 11 245 key1 sqrt(-1);
+#X msg 21 394 test 1 2 3;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 0 1 14 0;
+#X connect 0 2 3 0;
+#X connect 4 0 0 2;
+#X connect 5 0 0 1;
+#X connect 6 0 14 2;
+#X connect 7 0 14 1;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 10 0;
+#X connect 14 1 8 0;
+#X connect 14 2 9 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 14 0;
+#X connect 18 0 14 0;
+#X connect 19 0 14 0;
+#X connect 28 0 0 0;
+#X connect 29 0 0 0;
+#X connect 30 0 14 0;

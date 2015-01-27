@@ -1,15 +1,5 @@
 #N canvas 762 96 435 100 10;
 #N canvas 980 202 135 137 \$0-guts 0;
-#X obj 0 0 r 9616-in;
-#X obj 0 20 t a a;
-#X obj 0 80 ggate;
-#X obj 0 100 s 9616-false;
-#X obj 60 100 s 9616-true;
-#X obj 60 0 r 9616-set;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 2 1 4 0;
 #X restore 2 37 pd \$0-guts;
 #X obj 2 18 s \$0-in;
 #X obj 111 56 r \$0-false;
@@ -44,9 +34,12 @@
 #X msg 87 64 clear \, obj 0 0 r \$1-in \, obj 0 20 t a a \, obj 0 80
 ggate \, obj 0 100 s \$1-false \, obj 60 100 s \$1-true \, obj 60 0
 r \$1-set \,;
+#X obj 112 107 sel 0;
+#X msg 111 128 != 0;
 #X connect 0 0 7 0;
 #X connect 1 0 23 0;
 #X connect 3 0 4 0;
+#X connect 3 1 24 0;
 #X connect 4 0 13 0;
 #X connect 4 1 6 1;
 #X connect 5 0 9 0;
@@ -77,6 +70,8 @@ r \$1-set \,;
 #X connect 21 0 16 1;
 #X connect 22 0 16 0;
 #X connect 23 0 2 0;
+#X connect 24 0 25 0;
+#X connect 25 0 4 0;
 #X restore 63 56 pd init;
 #X obj 2 -1 inlet INPUT;
 #X obj 111 75 outlet FALSE;
