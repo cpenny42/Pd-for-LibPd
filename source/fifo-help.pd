@@ -1,4 +1,4 @@
-#N canvas 285 373 458 308 10;
+#N canvas 255 199 458 308 10;
 #X msg 29 108 bang;
 #X obj 81 261 print;
 #X msg 106 166 1;
@@ -13,7 +13,7 @@ fifo.;
 #X text 64 142 floats \, symbols \, and symbolic atoms are stored;
 #X msg 196 166 symbol four;
 #X obj 135 261 pddp/print;
-#X obj 115 207 purepd/fifo 5;
+#X obj 115 207 fifo 5;
 #X connect 0 0 12 0;
 #X connect 2 0 12 0;
 #X connect 3 0 12 0;

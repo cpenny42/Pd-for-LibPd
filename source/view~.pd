@@ -4,7 +4,7 @@
 #X obj -17 8 inlet~ INPUT;
 #X obj 66 32 inlet RATE;
 #X obj -10 32 loadfloat 1;
-#X obj -10 55 metro 50;
+#X obj -10 55 metro 0;
 #X connect 0 0 1 0;
 #X connect 2 0 0 0;
 #X connect 3 0 5 1;

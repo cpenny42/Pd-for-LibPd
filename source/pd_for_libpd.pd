@@ -36,7 +36,6 @@
 #X obj 147 356 ggate~;
 #X obj 193 356 gswitch~;
 #X obj 458 300 gswitch;
-#X obj 258 484 guifilter~;
 #X obj 402 357 hann_table;
 #X obj 116 91 inv;
 #X obj 515 84 iterator;
@@ -103,4 +102,6 @@
 #X obj 573 190 lspace;
 #X obj 204 280 normalize~;
 #X obj 143 311 remove_dc_offset~;
-#X obj 792 172 if;
+#X obj 799 117 if;
+#X obj 829 119 filt;
+#X obj 258 484 guifilter~;

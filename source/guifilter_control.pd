@@ -1,0 +1,78 @@
+#N canvas 424 280 523 228 10;
+#X obj 4 2 hsl 147 15 40 22000 0 0 empty empty Center_Frequency 30
+8 0 10 -262144 -1 -1 3283 1;
+#X obj 35 61 bng 15 250 50 0 empty empty lowpass 17 7 0 10 -262144
+-1 -1;
+#X obj 35 78 bng 15 250 50 0 empty empty highpass 17 7 0 10 -262144
+-1 -1;
+#X obj 35 95 bng 15 250 50 0 empty empty bandpass 17 7 0 10 -262144
+-1 -1;
+#X obj 35 112 bng 15 250 50 0 empty empty notch 17 7 0 10 -262144 -1
+-1;
+#X obj 105 61 bng 15 250 50 0 empty empty peak 17 7 0 10 -262144 -1
+-1;
+#X obj 105 78 bng 15 250 50 0 empty empty lowshelf 17 7 0 10 -262144
+-1 -1;
+#X obj 105 95 bng 15 250 50 0 empty empty highshelf 17 7 0 10 -262144
+-1 -1;
+#X floatatom 155 2 7 0 0 0 - - -;
+#X obj 105 112 tgl 15 0 empty empty DSP_ON 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 4 20 hsl 147 15 0.0001 1.5 0 0 empty empty Q 73 8 0 10 -262144
+-1 -1 14600 1;
+#X floatatom 155 20 7 0 0 0 - - -;
+#X obj 4 38 hsl 147 15 -24 15 0 1 empty empty Peak_Gain 50 8 0 10 -262144
+-1 -1 12900 1;
+#X floatatom 155 38 7 0 0 0 - - -;
+#X obj -3 174 outlet CENTER;
+#X obj 81 174 outlet Q;
+#X obj 135 174 outlet GAIN;
+#X obj 207 174 outlet TYPE;
+#X obj 279 174 outlet KILL;
+#X msg 207 76 lowpass;
+#X msg 207 93 highpass;
+#X msg 207 110 bandpass;
+#X msg 207 127 notch;
+#X msg 312 76 peak;
+#X msg 312 93 lowshelf;
+#X msg 312 110 highshelf;
+#X obj -79 95 loadfloat 1;
+#X obj -118 21 loadfloat 3;
+#X obj -118 -15 loadfloat 700;
+#X obj -118 44 loadbang;
+#X obj -118 3 loadfloat 0.707107;
+#X obj 214 -8 inlet;
+#X obj 214 15 route center q gain type on;
+#X connect 0 0 8 0;
+#X connect 1 0 19 0;
+#X connect 2 0 20 0;
+#X connect 3 0 21 0;
+#X connect 4 0 22 0;
+#X connect 5 0 23 0;
+#X connect 6 0 24 0;
+#X connect 7 0 25 0;
+#X connect 8 0 14 0;
+#X connect 9 0 18 0;
+#X connect 10 0 11 0;
+#X connect 11 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 16 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 0;
+#X connect 21 0 17 0;
+#X connect 22 0 17 0;
+#X connect 23 0 17 0;
+#X connect 24 0 17 0;
+#X connect 25 0 17 0;
+#X connect 26 0 9 0;
+#X connect 27 0 12 0;
+#X connect 28 0 0 0;
+#X connect 29 0 1 0;
+#X connect 30 0 10 0;
+#X connect 31 0 32 0;
+#X connect 32 0 0 0;
+#X connect 32 1 10 0;
+#X connect 32 2 12 0;
+#X connect 32 3 17 0;
+#X connect 32 4 9 0;
+#X coords 0 -1 1 1 200 132 2 0 0;

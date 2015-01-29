@@ -1,17 +1,17 @@
 #N canvas 782 364 480 333 10;
-#X obj 312 -54 inlet CLEAR;
+#X obj 310 -54 inlet CLEAR;
 #N canvas 839 578 95 62 \$0-guts 0;
 #X obj -2 -9 inlet GET_SET;
 #X obj -2 31 outlet VALUE;
 #N canvas 901 38 450 300 \$0-shell 0;
-#N canvas 1102 343 450 300 1358-bindings 0;
-#X restore 0 0 pd 1358-bindings;
-#X obj 0 60 r 1358-value;
+#N canvas 317 207 450 300 1013-bindings 0;
+#X restore 0 0 pd 1013-bindings;
+#X obj 0 60 r 1013-value;
 #X obj 0 80 outlet VALUE;
 #X obj 0 20 inlet TO_NODE;
 #X obj 0 40 s;
-#X obj 110 0 r 1358-sender;
-#X obj 110 20 lpre 1358-;
+#X obj 110 0 r 1013-sender;
+#X obj 110 20 lpre 1013-;
 #X obj 110 40 symbol;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -22,7 +22,7 @@
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 121 197 pd \$0-guts;
-#X obj 312 -31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 310 -31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 366 23 489 404 reset 0;
 #X obj 76 12 f \$0;
@@ -77,7 +77,7 @@ obj 110 0 r \$1-sender \, obj 110 20 lpre \$1- \, obj 110 40 symbol
 #X connect 22 0 18 0;
 #X connect 23 0 21 0;
 #X connect 24 0 4 0;
-#X restore 312 8 pd reset;
+#X restore 310 8 pd reset;
 #X obj 266 135 t b a;
 #X obj 266 33 list split 1;
 #X obj 231 152 list;
@@ -229,7 +229,7 @@ obj 110 0 r \$1-sender \, obj 110 20 lpre \$1- \, obj 110 40 symbol
 #X connect 17 0 18 0;
 #X connect 18 0 15 0;
 #X restore 299 75 pd manager;
-#X obj 312 -13 t b b;
+#X obj 310 -13 t b b;
 #X obj 231 173 lfl> 1;
 #N canvas 591 369 137 202 swap_sender 0;
 #X obj -20 2 inlet;

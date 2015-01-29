@@ -1,0 +1,14 @@
+#N canvas 455 496 450 300 10;
+#X obj 182 179 cpole-model;
+#X text 12 9 [cpole-model];
+#X text 355 5 Pd for LibPd;
+#X obj 366 54 cpole~;
+#X text 40 57 This patch is a visualization of the behavior of pd's
+;
+#X text 41 70 object in the complex plane. It shows the behavior of
+the filter across the spectrum over time. For more info on Pole-Zero
+plots \, see:;
+#X text 73 115 https://en.wikipedia.org/wiki/Pole%E2%80%93zero_plot
+;
+#X text 67 263 [cpole-model] was created by Katja Vetter \, April 2012
+;
