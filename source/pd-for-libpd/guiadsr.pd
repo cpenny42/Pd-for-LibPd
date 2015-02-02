@@ -1,0 +1,58 @@
+#N canvas 310 23 465 299 10;
+#X obj 104 122 hsl 150 15 2 5000 0 1 empty empty Attack 65 8 0 10 -262144
+-1 -1 200 1;
+#X obj 104 137 hsl 150 15 3 5000 0 1 empty empty Decay 68 8 0 10 -249661
+-1 -1 300 1;
+#X obj 104 152 hsl 150 15 0 1 0 1 empty empty Sustain 62 8 0 10 -257983
+-1 -1 0 1;
+#X obj 104 167 hsl 150 15 3 10000 0 1 empty empty Release 63 8 0 10
+-228856 -1 -1 0 1;
+#X obj 97 230 pack 0 0 0 0;
+#X obj 108 204 t b f;
+#X obj 150 205 t b f;
+#X obj 195 206 t b f;
+#X obj 98 270 outlet ADSR_list;
+#X obj 37 16 inlet;
+#X obj 93 72 loadbang;
+#X msg 36 226 on \$1;
+#X obj 101 101 tgl 20 0 empty empty Off/On 25 10 0 10 -262144 -1 -1
+0 1;
+#X obj 42 36 route adsr attack decay sustain release on;
+#X obj 290 119 print GUI_ADSR_ERROR;
+#X obj 290 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 290 95 list prepend unknown command;
+#X obj 5 99 unpack 0 0 0 0;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 6 0 4 0;
+#X connect 6 1 4 2;
+#X connect 7 0 4 0;
+#X connect 7 1 4 3;
+#X connect 9 0 13 0;
+#X connect 10 0 0 0;
+#X connect 10 0 1 0;
+#X connect 10 0 2 0;
+#X connect 10 0 3 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 0;
+#X connect 13 0 4 0;
+#X connect 13 0 17 0;
+#X connect 13 1 0 0;
+#X connect 13 2 1 0;
+#X connect 13 3 2 0;
+#X connect 13 4 3 0;
+#X connect 13 5 12 0;
+#X connect 13 6 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 0 0;
+#X connect 17 1 1 0;
+#X connect 17 2 2 0;
+#X connect 17 3 3 0;
+#X coords 0 -1 1 1 157 83 2 100 100;

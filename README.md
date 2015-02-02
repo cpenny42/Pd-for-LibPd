@@ -7,6 +7,6 @@ The /Documentation Folder contains organized help patches for all the objects, a
 
 The sinesum executable will print out the fourier series coefficients for a given wave type & number of harmonics that you can use with Pd's sinesum method for arrays.
 
-To use this framework in a LibPd project, call the addToSearchPath function when you initialize PdBase to include the /source folder above that contains the Pd patches.  You can also add the folder the search path in Pure-Data in the Preferences menu. More info at: [github.com/libpd](https://github.com/libpd/)
+To use this framework in a LibPd project, call the addToSearchPath function when you initialize PdBase to include all directories in the /source folder above that contain Pd patches. As of now there is the /pd-for-libpd directory with vanilla-guarenteed compatibility, and /pd-extended that has mostly vanilla-compatible patches along with some that need pd-extended objects.  /pd-extended also has many pd-extended gui objects implemented in Pure Data making them libpd compatible.  You can also add both folders to the search path in Pure-Data in the Preferences menu. More info at: [github.com/libpd](https://github.com/libpd/)
 
 This repository is incomplete and will continue to be updated.
