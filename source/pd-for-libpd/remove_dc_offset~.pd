@@ -2,7 +2,5 @@
 #X obj 4 4 inlet~;
 #X obj 4 94 outlet~;
 #X obj 4 69 hip~ 20;
-#X obj 18 34 loadfloat 20;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X connect 3 0 2 1;

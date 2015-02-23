@@ -1,0 +1,9 @@
+#N canvas 590 583 450 300 10;
+#X text 3 4 [lpre] - prepend item to each element in a list;
+#X text 366 4 Pd for LibPd;
+#X text 368 18 Chris Penny;
+#X msg 95 69 one two three four five;
+#X obj 95 92 lpre .;
+#X obj 95 116 print LPRE-HELP;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;

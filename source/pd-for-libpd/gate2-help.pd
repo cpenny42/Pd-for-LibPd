@@ -1,0 +1,23 @@
+#N canvas 555 487 450 300 10;
+#X text 4 3 [gate2] - a gate;
+#X text 362 2 Pd for LibPd;
+#X text 366 17 Chris Penny;
+#X obj 130 125 gate2;
+#X text 84 191 see:;
+#X obj 115 191 gate3;
+#X obj 155 191 gate4;
+#X obj 193 190 gate5;
+#X obj 232 190 gate16;
+#X obj 277 190 gate32;
+#X floatatom 109 101 5 0 0 0 - - -;
+#X obj 158 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 33 49 This is a gate that is statically created to make it
+libpd compatible by default. There are plenty of other gate objects
+you could use \, this is another one.;
+#X floatatom 91 150 5 0 0 0 - - -;
+#X floatatom 160 150 5 0 0 0 - - -;
+#X connect 3 0 13 0;
+#X connect 3 1 14 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 1;

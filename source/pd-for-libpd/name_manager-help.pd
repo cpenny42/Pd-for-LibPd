@@ -1,0 +1,43 @@
+#N canvas 390 497 450 330 10;
+#X text 6 1 [name_manager] - keep track of names;
+#X text 364 3 Pd for LibPd;
+#X text 367 15 Chris Penny;
+#X text 33 45 [name_manager] will keep track of names that have been
+added or removed to a central list.;
+#X obj 146 242 name_manager;
+#X msg 24 93 help;
+#X text 54 92 <- Print more info to the console;
+#X msg 21 136 methods;
+#X msg 120 117 foo;
+#X msg 147 117 bar;
+#X text 175 116 <- Check if name exists;
+#X obj 110 268 tgl 15 0 empty empty Name_Exists? 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 163 143 foo;
+#X msg 190 143 bar;
+#X text 218 142 <- Add name;
+#X obj 215 266 print ALL_NAMES;
+#X obj 202 169 bng 15 250 50 0 empty empty Output_All_Names 17 7 0
+10 -262144 -1 -1;
+#X msg 210 193 foo;
+#X msg 237 193 bar;
+#X text 265 192 <- Delete name;
+#X text 17 298 This is;
+#X obj 66 299 abstractions;
+#X text 146 299 compatible.;
+#X obj 245 219 bng 15 250 50 0 empty empty Clear_All_Names 17 7 0 10
+-262144 -1 -1;
+#X obj 20 269 print EXISTS?;
+#X connect 4 0 11 0;
+#X connect 4 0 24 0;
+#X connect 4 1 15 0;
+#X connect 5 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 12 0 4 1;
+#X connect 13 0 4 1;
+#X connect 16 0 4 2;
+#X connect 17 0 4 3;
+#X connect 18 0 4 3;
+#X connect 23 0 4 4;

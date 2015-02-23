@@ -1,0 +1,125 @@
+#N canvas 510 23 862 651 10;
+#X obj 362 425 print ALL;
+#X obj 289 425 print MATCH;
+#X obj 423 425 print NO_MATCH;
+#X obj 316 226 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
+-1 -1;
+#X obj 273 207 bng 15 250 50 0 empty empty Output_All_Keys_&_Values
+17 7 0 10 -262144 -1 -1;
+#X msg 99 230 test a b c;
+#X msg 212 229 test;
+#X msg 206 207 key1;
+#X msg 147 248 answer 42;
+#X msg 220 253 answer;
+#X msg 266 503 test;
+#X msg 345 503 key1;
+#X msg 301 502 answer;
+#X text -33 -25 [dictionary] - Store Key-Value Pairs;
+#X text 752 -27 Pd for LibPd;
+#X text 755 -13 Chris Penny;
+#X text 7 -1 [dictionary] allows you to associate a value to a key.
+A list of length > 1 will use the first item as the key and then store
+the rest of the list as the value.;
+#X text 10 180 Delete all stored values with the right inlet.;
+#X text 377 448 <- all the values in the dictionary above will be copied
+to the dictionary below.;
+#X msg 30 210 key1 foo bar;
+#X msg 32 266 key1 sqrt(-1);
+#X msg 176 505 test 1 2 3;
+#X msg 445 256 set key_one value_one value_two;
+#X msg 446 278 get key_one;
+#X msg 316 257 clear;
+#X msg 581 294 help;
+#X msg 580 518 print;
+#X msg 273 256 all;
+#X text 616 293 <- Print help info;
+#X msg 593 316 methods;
+#X text 642 317 <- print all available methods;
+#X obj 412 562 route match all no_match;
+#X obj 401 604 print MATCH2;
+#X obj 480 604 print ALL2;
+#X obj 547 604 print NO_MATCH2;
+#X obj 289 398 route match all nomatch;
+#X msg 417 498 all;
+#X msg 447 498 print;
+#X msg 491 500 clear;
+#X msg 370 254 print;
+#X text 10 44 A list of length == 1 (symbol) will look for the value
+associated with that key. Output will be prepended with "match" if
+the key is found \, or the key will be output prepended with "nomatch".
+;
+#X text 10 99 You can output all the key-value pairs with the "all"
+message. This will output each pair individually as a list prepended
+with "all". You can use this to copy dictionaries.;
+#X text 11 147 Use [route] or [list split 1] to separate the "match"
+\, "nomatch" \, and "all" streams.;
+#X msg 23 295 delete key1;
+#X text 399 65 [dictionary] also accepts messages to control it:;
+#X msg 414 94 set <key> <value>;
+#X msg 528 94 get <key>;
+#X msg 595 94 all;
+#X msg 627 94 clear;
+#X msg 633 114 reset;
+#X text 674 103 <- these 2 are the same;
+#X msg 421 140 methods;
+#X msg 484 139 help;
+#X msg 530 140 print;
+#X msg 576 139 delete <key>;
+#X text 555 357 <- numbers can't be keys;
+#X obj 139 395 list split 1;
+#X obj 173 417 list prepend set;
+#X obj 173 441 list trim;
+#X text -26 354 This will get you the value if found;
+#X text 53 367 or the key if not found:;
+#X obj 289 378 dictionary-standalone;
+#X msg 446 302 delete key_one;
+#X text 435 238 SET \, GET \, DELETE:;
+#X text 416 166 "set" and "get" are the same as passing a list length
+1 and a list length >1 \, respectively.;
+#X msg 517 356 1 foo;
+#X msg 517 375 1;
+#X text 396 31 STANDALONE - SOME EXTERNAL PATCHES HAVE BEEN REPLACED
+;
+#X msg 173 466;
+#X obj 412 539 dictionary-standalone;
+#X connect 3 0 24 0;
+#X connect 4 0 27 0;
+#X connect 5 0 61 0;
+#X connect 6 0 61 0;
+#X connect 7 0 61 0;
+#X connect 8 0 61 0;
+#X connect 9 0 61 0;
+#X connect 10 0 69 0;
+#X connect 11 0 69 0;
+#X connect 12 0 69 0;
+#X connect 19 0 61 0;
+#X connect 20 0 61 0;
+#X connect 21 0 69 0;
+#X connect 22 0 61 0;
+#X connect 23 0 61 0;
+#X connect 24 0 61 0;
+#X connect 25 0 61 0;
+#X connect 26 0 69 0;
+#X connect 27 0 61 0;
+#X connect 29 0 61 0;
+#X connect 31 0 32 0;
+#X connect 31 1 33 0;
+#X connect 31 2 34 0;
+#X connect 35 0 1 0;
+#X connect 35 1 0 0;
+#X connect 35 1 69 0;
+#X connect 35 2 2 0;
+#X connect 36 0 69 0;
+#X connect 37 0 69 0;
+#X connect 38 0 69 0;
+#X connect 39 0 61 0;
+#X connect 43 0 61 0;
+#X connect 56 1 57 0;
+#X connect 57 0 58 0;
+#X connect 58 0 68 0;
+#X connect 61 0 35 0;
+#X connect 61 0 56 0;
+#X connect 62 0 61 0;
+#X connect 65 0 61 0;
+#X connect 66 0 61 0;
+#X connect 69 0 31 0;

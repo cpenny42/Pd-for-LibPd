@@ -1,0 +1,68 @@
+#N canvas 306 121 673 601 10;
+#X text 7 -46 [environments] - groups of key-value pairs;
+#X text 581 -47 Pd for LibPd;
+#X text 583 -35 Chris Penny;
+#X text 146 -10 Environments uses the [dictionary] object to create
+groups (aka "environments") of variables.;
+#X text 146 22 To create a new environment \, send an "init" message:
+;
+#X msg 252 45 init foo;
+#X text 149 69 You can then use the "foo" dictionary's methods:;
+#X msg 252 89 foo my_variable 6;
+#X text 150 120 See;
+#X obj 177 120 dictionary-help;
+#X text 277 120 for more info on dictionaries.;
+#X obj 281 513 environments;
+#X text 152 154 To delete your environment \, send a "delete" message:
+;
+#X msg 251 174 delete foo;
+#X text 149 207 There are other methods available as well - send a
+"help" message to see more help info or send the message "methods"
+to see all available methods for [environment].;
+#X msg 11 301 init foo;
+#X msg 11 324 delete foo;
+#X msg 91 301 init bar;
+#X msg 91 324 delete bar;
+#X msg 167 301 init baz;
+#X msg 167 324 delete baz;
+#X msg 254 327 foo three 3;
+#X msg 254 348 foo four 4;
+#X msg 335 328 bar three Abraham Lincoln;
+#X msg 335 348 bar four hamburgers;
+#X msg 498 328 baz three 44;
+#X msg 498 348 baz four 33;
+#X text -8 278 Initializing and deleting environments:;
+#X text 255 307 Creating/setting variables:;
+#X text 431 389 Getting variables:;
+#X msg 447 408 foo three;
+#X msg 447 429 foo four;
+#X msg 510 409 bar three;
+#X msg 510 429 bar four;
+#X msg 579 409 baz three;
+#X msg 579 429 baz four;
+#X msg 9 491 help;
+#X msg 45 492 methods;
+#X msg 105 468 dictionary help;
+#X msg 105 489 dictionary methods;
+#X connect 15 0 11 0;
+#X connect 16 0 11 0;
+#X connect 17 0 11 0;
+#X connect 18 0 11 0;
+#X connect 19 0 11 0;
+#X connect 20 0 11 0;
+#X connect 21 0 11 0;
+#X connect 22 0 11 0;
+#X connect 23 0 11 0;
+#X connect 24 0 11 0;
+#X connect 25 0 11 0;
+#X connect 26 0 11 0;
+#X connect 30 0 11 0;
+#X connect 31 0 11 0;
+#X connect 32 0 11 0;
+#X connect 33 0 11 0;
+#X connect 34 0 11 0;
+#X connect 35 0 11 0;
+#X connect 36 0 11 0;
+#X connect 37 0 11 0;
+#X connect 38 0 11 0;
+#X connect 39 0 11 0;

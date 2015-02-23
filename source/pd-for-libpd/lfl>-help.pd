@@ -1,0 +1,17 @@
+#N canvas 397 550 450 300 10;
+#X text 366 0 Pd for LibPd;
+#X text 4 0 [lfl> ] - filter list based on length;
+#X text 369 13 Chris Penny;
+#X obj 154 186 print LFL>-HELP;
+#X obj 154 158 lfl> 2;
+#X msg 105 122 foo;
+#X msg 147 122 foo bar;
+#X msg 212 122 foo bar baz;
+#X text 40 52 [lfl>] will prevent any list that is NOT bigger than
+a certain amount from going through.;
+#X msg 290 122 foo bar baz saget;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 9 0 4 0;

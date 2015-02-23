@@ -1,0 +1,17 @@
+#N canvas 459 456 450 300 10;
+#X text 3 0 lprepend - [list prepend] with a [list trim] afterward
+;
+#X text 357 -1 Pd for LibPd;
+#X text 363 11 Chris Penny;
+#X text 47 49 This object is the same as [list prepend] if you put
+a [list trim] after it.;
+#X obj 129 176 lprepend foo bar;
+#X msg 129 146 one two three four five;
+#X obj 129 201 route list;
+#X obj 186 227 print LPREPEND-HELP;
+#X text 49 85 This makes it a little faster to prepend things to lists
+where you can't have the "list" selector as the first thing in the
+list.;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 1 7 0;

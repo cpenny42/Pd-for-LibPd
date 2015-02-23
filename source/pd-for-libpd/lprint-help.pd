@@ -1,0 +1,22 @@
+#N canvas 509 358 631 300 10;
+#X text 9 2 [lprint] - print lists without the annoying "list" prefix
+;
+#X text 521 6 Pd for LibPd;
+#X text 527 20 Chris Penny;
+#X msg 169 81 list one two 3 four five six;
+#X obj 169 168 lprint LPRINT-HELP;
+#X msg 222 108 A real-time graphical programming environment for live
+interactive computer music;
+#X msg 81 72 foo;
+#X msg 113 71 bar;
+#X obj 95 114 list;
+#X msg 34 83 baz;
+#X obj 40 139 symbol;
+#X text 170 36 Also works for symbols;
+#X connect 3 0 4 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;

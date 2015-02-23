@@ -1,0 +1,7 @@
+#N canvas 115 400 1057 232 10;
+#X text 11 25 filledpolygon < interior_color > < perimeter_color >
+<;
+#X text 341 24 perimeter_width >;
+#X text 451 24 < coord1_x > < coord1_y > < coord2_x > < coord2_y >
+;
+#X text 763 23 ... for as many coordinates as there are;

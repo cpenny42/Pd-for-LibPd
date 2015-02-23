@@ -1,60 +1,119 @@
-#N canvas 190 78 709 513 10;
-#X obj 176 6 t a a;
-#X obj 176 66 ggate;
-#X obj 203 26 list length;
-#X obj 203 46 > 1;
-#X msg 296 170 NULL NULL \,;
-#X obj 296 262 route x;
-#X obj 336 203 list split 1;
-#X obj 336 222 list prepend symbol;
-#X obj 335 242 list trim;
-#X obj 436 2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 190 23 960 695 10;
+#X obj 176 52 t a a;
+#X obj 176 112 ggate;
+#X obj 203 72 list length;
+#X obj 203 92 > 1;
+#X msg 296 216 NULL NULL \,;
+#X obj 296 308 route x;
+#X obj 336 249 list split 1;
+#X obj 336 268 list prepend symbol;
+#X obj 335 288 list trim;
+#X obj 436 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 436 44 t b b;
-#X msg 436 82 addcomma;
-#X obj 335 340 ladd3;
-#X msg 335 365;
-#X msg 416 272 set;
-#X obj 296 304 list;
-#X obj 296 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 436 90 t b b;
+#X msg 436 128 addcomma;
+#X obj 335 386 ladd3;
+#X msg 335 411;
+#X msg 416 318 set;
+#X obj 296 350 list;
+#X obj 296 329 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 225 304 spigot;
-#X msg 251 284 0;
-#X msg 260 284 1;
-#X obj 341 112 t b a b a a b;
-#X obj 229 126 t b b;
-#X msg 256 147 set;
-#X obj 196 153 ladd3;
-#X msg 17 192 NULL NULL \,;
-#X obj 59 292 route x;
-#X obj 99 233 list split 1;
-#X obj 99 252 list prepend symbol;
-#X obj 98 272 list trim;
-#X obj 44 234 f;
-#X obj 68 233 + 1;
-#X msg 115 116 0;
-#X obj 17 213 t a b;
-#X obj 100 364 ==;
-#X obj 100 332 f;
-#X obj 124 331 + 1;
-#X obj 68 90 t b b a b a;
-#X obj 86 431 anything;
-#X obj 98 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 225 350 spigot;
+#X msg 251 330 0;
+#X msg 260 330 1;
+#X obj 244 119 t b a b a a b;
+#X obj 229 172 t b b;
+#X msg 256 193 set;
+#X obj 196 199 ladd3;
+#X msg 15 240 NULL NULL \,;
+#X obj 59 338 route x;
+#X obj 99 279 list split 1;
+#X obj 99 298 list prepend symbol;
+#X obj 98 318 list trim;
+#X obj 44 280 f;
+#X obj 68 279 + 1;
+#X msg 115 162 0;
+#X obj 17 259 t a b;
+#X obj 100 410 ==;
+#X obj 100 378 f;
+#X obj 124 377 + 1;
+#X obj 68 136 t b b a b a;
+#X obj 86 477 anything;
+#X obj 98 360 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 82 384 f;
-#X obj 62 345 t b b;
-#X obj 82 406 sel 1;
-#X msg 216 410 NULL NULL \,;
-#X obj 314 7 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 82 430 f;
+#X obj 62 391 t b b;
+#X obj 82 452 sel 1;
+#X msg 171 383 NULL NULL \,;
+#X obj 314 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 314 -21 inlet OUTPUT_ALL;
-#X obj 436 -21 inlet CLEAR;
 #X obj 176 -21 inlet SET_&_GET;
-#X obj -4 458 outlet MATCH;
-#X obj 301 455 outlet NOMATCH;
-#X obj 127 459 outlet ALL_KEYS_&_VALUES;
-#X obj 463 63 lset NULL NULL;
-#X obj 496 8 loadbang;
+#X obj 463 109 lset NULL NULL;
+#X obj 471 34 loadbang;
+#X msg 74 -11 help;
+#X obj 171 516 ggate;
+#X msg 216 498 0;
+#X msg 241 497 1;
+#X obj 359 65 t b b b b b;
+#X obj 198 542 list prepend --;
+#X msg 344 571 ------ Dictionary Contents ------;
+#X obj 512 465 print HELP;
+#X obj 512 245 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 121 -27 print;
+#X msg 331 593 ----------------------------------------;
+#X obj 465 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 465 527 lprint DICTIONARY_METHODS;
+#X obj 328 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 182 615 lprint DICTIONARY-\$0;
+#X obj 12 552 list prepend match;
+#X obj 12 574 list trim;
+#X obj 12 637 outlet;
+#X obj 81 611 list trim;
+#X obj 81 589 list prepend all;
+#X obj 37 526 list trim;
+#X obj 37 504 list prepend nomatch;
+#X obj 176 5 route set get all clear reset help print methods delete
+;
+#X msg 22 13 foo 1;
+#X msg 3 38 delete foo;
+#X obj 585 22 t b a b;
+#X obj 607 74 ggate;
+#X msg 622 53 0;
+#X msg 634 53 1;
+#X obj 634 94 b;
+#X msg 634 113 list;
+#X msg 83 25 bar 2;
+#X msg 83 46 delete bar;
+#X msg 18 67 baz the nightman cometh;
+#X msg 25 89 delete baz;
+#X msg 673 131 NULL NULL \,;
+#X obj 540 19 spigot;
+#X obj 645 -3 t a a;
+#X obj 673 169 liter;
+#X obj 676 218 select symbol;
+#X obj 755 196 symbol;
+#X obj 674 197 symbol;
+#X obj 674 36 t b a b;
+#X msg 619 208 0;
+#X msg 592 208 1;
+#X obj 512 270 help_builder --title dictionary.pd --description Store
+key-value pairs in a subpatch --inlet Call Method. Input key to get
+value or input key-value pair to store value. --outlet Output prepended
+with "match" "nomatch" or "all". Use [route] to separate. --method
+methods: print all available methods for [dictionary] --method set
+< key > < value >: Set value stored with the key --method get < key
+>: If value exists returns "match < value >" otherwise "nomatch < key
+>" --method all: Output all key-value pairs prepended by "all" --method
+delete < key >: delete a stored key (does nothing if key is invalid)
+--method clear: Clear all stored key-value pairs --method reset: Same
+as clear --method help: print help information to the console --method
+print: print all key-value pairs to the console;
+#X msg 465 488 list set get delete all clear reset methods help print
+< key value > < key >;
+#X text 319 182 Spaghetti;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 1 0 36 0;
@@ -70,10 +129,11 @@
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 10 1 14 0;
-#X connect 10 1 50 0;
+#X connect 10 1 45 0;
 #X connect 11 0 4 0;
 #X connect 11 0 24 0;
 #X connect 11 0 42 0;
+#X connect 11 0 82 0;
 #X connect 12 0 13 0;
 #X connect 13 0 23 0;
 #X connect 14 0 13 0;
@@ -87,7 +147,7 @@
 #X connect 20 1 17 0;
 #X connect 20 2 4 0;
 #X connect 20 3 6 0;
-#X connect 20 4 15 1;
+#X connect 20 4 73 0;
 #X connect 20 5 19 0;
 #X connect 20 5 14 0;
 #X connect 21 0 13 0;
@@ -95,11 +155,13 @@
 #X connect 22 0 4 0;
 #X connect 22 0 24 0;
 #X connect 22 0 42 0;
+#X connect 22 0 82 0;
 #X connect 23 0 4 0;
 #X connect 23 0 24 0;
 #X connect 23 0 42 0;
+#X connect 23 0 82 0;
 #X connect 24 0 32 0;
-#X connect 25 0 47 0;
+#X connect 25 0 62 0;
 #X connect 25 1 38 0;
 #X connect 26 0 27 0;
 #X connect 27 0 28 0;
@@ -120,18 +182,80 @@
 #X connect 36 2 26 0;
 #X connect 36 3 31 0;
 #X connect 36 4 37 1;
-#X connect 37 0 48 0;
+#X connect 37 0 68 0;
 #X connect 38 0 34 0;
 #X connect 39 0 41 0;
 #X connect 40 0 39 0;
 #X connect 40 1 33 0;
 #X connect 41 0 37 0;
-#X connect 42 0 49 0;
+#X connect 42 0 48 0;
 #X connect 43 0 42 0;
-#X connect 44 0 43 0;
-#X connect 45 0 9 0;
-#X connect 46 0 0 0;
-#X connect 50 0 4 0;
-#X connect 50 0 24 0;
-#X connect 50 0 42 0;
-#X connect 51 0 9 0;
+#X connect 44 0 69 0;
+#X connect 45 0 4 0;
+#X connect 45 0 24 0;
+#X connect 45 0 42 0;
+#X connect 45 0 82 0;
+#X connect 46 0 9 0;
+#X connect 47 0 69 0;
+#X connect 48 0 66 0;
+#X connect 48 1 52 0;
+#X connect 49 0 48 1;
+#X connect 50 0 48 1;
+#X connect 51 0 57 0;
+#X connect 51 1 49 0;
+#X connect 51 2 42 0;
+#X connect 51 3 50 0;
+#X connect 51 4 53 0;
+#X connect 52 0 61 0;
+#X connect 53 0 61 0;
+#X connect 55 0 92 0;
+#X connect 56 0 69 0;
+#X connect 57 0 61 0;
+#X connect 58 0 93 0;
+#X connect 60 0 51 0;
+#X connect 62 0 63 0;
+#X connect 63 0 64 0;
+#X connect 65 0 64 0;
+#X connect 66 0 65 0;
+#X connect 67 0 64 0;
+#X connect 68 0 67 0;
+#X connect 69 0 0 0;
+#X connect 69 1 0 0;
+#X connect 69 2 43 0;
+#X connect 69 3 9 0;
+#X connect 69 4 9 0;
+#X connect 69 5 55 0;
+#X connect 69 6 51 0;
+#X connect 69 7 58 0;
+#X connect 69 8 84 0;
+#X connect 69 9 0 0;
+#X connect 70 0 69 0;
+#X connect 71 0 69 0;
+#X connect 72 0 74 0;
+#X connect 72 1 20 0;
+#X connect 72 2 75 0;
+#X connect 73 0 15 1;
+#X connect 73 1 76 0;
+#X connect 74 0 73 1;
+#X connect 75 0 73 1;
+#X connect 76 0 77 0;
+#X connect 77 0 15 1;
+#X connect 78 0 69 0;
+#X connect 79 0 69 0;
+#X connect 80 0 69 0;
+#X connect 81 0 69 0;
+#X connect 82 0 85 0;
+#X connect 83 0 72 0;
+#X connect 84 0 83 0;
+#X connect 84 1 89 0;
+#X connect 85 0 88 0;
+#X connect 86 0 91 0;
+#X connect 87 0 86 1;
+#X connect 88 0 86 0;
+#X connect 89 0 82 0;
+#X connect 89 1 87 0;
+#X connect 89 2 90 0;
+#X connect 90 0 83 1;
+#X connect 91 0 83 1;
+#X connect 92 0 54 0;
+#X connect 93 0 59 0;

@@ -1,9 +1,9 @@
-#N canvas 275 256 438 346 10;
+#N canvas 275 256 443 382 10;
 #X obj 147 37 iterator;
 #X floatatom 148 58 5 0 0 0 - - -;
-#X obj 20 -34 inlet PUSH;
-#X obj 172 -34 inlet POP;
-#X obj 237 -34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 20 -73 inlet PUSH;
+#X obj 172 -73 inlet POP;
+#X obj 237 -73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 148 77 sel 0;
 #X obj 175 96 - 1;
@@ -21,29 +21,56 @@
 #X obj 170 127 != 0;
 #X obj 165 164 spigot;
 #X obj 215 253 outlet POPPED_ITEM_NUMBER;
-#X obj 20 -6 route view;
 #X msg 20 177 view;
 #X obj 20 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 353 -33 inlet CLEAR;
+#X obj 353 -72 inlet CLEAR;
 #X obj 308 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 246 188 != 0;
 #X obj 214 218 spigot;
 #X obj 373 -5 loadbang;
 #X obj 317 75 iterator;
-#X obj 268 -2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 345 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X obj 295 107 f;
-#X obj 267 -34 inlet REWIND;
 #X obj 0 19 loadfloat 0;
 #X obj 108 279 outlet POPPED;
 #X obj 108 259 larray stack;
+#N canvas 429 261 450 300 error 0;
+#X obj 20 12 inlet;
+#X msg 22 51 rewind is not currently working for stacks;
+#X obj 22 88 print STACK_ERROR;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 142 -20 pd error;
+#N canvas 728 296 450 300 help 0;
+#X obj 24 11 inlet;
+#X obj 24 43 help_builder --title stack.pd --description A Stack Implementation
+in Pd --inlet Push an item onto the stack --inlet Bang to pop from
+the stack --inlet Erase Stack contents --outlet Popped items --outlet
+Popped item number --method push: push an item onto the stack --method
+pop: pop from the stack --method clear: clear all stack contents --method
+reset: same as clear --method view: show subpatch containing the stack
+--method help: print help information to the console --method methods:
+print available methods for [stack];
+#X obj 24 187 print HELP;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 247 -23 pd help;
+#X obj 29 -47 route view push pop rewind clear reset help methods;
+#N canvas 656 223 450 300 methods 0;
+#X obj 11 9 inlet;
+#X msg 13 53 view push pop clear reset help methods;
+#X obj 12 86 print STACK_METHODS;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 302 -23 pd methods;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 1 0 17 0;
-#X connect 1 0 25 0;
-#X connect 2 0 20 0;
+#X connect 1 0 24 0;
+#X connect 2 0 35 0;
 #X connect 3 0 9 0;
 #X connect 4 0 9 0;
 #X connect 5 0 11 0;
@@ -54,34 +81,40 @@
 #X connect 8 0 15 0;
 #X connect 8 1 7 0;
 #X connect 8 2 0 5;
-#X connect 8 2 28 5;
+#X connect 8 2 27 5;
 #X connect 9 0 0 0;
 #X connect 9 1 10 0;
 #X connect 10 0 18 0;
-#X connect 10 0 26 0;
+#X connect 10 0 25 0;
 #X connect 12 0 14 1;
 #X connect 13 0 14 0;
 #X connect 14 0 16 0;
 #X connect 15 0 13 0;
 #X connect 15 1 12 0;
 #X connect 15 2 12 1;
-#X connect 16 0 34 0;
+#X connect 16 0 32 0;
 #X connect 17 0 18 1;
-#X connect 18 0 34 0;
-#X connect 20 0 22 0;
-#X connect 20 1 8 0;
-#X connect 21 0 34 0;
-#X connect 22 0 21 0;
-#X connect 23 0 24 0;
-#X connect 24 0 0 1;
-#X connect 24 0 28 1;
-#X connect 24 0 34 2;
-#X connect 25 0 26 1;
-#X connect 26 0 19 0;
-#X connect 27 0 24 0;
-#X connect 28 0 30 1;
-#X connect 29 0 30 0;
-#X connect 30 0 0 1;
-#X connect 31 0 29 0;
-#X connect 32 0 0 3;
-#X connect 34 0 33 0;
+#X connect 18 0 32 0;
+#X connect 20 0 32 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 0 1;
+#X connect 23 0 27 1;
+#X connect 23 0 32 2;
+#X connect 24 0 25 1;
+#X connect 25 0 19 0;
+#X connect 26 0 23 0;
+#X connect 27 0 29 1;
+#X connect 28 0 29 0;
+#X connect 29 0 0 1;
+#X connect 30 0 0 3;
+#X connect 32 0 31 0;
+#X connect 35 0 21 0;
+#X connect 35 1 8 0;
+#X connect 35 2 9 0;
+#X connect 35 3 33 0;
+#X connect 35 4 23 0;
+#X connect 35 5 23 0;
+#X connect 35 6 34 0;
+#X connect 35 7 36 0;
+#X connect 35 8 8 0;

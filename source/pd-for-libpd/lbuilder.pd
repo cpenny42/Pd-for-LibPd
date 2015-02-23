@@ -1,4 +1,4 @@
-#N canvas 0 22 450 300 10;
+#N canvas 145 502 450 300 10;
 #X obj 47 104 list prepend add2;
 #X obj 47 124 list trim;
 #X msg 108 124 set;

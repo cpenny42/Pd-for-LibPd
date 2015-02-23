@@ -1,0 +1,28 @@
+#N canvas 646 328 450 300 10;
+#X text 2 0 [arg2method] - Convert arguments to methods;
+#X text 360 2 Pd for LibPd;
+#X text 365 16 Chris Penny;
+#X text 27 38 [arg2method] converts "arguments" aka symbols prepended
+with "--" into messages that are prepended with the rest of the symbol:
+;
+#X msg 47 92 --one method one --two method two --three method 3 --four
+I drink your milkshake;
+#X obj 47 126 arg2method;
+#X obj 192 149 route one two three four;
+#X obj 147 186 print ONE;
+#X obj 212 186 print TWO;
+#X obj 280 186 print THREE;
+#X obj 359 186 print FOUR;
+#X msg 47 219 one method one \, two method two \, three method 3 \,
+four I drink your milkshake \,;
+#X obj 47 155 ladd3;
+#X msg 57 190 set;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 12 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 6 2 9 0;
+#X connect 6 3 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;

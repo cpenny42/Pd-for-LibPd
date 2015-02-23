@@ -1,0 +1,14 @@
+#N canvas 522 239 450 300 10;
+#X text 4 2 [liter] - Iterate through items in a list;
+#X text 367 2 Pd for LibPd;
+#X text 373 16 Chris Penny;
+#X obj 167 163 liter;
+#X text 51 80 Separates items in a list.;
+#X obj 194 201 print INDEX;
+#X obj 167 229 print ELEMENT;
+#X msg 80 117 The right outlet outputs the index of each element.;
+#X msg 175 142 5 4 3 2 1 0;
+#X connect 3 0 6 0;
+#X connect 3 1 5 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;

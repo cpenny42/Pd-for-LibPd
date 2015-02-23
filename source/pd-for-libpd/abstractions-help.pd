@@ -1,0 +1,137 @@
+#N canvas 368 99 1027 652 10;
+#X text 900 -40 Pd for LibPd;
+#X text 902 -28 Chris Penny;
+#X msg 125 220 delete foo;
+#X text 41 273 There are other methods available as well - send a "help"
+message to see more help info or send the message "methods" to see
+all available methods for [environment].;
+#X msg 8 412 delete foo;
+#X msg 145 412 delete bar;
+#X msg 251 412 delete baz;
+#X msg 392 401 foo three 3;
+#X text -31 -36 [abstractions] - dynamically create & store different
+;
+#X text 292 -36 subpatches by name.;
+#X text 22 1 [abstractions] lets you dynamically create a patch and
+give it a name for later use.;
+#X text 22 35 To create a new abstraction \, send an "init" message
+\, where <type> is the object name. The example below would create
+a new [dictionary] object called foo:;
+#X msg 128 86 init dictionary foo;
+#X obj 398 552 abstractions;
+#X text 26 200 To delete your abstraction \, send a "delete" message:
+;
+#X text 7 369 Initializing and deleting abstractions:;
+#X msg 8 389 init dictionary foo;
+#X obj 398 574 print ABSTRACTIONS-HELP;
+#X text 499 -16 To be able to work with [abstractions] \, your subpatch
+must accept all input through its left inlet and put all output to
+its left outlet. Other inlets/outlets will be ignored.;
+#X text 500 30 Each abstraction is given a unique identifier as an
+argument - this is so it can be found later for deletion. Your subpatch
+must not require certain creation arguments to work \, and must be
+able to work with the abstraction's unique ID as the first argument.
+Basically all input to your subpatch will be through the first inlet.
+;
+#X text 502 128 See;
+#X obj 528 129 dictionary;
+#X msg 251 389 init larray baz;
+#X text 393 381 Sending Messages:;
+#X msg 145 389 init stack bar;
+#X msg 473 402 bar push Abraham Lincoln;
+#X text 595 130 \,;
+#X msg 473 422 bar pop;
+#X msg 629 422 baz 1;
+#X msg 505 500 help;
+#X msg 504 521 methods;
+#X text 646 130 \, or;
+#X text 725 129 for examples of;
+#X text 502 150 subpatches that work with [abstractions].;
+#X text 503 182 It is a good idea to use [route] to accept different
+methods in the subpatch as well as using it to separate different types
+of output:;
+#X obj 470 252 inlet;
+#X obj 470 274 route method1 method2 method3;
+#X text 489 298 ... to your subpatch;
+#N canvas 738 328 280 264 example_subpatch 0;
+#X obj 29 14 inlet;
+#X obj 75 230 outlet;
+#X obj 29 48 route method1 method2 method3;
+#X obj 75 208 list trim;
+#X obj 29 129 list prepend method1;
+#X obj 86 152 list prepend method2;
+#X obj 143 174 list prepend method3;
+#X msg 29 85 foo;
+#X msg 86 85 bar;
+#X msg 143 85 baz;
+#X connect 0 0 2 0;
+#X connect 2 0 7 0;
+#X connect 2 1 8 0;
+#X connect 2 2 9 0;
+#X connect 2 3 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 6 0;
+#X restore 691 299 pd example_subpatch;
+#X text 717 241 An example:;
+#X obj 691 322 route method1 method2 method3;
+#X msg 691 270 method1;
+#X msg 745 270 method2;
+#X msg 798 270 method3;
+#X obj 586 352 print METHOD1;
+#X obj 673 352 print METHOD2;
+#X obj 760 352 print METHOD3;
+#X obj 850 352 print UNKNOWN METHOD;
+#X msg 869 270 method4;
+#X msg 267 528 test;
+#X text -9 527 Do a unit test to make sure its not broken ->;
+#X msg 629 402 baz 1 This is stored in index 1 of the [larray] named
+baz.;
+#X msg 392 422 foo three;
+#X text 757 150 (also;
+#X obj 793 149 name_manager;
+#X text 871 150 );
+#X text 609 500 If it gives you a message asking if you want to save
+changes to abstractions.pd \, ignore it. Or don't \, doesn't matter
+either way - if you save the changes they'll automatically revert to
+the old version next time you open the patch.;
+#X msg 344 464 clear;
+#X msg 402 463 view;
+#X obj 610 129 stack;
+#X obj 680 130 larray;
+#X msg 128 168 set foo my_variable 6;
+#X text 25 111 You can then use methods the subpatch accepts. [dictionary]
+lets me create a variable with "set" \, but this can be anything that's
+defined for whatever patch your using:;
+#X connect 4 0 13 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 13 0;
+#X connect 13 0 17 0;
+#X connect 16 0 13 0;
+#X connect 22 0 13 0;
+#X connect 24 0 13 0;
+#X connect 25 0 13 0;
+#X connect 27 0 13 0;
+#X connect 28 0 13 0;
+#X connect 29 0 13 0;
+#X connect 30 0 13 0;
+#X connect 35 0 36 0;
+#X connect 38 0 40 0;
+#X connect 40 0 44 0;
+#X connect 40 1 45 0;
+#X connect 40 2 46 0;
+#X connect 40 3 47 0;
+#X connect 41 0 38 0;
+#X connect 42 0 38 0;
+#X connect 43 0 38 0;
+#X connect 48 0 38 0;
+#X connect 49 0 13 0;
+#X connect 51 0 13 0;
+#X connect 52 0 13 0;
+#X connect 57 0 13 0;
+#X connect 58 0 13 0;

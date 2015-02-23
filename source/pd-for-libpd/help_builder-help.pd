@@ -1,0 +1,51 @@
+#N canvas 311 141 882 569 10;
+#X text 5 2 [help_builder] - easily format patch help info;
+#X text 675 -1 Pd for LibPd;
+#X text 678 11 Chris Penny;
+#X text 32 39 [help_builder] takes propertly formatted arguments and
+organizes it into a formatted help message that can be printed.;
+#X text 430 51 Options are:;
+#X text 465 72 --title: the title of the patch;
+#X msg 207 337 help;
+#X msg 246 338 methods;
+#X msg 207 309 clear;
+#X msg 166 230 --title I changed the title;
+#X obj 139 181 bng 15 250 50 0 empty empty Bang_to_output 17 7 0 10
+-262144 -1 -1;
+#X obj 161 487 print HELP;
+#X msg 176 254 --description I changed the description;
+#X msg 185 276 --inlet I added an inlet;
+#X msg 303 338 reset;
+#X obj 161 363 help_builder --title help_builder.pd --description Easily
+format help information for your patches --inlet Bang to output or
+change stored info --inlet Send arguments to reset help info to new
+configuration --outlet Formatted help info that can be printed --method
+help: print help info to the console --method clear: clear stored info
+--method reset: reset contents to what is given by the object arguments
+--method set: set arguments --method methods: print available [help_builder]
+methods;
+#X msg 424 288 --title woop --description woop --inlet woop --inlet
+woop --outlet woop --outlet woop;
+#X text 450 266 Reset and change to new configuration:;
+#X text 172 212 Change current configuration:;
+#X text 466 88 --description: a brief description;
+#X text 466 105 --inlet: add an inlet (order matters!);
+#X text 468 123 --outlet: add an outlet (order matters!);
+#X text 32 83 The best way to use this is to type the arguments in
+the object box - this way you can see from the outside what it will
+print. You can also send changes to the current configuration to the
+left inlet or reset it with a new configuration to the right inlet.
+;
+#X obj 501 328 bng 15 250 50 0 empty empty A_bang_here_clears_everything
+17 7 0 10 -262144 -1 -1;
+#X connect 6 0 15 0;
+#X connect 7 0 15 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 15 1;
+#X connect 23 0 15 1;

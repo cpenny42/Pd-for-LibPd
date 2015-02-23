@@ -1,0 +1,15 @@
+#N canvas 733 70 166 191 10;
+#X obj 14 34 liter;
+#X obj 14 99 s2l;
+#X obj 29 78 loadmess symbol;
+#X obj 14 8 inlet LIST;
+#X obj 14 141 outlet LIST_OF_LISTS;
+#X obj 14 120 list trim;
+#X obj 14 59 route float;
+#X connect 0 0 6 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 6 1 1 0;

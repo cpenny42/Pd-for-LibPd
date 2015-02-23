@@ -1,0 +1,146 @@
+#N canvas 611 40 521 386 10;
+#X obj -10 4 inlet NAME_EXISTS?;
+#X obj 118 5 inlet ADD_NAME;
+#X obj 358 3 inlet CLEAR;
+#X obj 214 5 inlet ALL;
+#X obj -10 101 t b a b;
+#X obj 32 163 t b a;
+#X obj 107 232 symbol;
+#X msg 32 188;
+#X obj 32 211 liter;
+#X obj 32 232 symbol;
+#X msg 32 274 1;
+#X obj -10 291 f;
+#X msg 5 132 0;
+#X obj -10 351 outlet;
+#X obj 135 171 ladd2;
+#X msg 358 171 set;
+#X obj 347 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 347 188;
+#X obj 32 254 select symbol;
+#X obj 135 118 spigot;
+#X obj -10 320 ggate;
+#X msg 118 303 0;
+#X msg 129 303 1;
+#X obj 118 84 t b a a b;
+#X obj 187 101 == 0;
+#X obj 277 5 inlet DELETE;
+#X msg 160 246;
+#X obj 252 291 symbol;
+#X obj 160 270 liter;
+#X obj 160 291 symbol;
+#X obj 160 313 select symbol;
+#X msg 269 171 set;
+#X obj 235 171 ladd2;
+#X msg 269 188;
+#X obj 218 123 t b b a b;
+#X obj 269 229 lset;
+#X msg 325 229 set;
+#X obj 298 171 t b b;
+#X obj -10 45 route add exists all delete clear reset help methods
+;
+#X msg 6 25 help;
+#X obj 358 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 574 168 443 398 help 0;
+#X obj 15 20 inlet;
+#X obj 13 267 print HELP;
+#X obj 59 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 16 45 help_builder --title name_manager.pd --description Keeps
+track of names you've added or deleted --inlet [name_manager] method
+or Name Exists? Outputs 1 if true or 0 if false --inlet Add Name. Input
+a name to add it to the internal list of names --inlet All. A bang
+outputs all names to outlet 1 --inlet Delete. Input a name to deletes
+it from the internal list --inlet Clear. A bang clears the internal
+list. --outlet Name Exists? Outputs 1 or 0 when prompted by inlet 0
+or the "exists" method --outlet All. Outputs all names when prompted
+by inlet 2 or the "all" method --method add: add a name to the list
+--method exists: outputs 1 or 0 --method all: outputs all names to
+outlet 1 --method delete: delete a name from the list --method clear:
+clears the list --method reset: same as clear --method help: print
+help info to the console --method mehtods: print all available [name_manager]
+methods;
+#X connect 0 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X restore 221 74 pd help;
+#N canvas 539 104 450 300 methods 0;
+#X msg 12 68 add exists all delete clear reset help methods;
+#X obj 12 48 b;
+#X obj 12 21 inlet;
+#X obj 12 98 print NAME_MANAGER_METHODS;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X restore 278 77 pd methods;
+#X obj 347 344 outlet ALL;
+#X connect 0 0 38 0;
+#X connect 1 0 23 0;
+#X connect 2 0 40 0;
+#X connect 3 0 16 0;
+#X connect 4 0 11 0;
+#X connect 4 1 5 0;
+#X connect 4 2 12 0;
+#X connect 5 0 7 0;
+#X connect 5 1 6 0;
+#X connect 6 0 18 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 18 0;
+#X connect 10 0 11 1;
+#X connect 11 0 20 0;
+#X connect 12 0 11 1;
+#X connect 14 0 17 0;
+#X connect 14 0 7 0;
+#X connect 14 0 26 0;
+#X connect 15 0 7 0;
+#X connect 15 0 17 0;
+#X connect 15 0 26 0;
+#X connect 15 0 33 0;
+#X connect 16 0 17 0;
+#X connect 17 0 43 0;
+#X connect 18 0 10 0;
+#X connect 19 0 14 0;
+#X connect 20 0 13 0;
+#X connect 20 1 24 0;
+#X connect 21 0 20 1;
+#X connect 22 0 20 1;
+#X connect 23 0 21 0;
+#X connect 23 1 19 0;
+#X connect 23 2 4 0;
+#X connect 23 3 22 0;
+#X connect 24 0 19 1;
+#X connect 25 0 34 0;
+#X connect 26 0 28 0;
+#X connect 27 0 30 1;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 1 32 0;
+#X connect 31 0 7 0;
+#X connect 31 0 17 0;
+#X connect 31 0 33 0;
+#X connect 32 0 7 0;
+#X connect 32 0 17 0;
+#X connect 32 0 33 0;
+#X connect 33 0 35 0;
+#X connect 34 0 37 0;
+#X connect 34 1 26 0;
+#X connect 34 2 27 0;
+#X connect 34 3 31 0;
+#X connect 35 0 26 0;
+#X connect 36 0 26 0;
+#X connect 37 0 33 0;
+#X connect 37 1 36 0;
+#X connect 38 0 23 0;
+#X connect 38 1 4 0;
+#X connect 38 2 16 0;
+#X connect 38 3 34 0;
+#X connect 38 4 40 0;
+#X connect 38 5 40 0;
+#X connect 38 6 41 0;
+#X connect 38 7 42 0;
+#X connect 38 8 4 0;
+#X connect 39 0 38 0;
+#X connect 40 0 15 0;

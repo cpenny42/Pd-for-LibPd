@@ -1,0 +1,181 @@
+#N canvas 288 80 1039 686 10;
+#X text 900 -40 Pd for LibPd;
+#X text 902 -28 Chris Penny;
+#X msg 162 215 delete foo;
+#X msg 36 421 delete foo;
+#X msg 129 421 delete bar;
+#X msg 217 421 delete baz;
+#X text -31 -36 [abstractions] - dynamically create & store different
+;
+#X text 295 -36 subpatches by name.;
+#X text 21 -13 [abstractions] lets you dynamically create a patch and
+give it a name for later use.;
+#X text 21 21 To create a new abstraction \, send an "init" message
+\, where <type> is the object name. The example below would create
+a new [dictionary] object called foo:;
+#X msg 136 72 init dictionary foo;
+#X text 25 186 To delete your abstraction \, send a "delete" message:
+;
+#X text 35 378 Initializing and deleting abstractions:;
+#X obj 390 558 print ABSTRACTIONS-HELP;
+#X text 410 377 Sending Messages:;
+#X msg 418 463 help;
+#X msg 479 498 methods;
+#X text 495 151 It is a good idea to use [route] to accept different
+methods in the subpatch as well as using it to separate different types
+of output:;
+#X obj 440 230 inlet;
+#X obj 440 252 route method1 method2 method3;
+#N canvas 452 266 280 264 example_subpatch 0;
+#X obj 29 14 inlet;
+#X obj 75 230 outlet;
+#X obj 29 48 route method1 method2 method3;
+#X obj 75 208 list trim;
+#X obj 29 129 list prepend method1;
+#X obj 86 152 list prepend method2;
+#X obj 143 174 list prepend method3;
+#X msg 29 85 foo;
+#X msg 86 85 bar;
+#X msg 143 85 baz;
+#X connect 0 0 2 0;
+#X connect 2 0 7 0;
+#X connect 2 1 8 0;
+#X connect 2 2 9 0;
+#X connect 2 3 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 6 0;
+#X restore 670 272 pd example_subpatch;
+#X text 696 214 An example:;
+#X obj 670 295 route method1 method2 method3;
+#X msg 670 243 method1;
+#X msg 724 243 method2;
+#X msg 777 243 method3;
+#X obj 565 325 print METHOD1;
+#X obj 652 325 print METHOD2;
+#X obj 739 325 print METHOD3;
+#X obj 829 325 print UNKNOWN METHOD;
+#X msg 848 243 method4;
+#X msg 259 508 test;
+#X msg 300 436 clear;
+#X msg 339 457 view;
+#X text 24 97 You can then use methods the subpatch accepts. [dictionary]
+lets me create a variable with "set" \, but this can be anything that's
+defined for whatever patch your using:;
+#X msg 57 154 foo set my_variable 6;
+#X obj 390 525 abstractions-standalone;
+#X msg 409 397 foo 69;
+#X msg 409 418 foo 40;
+#X msg 363 398 foo \$1;
+#X floatatom 363 378 5 0 0 0 - - -;
+#X msg 129 398 init exp bar;
+#X msg 471 398 bar 1;
+#X msg 471 418 bar 30942;
+#X msg 217 398 init ftom baz;
+#X floatatom 540 396 5 0 0 0 - - -;
+#X msg 540 416 baz \$1;
+#X text 493 -3 To be able to work with [abstractions] \, your patch
+must accept all input through its left inlet and put all output to
+its left outlet. Other inlets/outlets will be ignored.;
+#X text 494 47 Each abstraction is given a unique identifier as an
+argument - this is so it can be found later for deletion. Your subpatch
+must not require certain creation arguments to work \, and must be
+able to work with the abstraction's unique ID as the first argument.
+Basically all input to your subpatch will be through the first inlet
+\, including what would normally be handled with creation arguments.
+;
+#X obj 471 444 t b a b;
+#X msg 633 508 0;
+#X msg 606 508 1;
+#X text 644 545 <- This lets you separate the output for different
+;
+#X text 663 558 abstractions;
+#X floatatom 534 610 5 0 0 1 exp - -;
+#X floatatom 596 610 5 0 0 1 ftom - -;
+#X obj 540 443 t b a b;
+#X msg 579 508 2;
+#X obj 633 474 loadbang;
+#X floatatom 660 610 5 0 0 1 Everything_Else - -;
+#X obj 573 582 route 1 2 0;
+#N canvas 691 181 86 139 lswap 0;
+#X obj 3 4 inlet;
+#X obj 3 23 list split 1;
+#X obj 3 61 list;
+#X obj 3 42 t b a;
+#X obj 3 80 list;
+#X obj 3 119 outlet;
+#X obj 3 99 list trim;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 1;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 4 1;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X restore 573 562 pd lswap;
+#X text 633 386 If it gives you a message asking if you want to save
+changes to abstractions.pd \, ignore it \, doesn't matter either way
+- if you save the changes they'll automatically revert to the old version
+next time you open the patch.;
+#X text 468 276 ... your subpatch;
+#X text 37 246 There are other methods available as well - send a "help"
+message to see more help info or send the message "methods" to see
+all available methods for [abstractions].;
+#X text 38 301 Most Pd-Extended objects rely on inlets instead of messages
+\, which makes doing dynamic abstractions a lot messier. It is really
+easy to extend any object to work through messages \, however.;
+#X text 183 507 Unit test ->;
+#X msg 198 154 foo get my_variable;
+#X msg 36 398 init mtof foo;
+#X obj 573 542 list;
+#X connect 3 0 36 0;
+#X connect 4 0 36 0;
+#X connect 5 0 36 0;
+#X connect 15 0 36 0;
+#X connect 16 0 36 0;
+#X connect 18 0 19 0;
+#X connect 20 0 22 0;
+#X connect 22 0 26 0;
+#X connect 22 1 27 0;
+#X connect 22 2 28 0;
+#X connect 22 3 29 0;
+#X connect 23 0 20 0;
+#X connect 24 0 20 0;
+#X connect 25 0 20 0;
+#X connect 30 0 20 0;
+#X connect 31 0 36 0;
+#X connect 32 0 36 0;
+#X connect 33 0 36 0;
+#X connect 36 0 13 0;
+#X connect 36 0 69 0;
+#X connect 37 0 36 0;
+#X connect 38 0 36 0;
+#X connect 39 0 36 0;
+#X connect 40 0 39 0;
+#X connect 41 0 36 0;
+#X connect 42 0 49 0;
+#X connect 43 0 49 0;
+#X connect 44 0 36 0;
+#X connect 45 0 46 0;
+#X connect 46 0 56 0;
+#X connect 49 0 50 0;
+#X connect 49 1 36 0;
+#X connect 49 2 51 0;
+#X connect 50 0 69 1;
+#X connect 51 0 69 1;
+#X connect 56 0 50 0;
+#X connect 56 1 36 0;
+#X connect 56 2 57 0;
+#X connect 57 0 69 1;
+#X connect 58 0 50 0;
+#X connect 60 0 54 0;
+#X connect 60 1 55 0;
+#X connect 60 2 59 0;
+#X connect 61 0 60 0;
+#X connect 68 0 36 0;
+#X connect 69 0 61 0;

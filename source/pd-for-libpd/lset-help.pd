@@ -1,0 +1,16 @@
+#N canvas 594 320 590 250 10;
+#X text 7 3 [lset] - Prepend list with "set" message;
+#X text 361 15 Chris Penny;
+#X text 359 3 Pd for LibPd;
+#X obj 163 147 lset;
+#X msg 163 183 and commas mess this object up;
+#X floatatom 211 125 5 0 0 0 - - -;
+#X msg 100 43 This is the first list;
+#X msg 162 70 a_symbol;
+#X msg 180 96 I drink your milkshake \, and commas mess this object
+up;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;

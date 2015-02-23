@@ -1,0 +1,18 @@
+#N canvas 547 274 461 298 10;
+#X text 3 1 [loadmess] - load a message on opening;
+#X text 366 0 Pd for LibPd;
+#X text 369 14 Chris Penny;
+#X obj 137 108 loadmess This is a message;
+#X obj 137 136 print LOADMESS-HELP;
+#X obj 137 85 bng 15 250 50 0 empty empty Bang_to_re-output 17 7 0
+10 -262144 -1 -1;
+#X msg 136 210 loadbang;
+#X obj 136 233 s pd-loadmess-help.pd;
+#X obj 136 188 bng 15 250 50 0 empty empty Re-trigger_the_loadbang_for_this_patch
+17 7 0 10 -262144 -1 -1;
+#X text 29 34 Loadmess works like the [loadmess] in MAX - the message
+will be loaded on initialization.;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
