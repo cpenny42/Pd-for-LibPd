@@ -1,0 +1,27 @@
+#N canvas 733 57 409 260 10;
+#X obj 257 201 chorus~;
+#X obj 105 120 hsl 100 15 0 10 0 1 \$0-to_rate \$0-gui_rate Rate 3
+8 0 10 -262144 -1 -1 9900 1;
+#X floatatom 209 120 7 0 0 0 - #0-to_rate #0-rate;
+#X obj 105 138 hsl 100 15 0 12 0 1 \$0-to_depth \$0-gui_depth Depth
+48 8 0 10 -262144 -1 -1 9900 1;
+#X floatatom 209 138 7 0 0 0 - #0-to_depth #0-depth;
+#X obj 105 156 hsl 100 15 0 100 0 1 \$0-to_mix \$0-gui_mix Mix 25 8
+0 10 -262144 -1 -1 4500 1;
+#X floatatom 209 156 7 0 0 0 - #0-to_mix #0-mix;
+#X obj 266 122 r \$0-rate;
+#X obj 286 162 r \$0-mix;
+#X obj 276 142 r \$0-depth;
+#X obj 199 103 tgl 15 0 \$0-off empty Off/On 17 7 0 10 -262144 -1 -1
+1 1;
+#X text 105 102 3-Voice Chorus;
+#X obj 193 181 inlet~;
+#X obj 257 229 outlet~;
+#X obj 296 181 r \$0-off;
+#X connect 0 0 13 0;
+#X connect 7 0 0 1;
+#X connect 8 0 0 3;
+#X connect 9 0 0 2;
+#X connect 12 0 0 0;
+#X connect 14 0 0 4;
+#X coords 0 -1 1 1 155 74 2 100 100;
