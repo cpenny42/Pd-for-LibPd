@@ -1,69 +1,27 @@
-#N canvas 846 96 493 299 10;
-#X obj 13 10 inlet~;
-#X obj 13 276 outlet~;
-#X obj 13 251 gswitch~;
-#X obj 187 236 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 1053 609 383 270 10;
+#X obj 18 10 inlet~;
+#X obj 18 236 outlet~;
+#X obj 18 211 gswitch~;
+#X obj 312 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 60 79 5 0 0 0 - - -;
-#X floatatom 102 78 5 0 0 0 - - -;
-#X obj 60 128 vline~;
-#X obj 44 201 delwrite~ \$0-delay 20000;
-#X obj 87 178 *~;
-#X obj 60 149 vd~ \$0-delay;
-#X obj 60 10 inlet;
-#X msg 60 107 \$1 200;
-#X obj 102 58 clip 0 1;
-#N canvas 663 257 400 116 METHODS 0;
-#X text 263 22 delay < float >;
-#X text 263 36 feedback < float >;
-#X text 265 50 amount < float >;
-#X text 264 65 on < float > (0 or 1);
-#X obj 20 19 inlet;
-#X obj 20 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 20 91 print MULTIDELAY~_METHODS;
-#X msg 20 66 delay feedback amount on help methods;
-#X connect 4 0 5 0;
-#X connect 5 0 7 0;
-#X connect 7 0 6 0;
-#X restore 272 101 pd METHODS;
-#X obj 60 225 *~ 0.5;
-#X obj 60 32 route delay feedback amount on help methods;
-#N canvas 684 534 376 185 help 0;
-#X obj 15 10 inlet;
-#X obj 15 34 help_builder --title multidelay.pd --description Multi-tap
-Delay Effect (pitch shifting) --inlet Dry signal to send through the
-effect --inlet Methods --outlet Signal output --method delay: Set delay
-time (ms) --method feedback: Set feedback amount (0 to 1) --method
-amount: Set delay volume --method on: Toggle effect on & off (1 is
-on) --method help: Print help information to the console --method methods:
-Print available methods for [multidelay~];
-#X obj 15 150 print HELP;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X restore 230 122 pd help;
-#X obj 315 58 list prepend unknown method:;
-#X obj 315 80 lprint MULTIDELAY~_ERROR;
+#X obj 79 142 delwrite~ \$0-delay 20000;
+#X obj 79 111 *~;
+#X obj 60 75 vd~ \$0-delay;
+#X obj 60 10 inlet~ TIME;
+#X obj 132 10 inlet~ FEEDBACK;
+#X obj 228 10 inlet~ AMOUNT;
+#X obj 60 182 *~;
+#X obj 312 10 inlet on;
 #X connect 0 0 2 0;
-#X connect 0 0 7 0;
+#X connect 0 0 4 0;
 #X connect 0 0 2 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 2;
-#X connect 4 0 11 0;
-#X connect 5 0 8 1;
-#X connect 6 0 9 0;
-#X connect 8 0 7 0;
-#X connect 9 0 8 0;
-#X connect 9 0 14 0;
-#X connect 10 0 15 0;
-#X connect 11 0 6 0;
-#X connect 12 0 5 0;
-#X connect 14 0 2 1;
-#X connect 15 0 4 0;
-#X connect 15 1 12 0;
-#X connect 15 2 14 1;
-#X connect 15 3 3 0;
-#X connect 15 4 16 0;
-#X connect 15 5 13 0;
-#X connect 15 6 17 0;
-#X connect 17 0 18 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 6 0 10 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 1;
+#X connect 9 0 10 1;
+#X connect 10 0 2 1;
+#X connect 11 0 3 0;
