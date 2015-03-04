@@ -1,4 +1,4 @@
-#N canvas 346 23 312 175 10;
+#N canvas 346 23 332 170 10;
 #X obj 12 9 inlet~;
 #X obj 88 9 inlet~ FREQUENCY;
 #X obj 135 28 inlet~ Q;
@@ -7,8 +7,9 @@
 #X obj 12 139 outlet~;
 #X obj 88 96 sigbiquad_coeff~ lowpass;
 #X obj 12 113 sigbiquad~;
+#X obj 88 66 clip~ 40 21000;
 #X connect 0 0 7 0;
-#X connect 1 0 6 0;
+#X connect 1 0 8 0;
 #X connect 2 0 6 1;
 #X connect 3 0 6 2;
 #X connect 4 0 6 3;
@@ -18,3 +19,4 @@
 #X connect 6 3 7 4;
 #X connect 6 4 7 5;
 #X connect 7 0 5 0;
+#X connect 8 0 6 0;
