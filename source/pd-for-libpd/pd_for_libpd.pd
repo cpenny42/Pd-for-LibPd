@@ -1,107 +1,316 @@
-#N canvas 8 23 884 821 10;
-#X obj 41 91 ^;
-#X obj 54 383 adsr~;
-#X obj 390 90 alternate;
-#X text 37 66 Math:;
-#X text 369 61 Other:;
-#X text 172 29 Note: Incomplete - Will be expended soon;
-#X text 53 246 Audio:;
-#X obj 390 118 any_argument;
-#X obj 388 144 anything;
-#X obj 58 410 autobiquad~;
-#X obj 163 384 autospectrum~;
-#X obj 48 437 biquad_coefficients;
-#X obj 48 484 biquad_response;
-#X obj 620 193 bset;
-#X obj 86 120 cadd;
-#X obj 117 120 csub;
-#X obj 148 120 cmult;
-#X obj 184 120 cdiv;
-#X obj 214 120 cexp;
-#X obj 244 120 cmag;
-#X obj 274 120 csymbol;
-#X obj 38 120 complex;
-#X text 179 4 PD for LibPd - Master List of Patches;
-#X obj 93 147 clip;
-#X obj 70 89 delta;
-#X obj 795 147 fifo;
-#X obj 473 117 float_argument;
-#X obj 432 62 for++;
-#X obj 164 410 gain~;
-#X obj 415 267 gate2;
-#X obj 480 266 gate8;
-#X text 454 267 ...;
-#X text 516 267 ...;
-#X obj 417 299 ggate;
-#X obj 147 356 ggate~;
-#X obj 193 356 gswitch~;
-#X obj 458 300 gswitch;
-#X obj 402 357 hann_table;
-#X obj 116 91 inv;
-#X obj 515 84 iterator;
-#X obj 439 9 keyboard_shortcuts;
-#X obj 466 144 ladd;
-#X obj 498 144 ladd2;
-#X obj 535 143 lset;
-#X obj 566 143 lapp;
-#X obj 638 144 larray;
-#X obj 467 168 lbuilder;
-#X obj 527 169 lcount;
-#X obj 386 208 lfl!=;
-#X obj 427 209 lfl<;
-#X text 456 210 <- "list filter length <bool>";
-#X obj 386 229 lfl<=;
-#X obj 426 231 lfl==;
-#X obj 464 232 lfl>;
-#X obj 497 231 lfl>=;
-#X obj 599 144 lfor;
-#X obj 573 168 lindexget;
-#X obj 638 168 lindexset;
-#X obj 688 84 circulararray7;
-#X obj 589 84 circulararray5;
-#X obj 586 64 scalegenerator5;
-#X obj 685 64 scalegenerator7;
-#X obj 539 266 gate32 ___________________________________________;
-#X obj 150 332 sgn~;
-#X obj 250 356 sigswitch~;
-#X obj 407 406 sine_table;
-#X obj 150 89 sinh;
-#X obj 182 89 cosh;
-#X obj 215 88 tanh;
-#X obj 51 350 smoothline~;
-#X obj 476 405 square_table;
-#X obj 557 404 sawtooth_table;
-#X obj 648 405 triangle_table;
-#X obj 685 143 stack;
-#X obj 546 237 switch2;
-#X obj 602 236 switch3;
-#X obj 570 116 symbol_argument;
-#X obj 684 114 dollarg;
-#X obj 106 381 tone~;
-#X obj 194 332 transistor~;
-#X obj 765 143 var;
-#X obj 97 281 view~;
-#X obj 186 439 volume~;
-#X obj 669 237 velocity;
-#X obj 140 279 waveview~;
-#X obj 251 90 round;
-#X obj 294 91 pi;
-#X obj 56 657 piano;
-#X obj 725 143 queue;
-#X obj 211 408 panner~;
-#X obj 737 233 once;
-#X obj 779 231 number;
-#X obj 770 208 numbertonote;
-#X obj 708 210 noteflush;
-#X obj 653 209 minigun;
-#X obj 704 167 lpre;
-#X obj 735 167 lprepend;
-#X obj 49 142 log10;
-#X obj 467 188 lprint;
-#X obj 515 190 lreplace;
-#X obj 573 190 lspace;
-#X obj 204 280 normalize~;
-#X obj 143 311 remove_dc_offset~;
-#X obj 799 117 if;
-#X obj 829 119 filt;
-#X obj 258 484 guifilter~;
+#N canvas 334 23 1068 844 10;
+#N canvas 901 56 397 394 README 0;
+#X text 12 29 Assume all patches are Vanilla-compatible unless otherwise
+specified.;
+#X text 12 68 If a patch is not vanilla compatible \, the required
+externals will be listed and the .c files can be found in the /externals
+directory for use in a libpd project.;
+#X text 14 121 See pd-for-ios on github for instructions on how to
+use these externals with libpd.;
+#X text 13 214 Many of the patches are standalone (don't need other
+patches from pd for libpd).;
+#X text 13 249 It is generally better to use the non-standalone version
+of a patch if there is one because the standalone can have many separate
+copies of a singal utility patch (such as [ggate]). You won't notice
+any practical differences between the two though since this difference
+is usually negligible.;
+#X text 103 188 Standalone vs. Dependent;
+#X text 115 6 Vanilla Compatibility;
+#X text 11 339 If a patch is not standalone \, its dependencies will
+be listed.;
+#X restore -51 -17 pd README;
+#X text -83 -16 .;
+#N canvas 775 421 450 300 extended-patches 0;
+#X restore 14 -17 pd extended-patches;
+#N canvas 329 23 956 704 togo 0;
+#X obj 670 582 anything;
+#X obj 668 561 arg2method;
+#X obj 288 264 expscale;
+#X obj 83 439 cexp;
+#X obj 191 439 complex;
+#X text 106 39 Needs Externals:;
+#X obj 743 560 dmakefilename;
+#X obj 742 603 dprint;
+#X obj 792 582 dr;
+#X text -45 45 needs to be finished:;
+#X obj -29 65 evaluate;
+#X obj 262 135 f!=;
+#X text 384 171 ...;
+#X obj 341 210 ggate;
+#X obj -30 87 iterator;
+#X obj 453 251 keyboard_shortcuts;
+#X obj 311 308 ladd;
+#X obj 341 308 ladd2;
+#X obj 377 308 ladd3;
+#X obj 327 334 lapp;
+#X obj 310 137 larray;
+#X obj 394 340 lbuilder;
+#X obj 368 136 lcount;
+#X obj 404 13 lfl!=;
+#X text 442 14 ...;
+#X obj 412 136 lfor;
+#X obj 503 297 lindexget;
+#X obj 504 318 lindexset;
+#X obj 382 287 liter;
+#X obj 325 359 ljoin;
+#X text -60 9 CHANGE DICTIONARY SO NUMBERS CAN BE KEYS!!!;
+#X obj 414 308 llist;
+#X obj 306 100 loadfloat;
+#X obj 121 102 loadmess;
+#X obj 288 333 lpre;
+#X obj 120 124 lprepend;
+#X obj 207 344 lprint;
+#X obj 216 368 lreplace;
+#X obj 284 381 lreverse;
+#X obj 267 305 lset;
+#X obj 119 145 lsplit;
+#X obj 215 301 lswap;
+#X obj 536 135 noteflush;
+#X obj 549 183 number;
+#X obj 418 215 pi;
+#X obj -94 471 piano;
+#X obj 464 221 round;
+#X obj 450 340 sbuilder;
+#X obj 210 246 print2;
+#X obj 599 80 stack;
+#X obj 545 105 unique_set;
+#X text 666 543 Added:;
+#X obj 151 80 if;
+#X obj 307 52 name_manager;
+#X obj 672 604 counter2;
+#X obj 741 581 dpoly;
+#X obj 346 246 gswitch;
+#X obj 791 602 filt;
+#X obj 639 308 scales;
+#X obj 593 184 number2note;
+#X obj 607 53 sigswitch~;
+#X obj 551 52 switch;
+#X obj 745 654 gate;
+#X obj 8 248 tan~;
+#X obj 11 269 cot~;
+#X obj 47 245 sec~;
+#X obj 47 268 csc~;
+#X obj 104 253 tan;
+#X obj 132 253 sec;
+#X obj 132 273 csc;
+#X obj 105 273 cot;
+#X obj 10 303 sinh~;
+#X obj 49 303 cosh~;
+#X obj 10 329 tanh~;
+#X obj 50 329 coth~;
+#X obj 13 350 sech~;
+#X obj 51 348 csch~;
+#X obj -45 439 cadd;
+#X obj 113 439 cmag;
+#X obj -14 439 csub;
+#X obj 17 439 cmult;
+#X obj 53 439 cdiv;
+#X obj 143 439 csymbol;
+#X restore 715 -12 pd togo;
+#X obj -232 9 cnv 15 100 60 empty empty Type 20 12 1 18 -262144 -66577
+0;
+#X obj 494 11 cnv 15 100 60 empty empty Dependencies 20 12 1 18 -262144
+-66577 0;
+#X obj 116 11 cnv 15 100 60 empty empty Description 20 12 1 18 -262144
+-66577 0;
+#X obj -112 9 cnv 15 100 60 empty empty Object 20 12 1 18 -262144 -66577
+0;
+#X obj -94 616 dictionary;
+#X obj -124 656 dictionary-standalone;
+#X obj -106 696 dictionary-small;
+#X obj -234 36 cnv 1 1000 1 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X text 71 618 key \, value pairs - the value is a list;
+#X obj -128 136 abstractions-standalone;
+#X obj -134 126 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 485 618 ggate \, liter \, ladd3 \, anything;
+#X text 47 699 [dictionary] stripped of all its extra methods.;
+#X text 524 657 None (standalone);
+#X text 524 697 None (standalone);
+#X text 423 92 name_manager \, ggate \, liter \, ladd2 \, lset \, anything
+\, dr \, iterator \, lswap \, number \, gate2;
+#X obj -134 246 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 524 138 None (standalone);
+#X obj -86 256 arg2method;
+#X text 27 251 Converts a list with "arguments" (words starting with
+"--") into separate messages prepended with the argument.;
+#X text 498 266 s2l requires "symbol2list.c";
+#X text 401 251 NOT VANILLA COMPATIBLE - lsplit \, ljoin \, lbuilder
+\, liter \, s2l;
+#X obj -135 9 cnv 1 1 1800 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj -225 113 cnv 15 15 15 empty empty Glue 20 12 1 14 -262144 -66577
+0;
+#X obj -109 257 cnv 15 15 15 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 146 -16 cnv 15 15 15 empty empty Not_Vanilla_Compatible 20 8
+2 14 -258113 -66577 0;
+#X obj -86 216 anything;
+#X text 524 218 None (standalone);
+#X obj -96 96 abstractions;
+#X text 43 217 Store anything (similar to [float] \, [symbol] \, &
+[list]);
+#X obj -134 326 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -84 576 counter2;
+#X text 31 576 A simple counter - left = down \, right = up \, center
+= reset;
+#X text 524 577 None (standalone);
+#X obj -134 366 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -96 736 dmakefilename;
+#X text 524 738 None (standalone);
+#X text 41 734 Dynamic [makefilename] - change the format on the fly
+;
+#X obj -134 406 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 524 778 None (standalone);
+#X obj -75 776 dpoly;
+#X text 47 774 Dynamic [poly] - change number of voices on the fly
+;
+#X text 37 92 key \, value pairs - the value is another patch/object
+you can send messages to.;
+#X obj -134 446 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 524 818 None (standalone);
+#X obj -77 816 dprint;
+#X text 44 814 Dynamic [print] - change the print handle on the fly
+;
+#X obj -134 486 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 524 858 None (standalone);
+#X obj -69 856 dr;
+#X text 47 854 Dynamic [receive] - change the receiver on the fly;
+#X text 92 657 Standalone version of [dictionary];
+#X obj -134 526 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -74 896 filt;
+#X text 34 894 Prevent certain items from passing through depending
+on a boolean statement.;
+#X obj -94 897 cnv 15 15 15 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X text 435 891 NOT VANILLA COMPATIBLE - ggate \, gswitch \, dollarg
+;
+#X text 495 905 dollarg requires "dollarg.c";
+#X obj -134 566 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text -227 -16 pd for libpd - version 0;
+#X text -76 -16 5;
+#X obj -134 606 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 646 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 686 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 806 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 846 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 886 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 926 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 966 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1006 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1046 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1086 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 726 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 766 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1126 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1166 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1206 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -75 938 gate;
+#X text 74 938 Clone of the gate in MAX/MSP (and Cyclone);
+#X obj -134 1246 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1286 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1406 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1446 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1486 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1526 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1566 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1606 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1646 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1686 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1326 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1366 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1726 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1766 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj -134 1806 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj 20 9 cnv 1 1 1800 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 394 9 cnv 1 1 1800 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 767 9 cnv 1 1 1800 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X text 524 178 None (standalone);
+#X obj -78 176 adsr~;
+#X text 39 173 traditional adsr envelope - velocity in the left \,
+list of attack \, decay \, sustain \, release in the right;
+#X text 524 937 None (standalone);
+#X text 319 -15 !! - needs to be finished;
+#X text 490 -16 * - needs a help file;
+#X text -122 295 !!;
+#X obj -90 296 autobiquad~;
+#X text 33 292 Control-rate biquad filter - automatically calculates
+coefficients from center freq \, resonance \, and filter type.;
+#X text 549 301 TBD!!!;
+#X text -3 335 *;
+#X obj -95 336 autobiquad2~;
+#X text 33 332 Audio-rate biquad filter - like [autobiquad~] \, but
+takes signal inputs. Good for LFOs and Envelopes.;
+#X obj -242 175 cnv 15 15 15 empty empty Audio_Glue 20 12 1 14 -262144
+-66577 0;
+#X obj -234 86 cnv 1 1000 1 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj -234 166 cnv 1 1000 1 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj -225 233 cnv 15 15 15 empty empty Glue 20 12 1 14 -262144 -66577
+0;
+#X obj -234 206 cnv 1 1000 1 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj -231 313 cnv 15 15 15 empty empty Filtering 20 12 1 14 -262144
+-66577 0;
+#X obj -111 45 !=~;
+#X obj -86 45 ==~;
+#X obj -61 45 <~;
+#X obj -36 45 <=~;
+#X obj -111 65 >~;
+#X obj -86 65 >=~;
+#X obj -61 65 &&~;
+#X obj -36 65 ||~;
+#X text 75 51 Signal Comparison & Binary Operations;
+#X text 524 52 None (standalone);
+#X obj -234 286 cnv 1 1000 1 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj -95 376 autospectrum~;
+#X text 38 377 Automatically configure & plot the spectrum of a signal
+;
+#X text 524 377 None (standalone);
+#X text 93 137 standalone version of [abstractions];
+#X text 450 331 sinh~ \, <~ \, ==~ \, transistor~ \, complex_add.mmb
+\, complex_divide.mmb \, complex_sub.mmb;

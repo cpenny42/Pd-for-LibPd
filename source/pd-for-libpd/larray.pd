@@ -4,14 +4,14 @@
 #X obj -2 -9 inlet GET_SET;
 #X obj -2 31 outlet VALUE;
 #N canvas 901 38 450 300 \$0-shell 0;
-#N canvas 341 98 450 300 1002-bindings 0;
-#X restore 0 0 pd 1002-bindings;
-#X obj 0 60 r 1002-value;
+#N canvas 349 103 450 300 4844-bindings 0;
+#X restore 0 0 pd 4844-bindings;
+#X obj 0 60 r 4844-value;
 #X obj 0 80 outlet VALUE;
 #X obj 0 20 inlet TO_NODE;
 #X obj 0 40 s;
-#X obj 110 0 r 1002-sender;
-#X obj 110 20 lpre 1002-;
+#X obj 110 0 r 4844-sender;
+#X obj 110 20 lpre 4844-;
 #X obj 110 40 symbol;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -270,20 +270,25 @@ obj 110 0 r \$1-sender \, obj 110 20 lpre \$1- \, obj 110 40 symbol
 #X obj 28 40 loadfloat 3;
 #X obj 56 13 t a b;
 #N canvas 337 222 450 394 help 0;
-#X obj 26 225 print HELP;
+#X obj 26 327 print HELP;
 #X obj 26 11 inlet;
-#X obj 26 35 help_builder --title larray.pd --description An Array
-of Lists --inlet Input method or Get an index or Set an index with
-list beginning with index to set --inlet Bang to output all indeces
-to outlet 1 --inlet Bang to clear --outlet Value returned from get
-request --outlet All indeces if triggered by inlet 1 --method view:
-view the subpatch containing each element --method col: set the column
-width in the internal subpatch. It clears the current array. --method
-get: get a value with an index --method set: set a value with a list
-beginning with the index to set --method all: output all values to
-outlet 1 --method clear: initialize array --method reset: same as clear
---method help: print help info to the console --method methods: print
-available methods to the console;
+#X msg 26 31 ----------------------- larray.pd -----------------------
+\, ------------------------------------------------------------------------
+\, --------------- An Array of Lists --------------- \, ---- \, ----
+Inlets: \, ---------- 0: Input method or Get an index or Set an index
+with with beginning with index to set \, ---------- 1: Bang to output
+all indeces to outlet 1 \, ---------- 2: Bang to clear \, ---- \, ----
+Outlets: \, ---------- 0: Value returned from get request \, ----------
+1: All indeces if triggered by inlet 1 \, ---- \, ---- Methods (sent
+to inlet 0): \, ---------- view: view the subpatch containing each
+element \, ---------- col: set the column width in the internal subpatch.
+It clears the current array. \, ---------- get: get a value with an
+index \, ---------- set: set a value with a a beginning with the index
+to set \, ---------- all: output all values to outlet 1 \, ----------
+clear: initialize array \, ---------- reset: same as clear \, ----------
+help: print help info to the console \, ---------- methods: print available
+methods to the console \, ------------------------------------------------------------------------
+\, ----------------------- larray.pd ----------------------- \,;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 188 -11 pd help;

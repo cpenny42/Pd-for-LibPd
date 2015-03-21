@@ -14,9 +14,6 @@
 #X text -33 -25 [dictionary] - Store Key-Value Pairs;
 #X text 752 -27 Pd for LibPd;
 #X text 755 -13 Chris Penny;
-#X text 7 -1 [dictionary] allows you to associate a value to a key.
-A list of length > 1 will use the first item as the key and then store
-the rest of the list as the value.;
 #X text 377 448 <- all the values in the dictionary above will be copied
 to the dictionary below.;
 #X msg 30 210 key1 foo bar;
@@ -28,13 +25,6 @@ to the dictionary below.;
 #X msg 273 256 all;
 #X msg 417 498 all;
 #X msg 491 500 clear;
-#X text 10 44 A list of length == 1 (symbol) will look for the value
-associated with that key. Output will be prepended with "match" if
-the key is found \, or the key will be output prepended with "nomatch".
-;
-#X text 10 99 You can output all the key-value pairs with the "all"
-message. This will output each pair individually as a list prepended
-with "all". You can use this to copy dictionaries.;
 #X text 399 65 [dictionary] also accepts messages to control it:;
 #X msg 414 94 set <key> <value>;
 #X msg 528 94 get <key>;
@@ -47,34 +37,40 @@ with "all". You can use this to copy dictionaries.;
 1 and a list length >1 \, respectively.;
 #X msg 517 356 1 foo;
 #X msg 517 375 1;
-#X text 396 31 STANDALONE - SOME EXTERNAL PATCHES HAVE BEEN REPLACED
-;
 #X obj 289 378 dictionary-small;
 #X obj 412 539 dictionary-small;
 #X obj 413 572 print TWO;
 #X obj 193 408 print ONE;
 #X text 435 238 SET \, GET:;
-#X connect 0 0 20 0;
-#X connect 1 0 21 0;
-#X connect 2 0 38 0;
-#X connect 3 0 38 0;
-#X connect 4 0 38 0;
-#X connect 5 0 38 0;
-#X connect 6 0 38 0;
-#X connect 7 0 39 0;
-#X connect 8 0 39 0;
-#X connect 9 0 39 0;
-#X connect 15 0 38 0;
-#X connect 16 0 38 0;
-#X connect 17 0 39 0;
-#X connect 18 0 38 0;
-#X connect 19 0 38 0;
-#X connect 20 0 38 0;
-#X connect 21 0 38 0;
-#X connect 22 0 39 0;
-#X connect 23 0 39 0;
-#X connect 35 0 38 0;
-#X connect 36 0 38 0;
-#X connect 38 0 39 0;
-#X connect 38 0 41 0;
-#X connect 39 0 40 0;
+#X text 14 20 List of length > 1 stores a value with the first item
+in the list as the key.;
+#X text 13 56 list of length == 1 will retrieve the value associated
+with that key;
+#X text 19 98 Numbers can't be keys - use [larray] for that.;
+#X text 416 16 THIS IS STANDALONE AND CAN BE USED INDEPENDENTLY;
+#X text 19 125 "set" \, "get" \, "all" \, "clear" \, "reset" are reserved
+keys that can't be overwritten.;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 2 0 34 0;
+#X connect 3 0 34 0;
+#X connect 4 0 34 0;
+#X connect 5 0 34 0;
+#X connect 6 0 34 0;
+#X connect 7 0 35 0;
+#X connect 8 0 35 0;
+#X connect 9 0 35 0;
+#X connect 14 0 34 0;
+#X connect 15 0 34 0;
+#X connect 16 0 35 0;
+#X connect 17 0 34 0;
+#X connect 18 0 34 0;
+#X connect 19 0 34 0;
+#X connect 20 0 34 0;
+#X connect 21 0 35 0;
+#X connect 22 0 35 0;
+#X connect 32 0 34 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 34 0 37 0;
+#X connect 35 0 36 0;

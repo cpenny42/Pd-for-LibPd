@@ -44,6 +44,7 @@ created for the PD for LIBPD framework.;
 #X text 34 49 Complex Symbol: Formats the complex number pair as "a
 + bi" for clearer printing & debugging.;
 #X text 244 159 <- 3 + 4i;
+#X obj 320 298 cconj;
 #X connect 11 0 24 0;
 #X connect 12 0 24 0;
 #X connect 13 0 24 0;

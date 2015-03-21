@@ -303,9 +303,9 @@
 #X obj 361 326 number;
 #X obj 661 155 number;
 #X obj 13 441 gate2;
-#X obj 579 64 minigun;
-#X obj 501 63 minigun;
-#X obj 59 473 minigun;
+#X obj 501 63 uzi;
+#X obj 579 64 uzi;
+#X obj 59 473 uzi;
 #X connect 0 0 150 0;
 #X connect 1 0 2 0;
 #X connect 1 0 45 0;
@@ -416,9 +416,9 @@
 #X connect 97 1 26 0;
 #X connect 98 0 97 0;
 #X connect 99 0 98 0;
-#X connect 102 0 154 0;
+#X connect 102 0 153 0;
 #X connect 103 0 102 0;
-#X connect 106 0 153 0;
+#X connect 106 0 154 0;
 #X connect 107 0 106 0;
 #X connect 108 0 80 0;
 #X connect 109 0 59 1;
@@ -479,6 +479,6 @@
 #X connect 150 0 77 0;
 #X connect 151 0 28 0;
 #X connect 152 1 155 0;
-#X connect 153 0 48 0;
-#X connect 154 0 52 0;
+#X connect 153 0 52 0;
+#X connect 154 0 48 0;
 #X connect 155 0 25 0;

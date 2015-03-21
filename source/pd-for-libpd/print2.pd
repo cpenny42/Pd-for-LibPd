@@ -1,0 +1,6 @@
+#N canvas 570 183 169 99 10;
+#X obj 31 19 inlet;
+#X obj 31 71 s LIBPD_PRINT;
+#X obj 31 47 list trim;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

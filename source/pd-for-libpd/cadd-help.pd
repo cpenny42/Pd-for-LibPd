@@ -1,4 +1,4 @@
-#N canvas 389 119 470 337 10;
+#N canvas 693 23 470 337 10;
 #X obj 161 179 cadd;
 #X text 5 3 [cadd] - Complex Addition;
 #X text 355 2 PD for LIBPD;
@@ -50,7 +50,8 @@ created for the PD for LIBPD framework.;
 #X obj 224 305 csymbol;
 #X obj 272 305 complex;
 #X text 158 285 Complex Arithematic;
-#X msg 130 242;
+#X msg 130 242 0 + 0i;
+#X obj 320 305 cconj;
 #X connect 0 0 5 0;
 #X connect 0 0 9 0;
 #X connect 0 0 12 0;

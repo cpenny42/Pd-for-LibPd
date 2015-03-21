@@ -46,6 +46,7 @@ plane.;
 #X msg 218 159 3 4;
 #X text 244 159 <- 3 + 4i (pythagorean triple);
 #X msg 179 158 1 1;
+#X obj 320 298 cconj;
 #X connect 16 0 27 0;
 #X connect 16 0 28 0;
 #X connect 17 0 16 0;

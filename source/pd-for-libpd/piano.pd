@@ -30,10 +30,10 @@
 #X text 14 45 Octave Up;
 #X text 8 110 Octave Down;
 #X obj 564 90 hsl 100 30 1 127 0 0 \$0-velocity \$0-velocity_ empty
--2 -8 0 10 -138095 -1 -1 6200 1;
+-2 -8 0 10 -138095 -1 -1 6207 1;
 #X text 588 97 Velocity;
 #X obj 565 127 hsl 100 30 30 10000 0 0 \$0-duration \$0-duration_ empty
--2 -8 0 10 -125184 -1 -1 866 1;
+-2 -8 0 10 -125184 -1 -1 566 1;
 #X text 589 134 Duration;
 #X obj 626 27 bng 40 250 50 0 \$0-flush \$0-flush_ empty 17 7 0 10
 -228856 -75776 -1;
@@ -589,66 +589,6 @@
 #X text 531 44 On/Off;
 #X text 584 30 Keys;
 #X text 531 30 Legato;
-#N canvas 552 36 645 595 keyboard_interface 0;
-#X obj 11 0 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 1 1 cnv 15 61 45 empty empty empty 0 12 0 10 -236910 -66577
-0;
-#X text 5 0 KEYBOARD;
-#X text 2 12 INTERFACE;
-#X msg 11 77 vis 1;
-#X obj 11 97 s pd-keyboard_interface;
-#X text 7 25 (click);
-#X obj 156 -1 cnv 15 486 206 empty empty empty 20 12 0 14 -204786 -66577
-0;
-#X text 160 1 Keyboard Interface for [piano]:;
-#X text 160 22 The "Keys On/Off" Toggle will turn off the keyboard
-interface.;
-#X text 162 153 FLUSH ALL NOTES: delete/backspace;
-#X obj 0 207 cnv 15 642 385 empty empty empty 20 12 0 14 -204800 -66577
-0;
-#X text 9 207 [piano] can also be controlled via messages in its inlet.
-;
-#X text 359 300 "up" or "down";
-#X text 11 300 octave < up/down/float > // set octave with float or
-send;
-#X text 10 229 Valid Commands: (format: "message <arguments> // description
-;
-#X text 370 229 ");
-#X text 10 253 flush <bang> // flush all notes;
-#X text 11 268 keys <bang/float> // toggle keyboard interface;
-#X text 9 284 legato <bang/float> // toggle legato playing (only;
-#X text 313 284 last note off is sent);
-#X text 11 317 velocity <float> // Set velocity (forced between 0-127)
-;
-#X text 11 335 duration <float> // Set duration (any float > 1);
-#X text 318 364 C C# D D# E F F# G G# A A# B;
-#X text 202 421 Example script (sent to [piano]'s inlet):;
-#X text 161 169 TOGGLE LEGATO: tab;
-#X text 162 184 PLAY C MAJOR SCALE: spacebar;
-#X text 13 370 play <bang> // Play C Major Scale;
-#X text 13 388 speed <float> // Set speed of C Major Scale;
-#X text 161 86 PLAY NOTES: A \, W \, S \, E \, D \, F \, T \, G \,
-Y \, H \, U \, J \,;
-#X text 450 86 K \, O \, L \, P \, : \, " \, ];
-#X text 237 100 Hold Shift to play the note an octave higher.;
-#X text 318 376 C+ C#+ D+ D#+ E+ F+ F#+ G+ G#+ A+ A#+ B+;
-#X text 318 388 C++ C#++ D++ D#++ E++ F++;
-#X msg 277 439 flush \; keys 1 \; legato 1 \; octave 4 \; octave up
-\; velocity 120 \; duration 20000 \; note F# \; note C \; note F++
-\; play \;;
-#X text 159 66 TOGGLE KEYBOARD INTERFACE: ?;
-#X text 160 50 For all non-note commands \, do not use the shift key!!
-;
-#X text 481 49 (aka "?" is really "/");
-#X text 161 119 OCTAVE UP: >;
-#X text 161 136 OCTAVE DOWN: <;
-#X text 12 352 note <note_letter> // Play note;
-#X text 267 352 Valid Note letters:;
-#X connect 0 0 4 0;
-#X connect 4 0 5 0;
-#X coords 0 -1 1 1 63 45 2 0 0;
-#X restore 250 2 pd keyboard_interface;
 #X obj 6 178 inlet;
 #X text 44 176 Inlet Methods: Control the [piano] through messages
 ;
@@ -799,6 +739,66 @@ play speed thru;
 #X connect 49 0 47 0;
 #X connect 50 0 48 0;
 #X restore 6 199 pd methods;
+#N canvas 552 36 645 595 \$0-keyboard_interface 0;
+#X obj 11 0 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 1 1 cnv 15 61 45 empty empty empty 0 12 0 10 -236910 -66577
+0;
+#X text 5 0 KEYBOARD;
+#X text 2 12 INTERFACE;
+#X msg 11 83 vis 1;
+#X text 7 25 (click);
+#X obj 156 -1 cnv 15 486 206 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 160 1 Keyboard Interface for [piano]:;
+#X text 160 22 The "Keys On/Off" Toggle will turn off the keyboard
+interface.;
+#X text 162 153 FLUSH ALL NOTES: delete/backspace;
+#X obj 0 207 cnv 15 642 385 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X text 9 207 [piano] can also be controlled via messages in its inlet.
+;
+#X text 359 300 "up" or "down";
+#X text 11 300 octave < up/down/float > // set octave with float or
+send;
+#X text 10 229 Valid Commands: (format: "message <arguments> // description
+;
+#X text 370 229 ");
+#X text 10 253 flush <bang> // flush all notes;
+#X text 11 268 keys <bang/float> // toggle keyboard interface;
+#X text 9 284 legato <bang/float> // toggle legato playing (only;
+#X text 313 284 last note off is sent);
+#X text 11 317 velocity <float> // Set velocity (forced between 0-127)
+;
+#X text 11 335 duration <float> // Set duration (any float > 1);
+#X text 318 364 C C# D D# E F F# G G# A A# B;
+#X text 202 421 Example script (sent to [piano]'s inlet):;
+#X text 161 169 TOGGLE LEGATO: tab;
+#X text 162 184 PLAY C MAJOR SCALE: spacebar;
+#X text 13 370 play <bang> // Play C Major Scale;
+#X text 13 388 speed <float> // Set speed of C Major Scale;
+#X text 161 86 PLAY NOTES: A \, W \, S \, E \, D \, F \, T \, G \,
+Y \, H \, U \, J \,;
+#X text 450 86 K \, O \, L \, P \, : \, " \, ];
+#X text 237 100 Hold Shift to play the note an octave higher.;
+#X text 318 376 C+ C#+ D+ D#+ E+ F+ F#+ G+ G#+ A+ A#+ B+;
+#X text 318 388 C++ C#++ D++ D#++ E++ F++;
+#X msg 277 439 flush \; keys 1 \; legato 1 \; octave 4 \; octave up
+\; velocity 120 \; duration 20000 \; note F# \; note C \; note F++
+\; play \;;
+#X text 159 66 TOGGLE KEYBOARD INTERFACE: ?;
+#X text 160 50 For all non-note commands \, do not use the shift key!!
+;
+#X text 481 49 (aka "?" is really "/");
+#X text 161 119 OCTAVE UP: >;
+#X text 161 136 OCTAVE DOWN: <;
+#X text 12 352 note <note_letter> // Play note;
+#X text 267 352 Valid Note letters:;
+#X obj 11 103 s pd-\$0-keyboard_interface;
+#X connect 0 0 4 0;
+#X connect 4 0 41 0;
+#X coords 0 -1 1 1 63 45 2 0 0;
+#X restore 250 2 pd \$0-keyboard_interface;
 #X connect 23 0 22 0;
-#X connect 31 0 53 0;
+#X connect 30 0 52 0;
 #X coords 0 -1 1 1 675 169 2 0 0;
