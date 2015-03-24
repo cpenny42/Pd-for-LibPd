@@ -1,0 +1,33 @@
+#N canvas 324 33 524 328 10;
+#X text 376 14 pd for libpd;
+#X msg 17 74 List One 1 2 3;
+#X msg 88 95 5 35 1939;
+#X obj 237 228 list prepend set;
+#X obj 237 249 list trim;
+#X msg 237 274;
+#X msg 120 71 push another list;
+#X text 18 50 Push with left inlet or "push";
+#X text 282 92 pop with 2nd inlet or with "pop";
+#X obj 262 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 182 99 pop;
+#X obj 262 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 199 124 clear;
+#X text 281 117 Clear with 3rd inlet or "clear";
+#X msg 186 242 set;
+#X obj 177 191 lstack;
+#X obj 81 238 print STACK;
+#X text 16 16 [lstack] - stack of lists;
+#X connect 1 0 15 0;
+#X connect 2 0 15 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 15 0;
+#X connect 9 0 15 1;
+#X connect 10 0 15 0;
+#X connect 11 0 15 2;
+#X connect 12 0 15 0;
+#X connect 14 0 5 0;
+#X connect 15 0 3 0;
+#X connect 15 0 16 0;

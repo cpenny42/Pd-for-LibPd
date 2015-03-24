@@ -1,0 +1,39 @@
+#N canvas 421 278 514 300 10;
+#X text 366 4 pd for libpd;
+#X obj 167 181 lqueue;
+#X text 6 6 [lqueue] - queue of lists;
+#X msg 7 64 List One 1 2 3;
+#X msg 78 85 5 35 1939;
+#X obj 227 218 list prepend set;
+#X obj 227 239 list trim;
+#X msg 227 264;
+#X obj 71 228 print QUEUE;
+#X msg 110 61 push another list;
+#X text 8 40 Push with left inlet or "push";
+#X text 272 82 pop with 2nd inlet or with "pop";
+#X obj 252 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 155 85 pop;
+#X obj 252 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 252 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 167 106 clear;
+#X text 271 107 Clear with 3rd inlet or "clear";
+#X text 270 132 Output all with right inlet or "all";
+#X msg 181 127 all;
+#X msg 176 232 set;
+#X connect 1 0 5 0;
+#X connect 1 0 8 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 9 0 1 0;
+#X connect 12 0 1 1;
+#X connect 13 0 1 0;
+#X connect 14 0 1 2;
+#X connect 15 0 1 3;
+#X connect 16 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 7 0;

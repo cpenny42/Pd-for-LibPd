@@ -1,29 +1,23 @@
 #N canvas 614 378 468 291 10;
 #X text 5 0 [anything];
-#X text 331 4 PD for LIBPD;
-#X text 336 17 Chris Penny;
 #X obj 126 228 anything;
-#X floatatom 163 133 5 0 0 0 - - -;
-#X symbolatom 197 133 10 0 0 0 - - -;
-#X msg 203 154 one two three four five six seven;
-#X floatatom 214 178 5 0 0 0 - - -;
-#X obj 63 131 bng 15 250 50 0 empty empty Output_Value 17 7 0 10 -262144
+#X floatatom 196 137 5 0 0 0 - - -;
+#X symbolatom 230 137 10 0 0 0 - - -;
+#X msg 236 158 one two three four five six seven;
+#X obj 96 135 bng 15 250 50 0 empty empty Output 17 7 0 10 -262144
 -1 -1;
-#X text 180 112 Store a value:;
+#X text 213 116 Store a value:;
 #X obj 126 250 print from_anything;
-#X obj 214 198 cadd 1 2;
-#X text 267 198 <- add 1 + 2i (Complex Number);
 #X text 24 37 [anything] stores any float \, symbol \, or list \, like
 [float] \, [symbol] \, and [list].;
-#X msg 23 180 foo bar;
-#X text 17 163 Store & output;
+#X msg 56 184 foo bar;
+#X text 50 167 Store & output;
 #X text 27 74 Left inlet stores & outputs value \, right inlet only
 stores it. Bang to the left inlet outputs the value;
-#X connect 3 0 10 0;
-#X connect 4 0 3 1;
-#X connect 5 0 3 1;
-#X connect 6 0 3 1;
-#X connect 7 0 11 0;
-#X connect 8 0 3 0;
-#X connect 11 0 3 1;
-#X connect 14 0 3 0;
+#X text 378 5 pd for libpd;
+#X connect 1 0 7 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 1;
+#X connect 4 0 1 1;
+#X connect 5 0 1 0;
+#X connect 9 0 1 0;

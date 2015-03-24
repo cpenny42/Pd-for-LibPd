@@ -1,9 +1,9 @@
-#N canvas 0 22 680 490 10;
-#X obj 13 454 cnv 15 660 20 empty \$0-pddp.cnv.footer empty 20 12 0
+#N canvas 0 22 691 566 10;
+#X obj 13 534 cnv 15 660 20 empty \$0-pddp.cnv.footer empty 20 12 0
 14 -228856 -66577 0;
 #X obj 12 8 cnv 15 660 40 empty \$0-pddp.cnv.header adsr~ 3 12 0 18
 -204280 -1 0;
-#X obj 11 264 cnv 3 660 3 empty \$0-pddp.cnv.inlets inlets 15 12 0
+#X obj 11 344 cnv 3 660 3 empty \$0-pddp.cnv.inlets inlets 15 12 0
 13 -228856 -1 0;
 #N canvas 52 467 342 269 META 0;
 #X text 11 23 LICENSE SIBSD;
@@ -22,113 +22,124 @@
 #X text 11 128 INLET_5 bang;
 #X text 11 142 INLET_6 toggle;
 #X text 12 172 OUTLET_1 float;
-#X restore 624 456 pd META;
-#X obj 11 328 cnv 3 660 3 empty empty outlets 15 12 0 13 -228856 -1
+#X restore 624 536 pd META;
+#X obj 11 408 cnv 3 660 3 empty empty outlets 15 12 0 13 -228856 -1
 0;
-#X obj 11 400 cnv 3 660 3 empty empty argument 15 12 0 13 -228856 -1
+#X obj 11 480 cnv 3 660 3 empty empty argument 15 12 0 13 -228856 -1
 0;
-#X obj 80 284 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+#X obj 80 364 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 462 11 pddp/dsp;
-#X obj 80 304 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+#X obj 80 384 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
-#X obj 81 353 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+#X obj 81 433 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
-#X obj 81 373 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+#X obj 81 453 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X text 595 30 Chris Penny;
-#X text 111 455 See also:;
+#X text 111 535 See also:;
 #X text 17 30 Traditional envelope controls - en.wikipedia.org/wiki/ADSR
 ;
-#X obj 175 456 *~;
-#X obj 95 196 *~;
-#X obj 95 216 *~ 0.5;
-#X msg 105 115 0;
-#X msg 44 114 127;
-#X text 54 83 Velocity:;
-#X floatatom 186 90 5 0 0 2 Attack_time_(ms) - -;
-#X floatatom 293 91 5 0 0 2 Decay_time_(ms) - -;
-#X floatatom 388 92 5 0 0 2 Sustain_Volume_(0-1) - -;
-#X floatatom 516 92 5 0 0 2 Release_time_(ms) - -;
-#X obj 446 137 bng 15 250 50 0 empty empty Kill_Note_Immediately 17
+#X obj 175 536 *~;
+#X obj 95 266 *~;
+#X obj 95 286 *~ 0.5;
+#X msg 132 133 0;
+#X msg 71 132 127;
+#X text 81 101 Velocity:;
+#X floatatom 186 120 5 0 0 2 Attack_time_(ms) - -;
+#X floatatom 293 121 5 0 0 2 Decay_time_(ms) - -;
+#X floatatom 388 122 5 0 0 2 Sustain_Volume_(0-1) - -;
+#X floatatom 516 122 5 0 0 2 Release_time_(ms) - -;
+#X obj 446 167 bng 15 250 50 0 empty empty Kill_Note_Immediately 17
 7 0 10 -262144 -1 -1;
-#X obj 383 118 tgl 15 0 empty empty Toggle_Print/Debug_Statements 17
+#X obj 383 148 tgl 15 0 empty empty Toggle_Print/Debug_Statements 17
 7 0 10 -262144 -1 -1 0 1;
-#X obj 500 54 loadfloat 3000;
-#X obj 376 53 loadfloat 0.1;
-#X obj 162 53 loadfloat 500;
-#X obj 274 53 loadfloat 500;
-#X text 30 96 Note-On;
-#X text 93 96 Note-Off;
-#X msg 128 54 1;
-#X text 14 54 Shorter Attack ->;
-#X msg 626 75 1;
-#X floatatom 158 225 5 0 0 0 - - -;
-#X obj 158 199 view~;
-#X text 21 216 Max Vol. ->;
-#X text 84 425 None - The argument above provides spacing between the
+#X text 57 114 Note-On;
+#X text 120 114 Note-Off;
+#X msg 626 105 1;
+#X obj 158 269 view~;
+#X text 84 505 None - The argument above provides spacing between the
 ;
-#X text 413 425 inlets so it's easier to use.;
-#X text 111 352 SIGNAL - Volume Multiplier;
-#X text 111 372 FLOAT - Note Indicator (1 if note is playing \, 0 if
+#X text 413 505 inlets so it's easier to use.;
+#X text 111 432 SIGNAL - Volume Multiplier;
+#X text 111 452 FLOAT - Note Indicator (1 if note is playing \, 0 if
 off);
-#X obj 254 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 254 268 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 208 456 line~;
-#X obj 253 456 vline~;
-#X obj 302 456 pack;
-#X obj 29 114 cnv 15 15 15 empty empty empty 20 12 0 14 -3201 -66577
+#X obj 208 536 line~;
+#X obj 253 536 vline~;
+#X obj 302 536 pack;
+#X obj 56 132 cnv 15 15 15 empty empty empty 20 12 0 14 -3201 -66577
 0;
-#X obj 90 115 cnv 15 15 15 empty empty empty 20 12 0 14 -184321 -66577
+#X obj 117 133 cnv 15 15 15 empty empty empty 20 12 0 14 -184321 -66577
 0;
-#X text 296 178 Traditional ADSR interface. A note-on velocity (any
+#X text 299 237 Traditional ADSR interface. A note-on velocity (any
 number other than 0) causes the object to output a signal from 0 to
 1 that can be multiplied with an audio object. A note-off velocity
 (0) triggers the release of the note. See en.wikipedia.org/wiki/ADSR
 for more info.;
-#X obj 65 167 osc~ 440;
+#X obj 65 237 osc~ 440;
 #X obj 606 13 adsr~;
-#X obj 84 242 dac~;
-#X obj 131 167 adsr~ _______________;
+#X obj 84 312 dac~;
 #X text 456 30 PD for Libpd;
-#X obj 254 146 pack 0 0 0 0;
-#X obj 257 119 t b f;
-#X obj 293 119 t b f;
-#X obj 330 119 t b f;
-#X msg 381 136 print \$1;
-#X msg 446 157 kill;
-#X text 110 283 FLOAT - MIDI Velocity: 0 -> Note Off \, 1-127 -> Note
+#X msg 381 166 print \$1;
+#X msg 446 187 kill;
+#X text 110 363 FLOAT - MIDI Velocity: 0 -> Note Off \, 1-127 -> Note
 On \,;
-#X text 445 283 patch methods;
-#X text 110 303 ADSR List - Attack \, decay \, sustain release;
+#X text 445 363 patch methods;
+#X text 110 383 ADSR List - Attack \, decay \, sustain release;
+#N canvas 175 222 450 300 hotpack 0;
+#X obj 143 135 pack 0 0 0 0;
+#X obj 146 108 t b f;
+#X obj 182 108 t b f;
+#X obj 219 108 t b f;
+#X obj 86 82 inlet;
+#X obj 139 84 inlet;
+#X obj 184 83 inlet;
+#X obj 245 85 inlet;
+#X obj 138 164 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 0 0;
+#X connect 2 1 0 2;
+#X connect 3 0 0 0;
+#X connect 3 1 0 3;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X restore 186 151 pd hotpack;
+#X obj 158 194 adsr~;
+#X msg 167 80 600;
+#X msg 282 79 1000;
+#X msg 383 81 0.1;
+#X msg 508 79 3000;
+#X obj 101 57 loadbang;
 #X connect 15 0 16 0;
-#X connect 16 0 51 0;
-#X connect 16 0 51 1;
-#X connect 17 0 52 0;
-#X connect 18 0 52 0;
-#X connect 20 0 54 0;
-#X connect 21 0 55 0;
-#X connect 22 0 56 0;
-#X connect 23 0 57 0;
-#X connect 24 0 59 0;
-#X connect 25 0 58 0;
-#X connect 26 0 23 0;
-#X connect 27 0 22 0;
-#X connect 28 0 20 0;
-#X connect 29 0 21 0;
-#X connect 32 0 20 0;
-#X connect 34 0 23 0;
-#X connect 36 0 35 0;
-#X connect 49 0 15 0;
-#X connect 52 0 15 1;
-#X connect 52 0 36 0;
-#X connect 52 1 42 0;
-#X connect 54 0 52 1;
-#X connect 55 0 54 0;
-#X connect 55 1 54 1;
+#X connect 16 0 43 0;
+#X connect 16 0 43 1;
+#X connect 17 0 51 0;
+#X connect 18 0 51 0;
+#X connect 20 0 50 0;
+#X connect 21 0 50 1;
+#X connect 22 0 50 2;
+#X connect 23 0 50 3;
+#X connect 24 0 46 0;
+#X connect 25 0 45 0;
+#X connect 28 0 23 0;
+#X connect 41 0 15 0;
+#X connect 45 0 51 0;
+#X connect 46 0 51 0;
+#X connect 50 0 51 1;
+#X connect 51 0 15 1;
+#X connect 51 0 29 0;
+#X connect 51 1 34 0;
+#X connect 52 0 20 0;
+#X connect 53 0 21 0;
+#X connect 54 0 22 0;
+#X connect 55 0 23 0;
+#X connect 56 0 52 0;
+#X connect 56 0 53 0;
 #X connect 56 0 54 0;
-#X connect 56 1 54 2;
-#X connect 57 0 54 0;
-#X connect 57 1 54 3;
-#X connect 58 0 52 0;
-#X connect 59 0 52 0;
+#X connect 56 0 55 0;

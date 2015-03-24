@@ -21,9 +21,7 @@
 0;
 #X obj 73 322 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
-#X text 587 25 Chris Penny;
 #X text 103 430 See also:;
-#X text 392 14 Intrinsic Audio PD Framework;
 #X obj 592 8 loadfloat;
 #X obj 71 392 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -48,20 +46,21 @@ when the containing patch is loaded;
 #X obj 483 57 loadfloat 0;
 #X obj 494 77 loadfloat 10;
 #X obj 505 97 loadfloat 1;
-#X obj 505 119 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 505 119 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 447 111 5 0 0 0 - - -;
 #X floatatom 472 171 5 0 0 0 - - -;
 #X text 149 203 [loadfloat] is similar to [loadbang] - it outputs the
 given float when the patch loads. It outputs 0 by default if no argument
 is given.;
-#X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 25 0 21 0;
-#X connect 26 0 22 0;
-#X connect 27 0 33 0;
-#X connect 28 0 27 1;
-#X connect 29 0 27 2;
-#X connect 30 0 31 0;
-#X connect 31 0 27 3;
-#X connect 32 0 27 0;
+#X text 514 9 pd for libpd;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 23 0 19 0;
+#X connect 24 0 20 0;
+#X connect 25 0 31 0;
+#X connect 26 0 25 1;
+#X connect 27 0 25 2;
+#X connect 28 0 29 0;
+#X connect 29 0 25 3;
+#X connect 30 0 25 0;
