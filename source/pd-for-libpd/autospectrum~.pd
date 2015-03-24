@@ -66,7 +66,7 @@
 #X msg -24 -30 1;
 #X text 128 147 Arguments: Array to write;
 #X obj -99 54 symbol \$1;
-#X msg -22 257 ;
+#X msg -22 257;
 #X obj -62 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj -128 29 t b b b;
@@ -74,11 +74,7 @@
 #X obj -2 370 symbol;
 #X obj -34 338 list trim;
 #X obj -196 46 nbx 5 14 4 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 4 256;
-#X obj -136 81 t a a;
-#X obj -109 101 list length;
-#X obj -142 143 spigot;
-#X obj -109 121 != \$1;
+-1 -1 4096 256;
 #N canvas 80 191 411 487 hann_table 0;
 #X msg 134 -158 0;
 #X obj 57 -86 osc~;
@@ -284,7 +280,7 @@
 #X connect 43 0 46 0;
 #X connect 43 0 47 1;
 #X connect 43 0 52 0;
-#X connect 43 0 76 0;
+#X connect 43 0 72 0;
 #X connect 44 0 15 0;
 #X connect 45 0 14 0;
 #X connect 46 0 49 0;
@@ -306,7 +302,8 @@
 #X connect 59 0 58 1;
 #X connect 60 0 59 0;
 #X connect 62 0 51 0;
-#X connect 64 0 72 0;
+#X connect 64 0 41 0;
+#X connect 64 0 69 0;
 #X connect 65 0 69 0;
 #X connect 66 0 67 0;
 #X connect 67 0 57 0;
@@ -314,10 +311,4 @@
 #X connect 69 0 68 1;
 #X connect 70 0 68 0;
 #X connect 71 0 43 0;
-#X connect 72 0 74 0;
-#X connect 72 1 73 0;
-#X connect 73 0 75 0;
-#X connect 74 0 41 0;
-#X connect 74 0 69 0;
-#X connect 75 0 74 1;
-#X connect 76 0 61 0;
+#X connect 72 0 61 0;

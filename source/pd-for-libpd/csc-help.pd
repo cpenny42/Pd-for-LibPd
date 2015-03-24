@@ -1,0 +1,10 @@
+#N canvas 663 307 450 300 10;
+#X text 358 5 pd for libpd;
+#X text 365 22 chris penny;
+#X floatatom 161 96 5 0 0 0 - - -;
+#X floatatom 161 173 5 0 0 0 - - -;
+#X text 3 5 [csc] - cosecant;
+#X text 118 46 cosecant == 1/sin(x);
+#X obj 161 133 csc;
+#X connect 2 0 6 0;
+#X connect 6 0 3 0;

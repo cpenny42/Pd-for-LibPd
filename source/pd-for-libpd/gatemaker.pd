@@ -1,4 +1,4 @@
-#N canvas 627 157 692 250 10;
+#N canvas 178 46 692 250 10;
 #N canvas 244 57 848 554 \$0-setup 1;
 #X obj -2 -6 inlet;
 #X obj -2 64 until;
@@ -39,6 +39,7 @@ outlet \, connect 3 0 \$5 0 \, connect 2 0 \$4 0 \, connect \$4 0 \$5
 #X msg 348 334 obj \$2 150 >= \$1 \, obj \$3 175 spigot \, obj \$3
 200 outlet \, connect 3 0 \$5 0 \, connect 2 0 \$4 0 \, connect \$4
 0 \$5 1 \, connect \$5 0 \$6 0;
+#X floatatom 43 -4 5 0 0 0 - - -;
 #X connect 0 0 21 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
@@ -86,6 +87,7 @@ outlet \, connect 3 0 \$5 0 \, connect 2 0 \$4 0 \, connect \$4 0 \$5
 #X connect 33 0 1 0;
 #X connect 33 1 32 1;
 #X connect 34 0 20 0;
+#X connect 35 0 21 0;
 #X restore 267 19 pd \$0-setup;
 #X obj 267 -1 f \$1;
 #X obj 36 38 inlet;

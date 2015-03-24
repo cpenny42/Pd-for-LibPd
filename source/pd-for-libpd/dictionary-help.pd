@@ -3,39 +3,28 @@
 #X obj 362 425 print ALL;
 #X obj 289 425 print MATCH;
 #X obj 423 425 print NO_MATCH;
-#X obj 316 226 bng 15 250 50 0 empty empty Clear 17 7 0 10 -262144
--1 -1;
-#X obj 273 207 bng 15 250 50 0 empty empty Output_All_Keys_&_Values
-17 7 0 10 -262144 -1 -1;
-#X msg 99 230 test a b c;
-#X msg 212 229 test;
+#X msg 109 230 test a b c;
+#X msg 234 228 test;
 #X msg 206 207 key1;
-#X msg 147 248 answer 42;
-#X msg 220 253 answer;
+#X msg 157 256 answer 42;
+#X msg 254 251 answer;
 #X msg 266 503 test;
 #X msg 345 503 key1;
 #X msg 301 502 answer;
 #X text -33 -25 [dictionary] - Store Key-Value Pairs;
 #X text 752 -27 Pd for LibPd;
 #X text 755 -13 Chris Penny;
-#X text 7 -1 [dictionary] allows you to associate a value to a key.
-A list of length > 1 will use the first item as the key and then store
-the rest of the list as the value.;
-#X text 10 180 Delete all stored values with the right inlet.;
 #X text 377 448 <- all the values in the dictionary above will be copied
 to the dictionary below.;
-#X msg 30 210 key1 foo bar;
-#X msg 32 266 key1 sqrt(-1);
+#X msg 47 207 key1 foo bar;
+#X msg -31 249 key1 sqrt(-1);
 #X msg 176 505 test 1 2 3;
-#X msg 431 257 set key_one value_one value_two;
-#X msg 432 279 get key_one;
-#X msg 316 257 clear;
-#X msg 517 282 help;
+#X msg 409 262 set key_one value_one value_two;
+#X msg 410 284 get key_one;
+#X msg 364 232 clear;
+#X msg 513 337 help;
 #X msg 580 518 print;
-#X msg 273 256 all;
-#X text 552 281 <- Print help info;
-#X msg 529 304 methods;
-#X text 578 305 <- print all available methods;
+#X msg 321 231 all;
 #X obj 412 562 route match all no_match;
 #X obj 401 604 print MATCH2;
 #X obj 480 604 print ALL2;
@@ -44,35 +33,15 @@ to the dictionary below.;
 #X msg 417 498 all;
 #X msg 447 498 print;
 #X msg 491 500 clear;
-#X msg 370 254 print;
-#X text 10 44 A list of length == 1 (symbol) will look for the value
-associated with that key. Output will be prepended with "match" if
-the key is found \, or the key will be output prepended with "nomatch".
-;
-#X text 10 99 You can output all the key-value pairs with the "all"
-message. This will output each pair individually as a list prepended
-with "all". You can use this to copy dictionaries.;
-#X text 11 147 Use [route] or [list split 1] to separate the "match"
-\, "nomatch" \, and "all" streams.;
-#X msg 23 295 delete key1;
-#X text 399 65 [dictionary] also accepts messages to control it:;
-#X msg 414 94 set <key> <value>;
-#X msg 528 94 get <key>;
-#X msg 595 94 all;
-#X msg 627 94 clear;
-#X msg 633 114 reset;
-#X text 674 103 <- these 2 are the same;
-#X msg 421 140 methods;
-#X msg 484 139 help;
-#X msg 530 140 print;
-#X msg 576 139 delete <key>;
-#X text 462 199 [set( and [get( are the same as passing a list length
-1 and a list length >1 (respectively).;
-#X msg 515 333 1 foo;
-#X text 553 334 <- numbers can't be keys;
-#X text 311 637 This Patch uses [dollarg] \, [l2s] \, and [s2l] from
-Pd-Extended for some minor functionality. It still works in Pd-Vanilla
-though.;
+#X msg 493 308 print;
+#X msg 60 271 delete key1;
+#X msg 412 68 set <key> <value>;
+#X msg 526 68 get <key>;
+#X msg 593 68 all;
+#X msg 625 68 clear;
+#X msg 667 69 help;
+#X msg 705 70 print;
+#X msg 457 94 delete <key>;
 #X obj 412 539 dictionary;
 #X obj 139 391 list split 1;
 #X obj 173 413 list prepend set;
@@ -80,42 +49,50 @@ though.;
 #X text -26 354 This will get you the value if found;
 #X text 53 367 or the key if not found:;
 #X msg 173 462;
-#X connect 0 0 36 0;
-#X connect 0 0 61 0;
-#X connect 4 0 25 0;
-#X connect 5 0 28 0;
+#X text 7 -1 key value pairs;
+#X text 15 29 store: list length > 1;
+#X text 75 46 first element in the list is used as the key;
+#X text 12 65 get: key;
+#X text 47 83 returns "match" <value> if found \, "nomatch" <key> if
+not;
+#X text 14 152 Use [route] or [list split 1] to separate "match" \,
+"nomatch" \, and "all";
+#X text 13 108 delete: key;
+#X text 478 43 Methods:;
+#X text 462 199 [set( and [get( are the same as passing a list length
+1 and a list length >1;
+#X connect 0 0 29 0;
+#X connect 0 0 43 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
 #X connect 8 0 0 0;
-#X connect 9 0 0 0;
-#X connect 10 0 0 0;
-#X connect 11 0 60 0;
-#X connect 12 0 60 0;
-#X connect 13 0 60 0;
+#X connect 9 0 42 0;
+#X connect 10 0 42 0;
+#X connect 11 0 42 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X connect 18 0 42 0;
+#X connect 19 0 0 0;
 #X connect 20 0 0 0;
 #X connect 21 0 0 0;
-#X connect 22 0 60 0;
-#X connect 23 0 0 0;
+#X connect 22 0 0 0;
+#X connect 23 0 42 0;
 #X connect 24 0 0 0;
-#X connect 25 0 0 0;
-#X connect 26 0 0 0;
-#X connect 27 0 60 0;
-#X connect 28 0 0 0;
-#X connect 30 0 0 0;
-#X connect 32 0 33 0;
-#X connect 32 1 34 0;
-#X connect 32 2 35 0;
-#X connect 36 0 2 0;
-#X connect 36 1 1 0;
-#X connect 36 1 60 0;
-#X connect 36 2 3 0;
-#X connect 37 0 60 0;
-#X connect 38 0 60 0;
-#X connect 39 0 60 0;
-#X connect 40 0 0 0;
-#X connect 44 0 0 0;
-#X connect 57 0 0 0;
-#X connect 60 0 32 0;
-#X connect 61 1 62 0;
-#X connect 62 0 63 0;
-#X connect 63 0 66 0;
+#X connect 25 0 26 0;
+#X connect 25 1 27 0;
+#X connect 25 2 28 0;
+#X connect 29 0 2 0;
+#X connect 29 1 1 0;
+#X connect 29 1 42 0;
+#X connect 29 2 3 0;
+#X connect 30 0 42 0;
+#X connect 31 0 42 0;
+#X connect 32 0 42 0;
+#X connect 33 0 0 0;
+#X connect 34 0 0 0;
+#X connect 42 0 25 0;
+#X connect 43 1 44 0;
+#X connect 44 0 45 0;
+#X connect 45 0 48 0;

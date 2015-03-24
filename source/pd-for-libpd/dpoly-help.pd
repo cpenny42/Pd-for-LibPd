@@ -1,0 +1,20 @@
+#N canvas 119 184 450 300 10;
+#X text 9 5 [dpoly] - dynamic poly;
+#X text 352 4 pd for libpd;
+#X text 356 20 chris penny;
+#X text 41 53 Like [poly] \, but you can change the number of voices
+on the fly.;
+#X msg 79 107 60 127;
+#X msg 127 107 60 0;
+#X floatatom 178 113 5 0 0 0 - - -;
+#X obj 123 185 pack f f f;
+#X obj 122 209 print;
+#X obj 125 152 dpoly 3;
+#X text 250 112 arg: initial # of voices;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 1;
+#X connect 7 0 8 0;
+#X connect 9 0 7 0;
+#X connect 9 1 7 1;
+#X connect 9 2 7 2;

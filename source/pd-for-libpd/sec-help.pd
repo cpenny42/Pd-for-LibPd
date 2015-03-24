@@ -1,0 +1,10 @@
+#N canvas 609 388 450 300 10;
+#X text 358 15 pd for libpd;
+#X text 365 32 chris penny;
+#X floatatom 161 106 5 0 0 0 - - -;
+#X floatatom 161 183 5 0 0 0 - - -;
+#X text 3 15 [sec] - secant;
+#X text 118 56 secant == 1/cos(x);
+#X obj 161 143 sec;
+#X connect 2 0 6 0;
+#X connect 6 0 3 0;

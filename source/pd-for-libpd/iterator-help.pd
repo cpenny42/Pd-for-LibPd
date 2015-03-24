@@ -6,13 +6,13 @@
 #X text -170 44 Iterator is a counter.;
 #X obj 15 218 bng 15 250 50 0 empty empty Bang_to_decrease 17 7 0 10
 -262144 -1 -1;
-#X obj 206 214 bng 15 250 50 0 empty empty Bang_to_increase 17 7 0
+#X obj 248 270 bng 15 250 50 0 empty empty Bang_to_increase 17 7 0
 10 -262144 -1 -1;
 #X obj 88 242 bng 15 250 50 0 empty empty Bang_to_Reset 17 7 0 10 -262144
 -1 -1;
 #X floatatom -27 298 5 0 0 0 Set_reset_value - -;
-#X floatatom 205 284 5 0 0 1 Set_minimum - -;
-#X floatatom 205 308 5 0 0 1 Set_Maximum - -;
+#X floatatom 239 306 5 0 0 1 Set_minimum - -;
+#X floatatom 239 330 5 0 0 1 Set_Maximum - -;
 #X msg 122 283 symbol none;
 #X msg 131 307 symbol none;
 #X floatatom 81 431 5 0 0 0 - - -;

@@ -32,6 +32,9 @@
 #X restore 160 238 pd output;
 #X obj 202 181 makefilename %s\$1;
 #X obj 162 265 outlet;
+#X obj 238 8 inlet;
+#X msg 280 67 set \$1;
+#X obj 280 44 symbol;
 #X connect 0 0 5 0;
 #X connect 1 0 9 0;
 #X connect 2 0 3 1;
@@ -50,3 +53,6 @@
 #X connect 10 3 12 0;
 #X connect 11 0 13 0;
 #X connect 12 0 11 0;
+#X connect 14 0 16 0;
+#X connect 15 0 12 0;
+#X connect 16 0 15 0;

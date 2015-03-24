@@ -33,3 +33,4 @@ won't preserve new lines or extra spaces when reopened.;
 #X text 256 59 DSP On: Command-/;
 #X text 250 72 DSP Off: Command-.;
 #X obj 366 67 pddp/dsp;
+#X text 284 100 Preferences: Command- \,;

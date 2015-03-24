@@ -1,0 +1,28 @@
+#N canvas 325 449 450 300 10;
+#X text 10 4 [filt] - filter input with boolean expression;
+#X text 361 5 pd for libpd;
+#X text 365 18 chris penny;
+#X text 46 60 only lets input through that makes the boolean expression
+true. Right input changes the expression:;
+#X obj 78 141 filt < 10;
+#X floatatom 82 116 5 0 0 0 - - -;
+#X floatatom 77 176 5 0 0 0 - - -;
+#X msg 189 115 foo bar;
+#X msg 243 114 foo bar baz;
+#X obj 231 158 filt length > 2;
+#X obj 298 187 print;
+#X obj 176 190 list prepend set;
+#X obj 175 212 list trim;
+#X msg 330 105 length == 3;
+#X msg 344 129 length < 3;
+#X msg 183 239;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;

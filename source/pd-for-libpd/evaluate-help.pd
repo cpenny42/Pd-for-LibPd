@@ -1,0 +1,430 @@
+#N canvas 391 112 966 663 10;
+#X text 878 0 pd for libpd;
+#X text 885 16 chris penny;
+#X obj 377 447 evaluate;
+#X text 16 80 Pass it a message with the expression to evaluate \,
+and it will output the result.;
+#X text 18 121 It does not use the traditional order of operations
+- within parentheses \, math statements are cumulative:;
+#X msg 21 164 1 + 2 * 4;
+#X text 87 164 would be parsed as 1 + 2 (returns 3) \, then 3 * 4 to
+return;
+#X text 441 164 12;
+#X msg 22 261 ( 2 + 3 ) * ( 7 - 14 ) - 8 + ( sin 0.4 / ( 3 ^ 7 ) )
+;
+#X text 338 259 == -42.9998;
+#X obj 22 301 s \$0-evaluate;
+#N canvas 793 221 450 300 peculiarities 0;
+#X obj 160 84 pow;
+#X msg 134 59 -2 2;
+#X floatatom 160 105 5 0 0 0 - - -;
+#X msg 177 59 2 2;
+#X text 36 18 [pow] in pure data has a bug where it will output 0 with
+a negative number as the base:;
+#X text 46 138 Because of this \, the same bug exists with ^ and pow
+in [evaluate].;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X restore 389 375 pd peculiarities;
+#X obj 377 427 r \$0-evaluate;
+#X msg 110 281 ( 1 - ( 3 * 4 ) ) * 2;
+#X obj 293 464 print RESULT;
+#X text 18 214 To ensure the expression is parsed as you intended \,
+always use parentheses:;
+#X text 748 270 == -708;
+#X text 495 24 There are binary operators that take 2 or more arguments
+and unary operators that take 1:;
+#X text 494 65 Binary Operators:;
+#X text 503 126 pow and ^ are exactly the same;
+#X text 494 177 Unary Operators:;
+#X text 526 377 Use message arguments for expressions with variables:
+;
+#X obj 660 451 pack f f;
+#X floatatom 660 405 5 0 0 0 - - -;
+#X obj 696 425 t b f;
+#X floatatom 696 405 5 0 0 0 - - -;
+#X msg 536 272 ( + 1 2 3 4 5 6 ) - ( 1 * 3 9 27 );
+#X obj 536 342 s \$0-evaluate;
+#X msg 555 312 2 ^ 2 2 2;
+#X msg 547 292 ( + 1 2 ) - ( ( 1 * 3 2.4 ) ^ ( 1 - 0.6 0.1 ) );
+#X text 835 290 == 1.19199;
+#X text 617 311 == 256;
+#X msg 660 471 sqrt ( ( \$1 ^ 2 ) + ( \$2 ^ 2 ) );
+#X obj 408 635 s \$0-evaluate;
+#X obj 377 481 nbx 10 30 -1e+37 1e+37 0 0 empty empty empty 5 -8 1
+16 -245630 -1 -1 0 256;
+#X obj 660 491 s \$0-evaluate;
+#X text 503 140 mod and % are exactly the same;
+#X text 95 465 Constants:;
+#X msg 515 83 + - * / pow ^ max min atan2 > >= == != <= < mod % div
+& | << >> && || %% logn;
+#X text 698 133 logn syntax: <base> logn <number>;
+#X msg 357 557 2 * pi;
+#X msg 424 557 3 logn 10;
+#X msg 512 557 ln ( sinh ( pi / 2 ) );
+#X msg 128 557 ( 4 > 3 ) && ( ( 2 ^ 7 ) < 1e+15 );
+#X msg 674 557 5 * 2e+10 - 1e+09;
+#X msg 67 557 1 > 2;
+#X msg 789 557 rand 5;
+#X msg 514 201 sqrt ln exp abs sin cos tan atan cot sec csc cosh sinh
+tanh sech csch coth round floor ceil rand seed;
+#X msg 857 557 10 logn 1000;
+#X msg 4 558 2 + 2;
+#X text 724 452 sqrt (a^2 + b^2);
+#X text 19 338 Since there is nothing in Vanilla that can split symbols
+\, parentheses must always have a space before and after them. It will
+print an error if you don't.;
+#X msg 57 404 (3 + 4);
+#X text 552 247 Binary operators can take lists:;
+#X obj 92 431 s \$0-evaluate;
+#X text 5 1 [evaluate] - evaluate math expressions;
+#X text 16 34 This is a calculator - like [expr] \, but without the
+GPL license (and Vanilla/Libpd compatible).;
+#X msg 129 404 ( 3 + 4);
+#X obj 109 512 s \$0-evaluate;
+#X msg 109 487 pi;
+#X msg 137 487 e;
+#X msg 632 405 3;
+#X msg 734 404 4;
+#N canvas 99 153 955 660 graphing 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-plot 150 float 5;
+#A 0 0 -0.00152663 -0.00660174 -0.00248581 0.0131789 0.0224553 0.0115846
+-0.0167988 -0.0343797 -0.0201912 0.0177634 0.0480761 0.0370353 -0.0111769
+-0.0536231 -0.0524126 0.00234482 0.0629271 0.0716518 0.0167515 -0.0600957
+-0.0872157 -0.0333728 0.0570107 0.105331 0.0585604 -0.0430951 -0.112453
+-0.0827759 0.0269334 0.120738 0.111567 -0.000259196 -0.118555 -0.132433
+-0.0254372 0.112464 0.15627 0.0612251 -0.0958854 -0.171358 -0.0934202
+0.0749143 0.183909 0.131981 -0.0423203 -0.184088 -0.163965 0.00725284
+0.178648 0.197669 0.0379502 -0.160621 -0.221732 -0.0812659 0.137614
+0.242156 0.130522 -0.101974 -0.248349 -0.175461 0.0618942 0.250778
+0.220332 -0.00885529 -0.237272 -0.256047 -0.0439478 0.216137 0.289306
+0.10451 -0.178557 -0.308198 -0.163038 0.133979 0.320217 0.222584 -0.0775413
+-0.313644 -0.272805 0.0157059 0.298423 0.319832 0.0553075 -0.265869
+-0.352907 -0.125071 0.222765 0.379618 0.198768 -0.165141 -0.385917
+-0.26326 0.0999677 0.38232 0.328852 -0.0202238 -0.357928 -0.378709
+-0.0592972 0.321795 0.42136 0.146844 -0.265778 -0.44463 -0.228767 0.200603
+0.456094 0.309158 -0.118519 -0.447071 -0.37929 0.030578 0.420692 0.442125
+0.0663948 -0.372613 -0.483969 -0.162574 0.312437 0.516639 0.260134
+-0.232269 -0.522521 -0.348937 0.142682 0.515761 0.433257 -0.0369572
+-0.480743 -0.499485 -0.0684083 0.431362 0.552258 0.182726 -0.356301
+-0.582588 -0.288184 0.269581 0.595043 0.392018 -0.162551 -0.580437
+-0.48163 0.0503401 0.546105 0.559774 0.0731862 -0.484179 -0.615963
+;
+#X coords 0 1 149 -1 200 140 1 0 0;
+#X restore 163 -123 graph;
+#X obj -17 -127 r \$0-graph;
+#X obj 76 -7 % 1000;
+#X floatatom 112 -345 5 0 1e+37 1 Set_Max_X_Value - -;
+#X obj 112 -296 pack 0 \$0;
+#X obj 49 -415 bng 30 250 50 0 empty empty Plot 4 14 0 10 -262144 -1
+-1;
+#N canvas 328 175 660 534 for++ 0;
+#X obj 38 45 inlet;
+#X obj 400 45 inlet;
+#X obj 515 49 inlet;
+#X obj 253 332 + 1;
+#X obj 38 71 route bang start stop;
+#X obj 68 446 outlet;
+#X msg 253 268 clear;
+#X obj 172 367 t b b;
+#X obj 202 407 outlet;
+#X obj 314 46 loadbang;
+#X obj 314 74 t b b;
+#X obj 38 245 t a a;
+#X text 257 411 finished;
+#X text 118 446 output;
+#N canvas 0 22 450 300 up-or-down 0;
+#X obj 127 96 t b a;
+#X msg 127 176 -1;
+#X obj 127 128 <;
+#X obj 127 151 select 0;
+#X obj 127 57 inlet;
+#X obj 79 56 inlet;
+#X obj 127 218 outlet;
+#X connect 0 0 2 0;
+#X connect 0 1 2 1;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 6 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X restore 314 175 pd up-or-down;
+#X obj 38 99 t b b b;
+#X obj 38 215 float \$2;
+#X obj 314 147 int \$2;
+#X obj 400 150 int \$3;
+#X obj 253 304 pipe \$4;
+#X obj 172 344 select \$3;
+#X connect 0 0 4 0;
+#X connect 1 0 18 0;
+#X connect 2 0 19 1;
+#X connect 3 0 16 0;
+#X connect 4 0 15 0;
+#X connect 4 1 15 0;
+#X connect 4 2 6 0;
+#X connect 4 3 17 1;
+#X connect 6 0 19 0;
+#X connect 7 0 6 0;
+#X connect 7 1 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 17 0;
+#X connect 10 1 18 0;
+#X connect 11 0 20 0;
+#X connect 11 1 5 0;
+#X connect 14 0 3 1;
+#X connect 15 0 16 0;
+#X connect 15 1 6 0;
+#X connect 15 2 17 0;
+#X connect 16 0 11 0;
+#X connect 17 0 14 0;
+#X connect 17 0 16 1;
+#X connect 18 0 14 1;
+#X connect 18 0 20 1;
+#X connect 19 0 3 0;
+#X connect 20 0 7 0;
+#X connect 20 1 19 0;
+#X restore 49 -197 pd for++;
+#X obj 49 -177 t f f;
+#X obj 514 -317 r \$0-equation;
+#X floatatom 602 -405 10 0 0 0 - - -;
+#X floatatom 667 -405 5 0 0 0 - - -;
+#X floatatom 702 -405 5 0 0 0 - - -;
+#X floatatom 737 -405 5 0 0 0 - - -;
+#X text 611 -424 Other Variables:;
+#X msg 481 -39 \$2 * \$1 + \$3;
+#X obj 385 -22 s \$0-evaluate;
+#N canvas 397 360 604 260 gate6 0;
+#X obj 46 48 inlet;
+#X obj 117 48 inlet;
+#X obj 37 160 == 1;
+#X obj 10 185 spigot;
+#X obj 10 210 outlet;
+#X obj 137 160 == 2;
+#X obj 110 185 spigot;
+#X obj 110 210 outlet;
+#X obj 237 160 == 3;
+#X obj 210 185 spigot;
+#X obj 210 210 outlet;
+#X obj 337 160 == 4;
+#X obj 310 185 spigot;
+#X obj 310 210 outlet;
+#X obj 437 160 == 5;
+#X obj 410 185 spigot;
+#X obj 410 210 outlet;
+#X obj 537 160 >= 6;
+#X obj 510 185 spigot;
+#X obj 510 210 outlet;
+#X connect 0 0 2 0;
+#X connect 0 0 5 0;
+#X connect 0 0 8 0;
+#X connect 0 0 11 0;
+#X connect 0 0 14 0;
+#X connect 0 0 17 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 1 0 9 0;
+#X connect 1 0 12 0;
+#X connect 1 0 15 0;
+#X connect 1 0 18 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 11 0 12 1;
+#X connect 12 0 13 0;
+#X connect 14 0 15 1;
+#X connect 15 0 16 0;
+#X connect 17 0 18 1;
+#X connect 18 0 19 0;
+#X restore 481 -240 pd gate6 ______________;
+#X obj 481 -404 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 474 -424 Select Equation:;
+#X msg 508 -69 \$2 * ( \$1 ^ 2 ) + ( \$3 * \$1 ) + \$4;
+#X text 723 -70 ax^2 + bx + c;
+#X obj -17 -7 /;
+#X obj 49 -157 s \$0-equation;
+#X obj 481 -270 + 1;
+#X obj -17 14 tabwrite \$0-plot;
+#X obj 109 -223 r \$0-graph.x;
+#X msg 112 -276 \; \$2-plot resize \$1 \; \$2-graph.x \$1 \;;
+#X floatatom 262 -335 10 0 1e+37 1 Scale_Y - -;
+#X obj 262 -306 pack 0 \$0;
+#X obj -2 -27 r \$0-graph.y;
+#X text 723 -127 \$1 is x;
+#X obj 265 -395 hsl 128 15 1 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 0;
+#X obj 115 -395 hsl 128 15 1 500 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 0;
+#N canvas 384 23 516 300 expscale 0;
+#X obj 14 18 inlet;
+#X obj 14 39 / 127;
+#X obj 14 106 outlet;
+#X obj 14 84 * 10000;
+#X obj 14 62 pow 5.5;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X restore 262 -356 pd expscale;
+#X text 272 -416 Scale Y Range:;
+#X text 128 -416 Scale X Range:;
+#X obj 49 -438 r \$0-plot;
+#X msg 262 -286 \; \$2-graph.y \$1 \; \$2-plot bang \;;
+#X text 133 -446 With large x values \, this can be slow.;
+#X obj 481 -376 t b f;
+#X obj 481 -353 s \$0-plot;
+#X text 635 -100 sin(.2x);
+#X text 632 -131 log (x);
+#X msg 616 -211;
+#X text 645 -233 Write your own;
+#X msg 562 -131 \$2 logn \$1;
+#X msg 535 -99 sin ( \$2 * \$1 );
+#X text 623 -389 \$2;
+#X text 675 -388 \$3;
+#X text 711 -388 \$4;
+#X text 747 -388 \$5;
+#X obj 599 -362 t b f;
+#X obj 599 -339 s \$0-plot;
+#N canvas 651 23 171 195 lop~ 0;
+#X obj 64 10 inlet;
+#X obj 13 50 lop~ 1000;
+#X obj 13 70 lop~ 1000;
+#X obj 13 90 lop~ 1000;
+#X obj 13 110 lop~ 1000;
+#X obj 13 10 inlet~;
+#X obj 13 130 outlet~;
+#N canvas 384 23 516 300 expscale 0;
+#X obj 14 18 inlet;
+#X obj 14 39 / 127;
+#X obj 14 106 outlet;
+#X obj 14 62 pow 2.5;
+#X obj 14 84 * 10000;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X restore 64 30 pd expscale;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 7 0 1 1;
+#X restore 643 107 pd lop~;
+#X obj 643 68 tabread~ \$0-plot;
+#X obj 643 3 phasor~;
+#X obj 643 47 *~ 2048;
+#X obj 682 26 r \$0-graph.y;
+#X obj 646 -39 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 643 -19 mtof;
+#X obj 685 89 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 643 173 dac~;
+#X text 651 -123 a;
+#X text 561 -40 ax + b;
+#X obj 679 131 hsl 70 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 616 -272 pack 0 1 1 1 1;
+#X msg 589 -171 ( \$2 * \$1 ) * sin ( \$2 * \$1 ) + ( rand \$3 / 10
+);
+#X obj 643 151 *~ 0;
+#X connect 1 0 21 0;
+#X connect 2 0 24 1;
+#X connect 3 0 4 0;
+#X connect 4 0 26 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 22 0;
+#X connect 7 1 2 0;
+#X connect 8 0 65 0;
+#X connect 9 0 51 0;
+#X connect 10 0 65 2;
+#X connect 11 0 65 3;
+#X connect 12 0 65 4;
+#X connect 14 0 15 0;
+#X connect 16 0 14 0;
+#X connect 16 1 19 0;
+#X connect 16 2 46 0;
+#X connect 16 3 45 0;
+#X connect 16 4 66 0;
+#X connect 16 5 43 0;
+#X connect 17 0 39 0;
+#X connect 19 0 15 0;
+#X connect 21 0 24 0;
+#X connect 23 0 16 0;
+#X connect 25 0 6 1;
+#X connect 25 0 2 1;
+#X connect 27 0 28 0;
+#X connect 28 0 37 0;
+#X connect 29 0 21 1;
+#X connect 31 0 33 0;
+#X connect 32 0 3 0;
+#X connect 33 0 27 0;
+#X connect 36 0 5 0;
+#X connect 39 0 40 0;
+#X connect 39 1 23 0;
+#X connect 43 0 15 0;
+#X connect 45 0 15 0;
+#X connect 46 0 15 0;
+#X connect 51 0 52 0;
+#X connect 51 1 65 1;
+#X connect 53 0 67 0;
+#X connect 54 0 53 0;
+#X connect 55 0 56 0;
+#X connect 56 0 54 0;
+#X connect 57 0 56 1;
+#X connect 58 0 59 0;
+#X connect 59 0 55 0;
+#X connect 60 0 53 1;
+#X connect 64 0 67 1;
+#X connect 65 0 16 1;
+#X connect 66 0 15 0;
+#X connect 67 0 61 0;
+#X connect 67 0 61 1;
+#X restore 403 355 pd graphing;
+#X obj 531 464 s \$0-graph;
+#X obj 21 185 s \$0-evaluate;
+#X msg 686 312 max 1 4 9 8 100 ( 2 ^ 10 ) -31;
+#X text 877 312 == 1024;
+#X text 247 281 == -22;
+#X text 697 526 rand takes the maximum random number;
+#X connect 2 0 14 0;
+#X connect 2 0 34 0;
+#X connect 2 0 64 0;
+#X connect 5 0 65 0;
+#X connect 8 0 10 0;
+#X connect 12 0 2 0;
+#X connect 13 0 10 0;
+#X connect 22 0 32 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 0;
+#X connect 24 1 22 1;
+#X connect 25 0 24 0;
+#X connect 26 0 27 0;
+#X connect 28 0 27 0;
+#X connect 29 0 27 0;
+#X connect 32 0 35 0;
+#X connect 40 0 33 0;
+#X connect 41 0 33 0;
+#X connect 42 0 33 0;
+#X connect 43 0 33 0;
+#X connect 44 0 33 0;
+#X connect 45 0 33 0;
+#X connect 46 0 33 0;
+#X connect 48 0 33 0;
+#X connect 49 0 33 0;
+#X connect 52 0 54 0;
+#X connect 57 0 54 0;
+#X connect 59 0 58 0;
+#X connect 60 0 58 0;
+#X connect 61 0 22 0;
+#X connect 62 0 24 0;
+#X connect 66 0 27 0;
