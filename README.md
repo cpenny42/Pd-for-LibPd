@@ -1,10 +1,10 @@
 # PD-for-LIBPD
-A collection of Pure-Data patches to provide extra functionality while also being LIBPD-compatible.  
+A framework for using Pure Data as an audio engine for mobile apps.
 
-To use these patches, add the /pd-extended and /pd-for-libpd folders to Pure Data's search path. Most of the patches have documentation, but there are still more help files to be added. 
+There are many Pure Data patches to help with development - These are found in /source/pd-for-libpd.  To use them in Pure Data, add that folder to Pd's search path.  They must be in your main resource bundle for use in libpd.
 
-Note many pd-extended patches have been added - most of these are vanilla compatible, but some require external files be added to the libpd project.  You can add these external files to a libpd project - see [github.com/libpd/pd-for-ios](https://github.com/libpd/pd-for-ios) for more info.
+There are a few externals available - /source/externals/use has the c files & the PdExternals class needed to use them in libpd.  The /compiled folder contains binaries of any additional externals for use in Pure Data - you can find the source code in source/externals/build to build them on your own machine.
 
-The sinesum executable will print the sinesum coefficients for a given wave type & number of harmonics for sinesum messages to arrays.
+Soundfonts are currently a work in progress.  To use them in Pure Data, use the import_sf.py script in /soundfonts to unpack a soundfont into .wav files for use with autosampler~ and add the /soundfonts folder to Pd's search path.  In a later update, you will be able to use an external object (autosampler~.c) to use the soundfonts in libpd without needing to include the unpacked .wav files.
 
-To use this framework in a LibPd project, call addToSearchPath() and add both folders in /source. 
+There is also a program for generating sinesum coefficients of different types of waves - this can be used with the sinesum array method in Pd for generating waveforms.

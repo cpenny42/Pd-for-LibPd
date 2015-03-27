@@ -1,0 +1,18 @@
+#N canvas 524 148 567 425 10;
+#X text 5 2 [dynamicpd] - simple interface for dynamic patching;
+#X text 484 2 pd for libpd;
+#X text 490 17 chris penny;
+#X obj 136 272 dynamicpd;
+#X msg 106 86 obj foo r input;
+#X msg 130 113 obj bar print DynamicPd;
+#X msg 151 141 connect foo bar;
+#X msg 183 169 send input This is a message!;
+#X msg 86 63 init;
+#X msg 195 191 view;
+#X text 223 291 More info TBD;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;

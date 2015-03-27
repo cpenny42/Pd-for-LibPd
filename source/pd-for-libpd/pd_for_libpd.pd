@@ -84,9 +84,6 @@ you can send messages to.;
 on a boolean statement.;
 #X obj -146 1597 cnv 15 15 15 empty empty empty 20 12 0 14 -258113
 -66577 0;
-#X text 405 1591 NOT VANILLA COMPATIBLE - ggate \, gswitch \, dollarg
-;
-#X text 465 1605 dollarg requires "dollarg.c";
 #X obj -164 906 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #X obj -164 1226 cnv 1 900 1 empty empty empty 20 12 0 14 -128992 -66577
@@ -376,9 +373,6 @@ or exponentially;
 #X text 494 2477 None (standalone);
 #X obj -124 2516 help_builder;
 #X text 45 2517 Easily format help information for a patch.;
-#X text 377 2511 for++ (in source/pd-extended) \, dollarg \, arg2method
-\, ladd3 \, lapp \, lset. NOT VANILLA COMPATIBLE - "dollarg.c" is needed.
-;
 #X obj -148 2517 cnv 15 15 15 empty empty empty 20 12 0 14 -258113
 -66577 0;
 #X obj -129 2557 cnv 15 15 15 empty empty empty 20 12 0 14 -258113
@@ -521,12 +515,8 @@ reset values;
 #X text 494 3237 None (standalone);
 #X obj -132 3279 loadmess foo bar;
 #X text 44 3278 Automatically send a message on patch load;
-#X text 403 3278 NOT VANILLA COMPATIBLE - dollarg needs "dollarg.c"
-;
 #X obj -131 3318 lprepend foo bar;
 #X text 27 3318 Prepend a list with another list \, symbol \, or float
-;
-#X text 403 3318 NOT VANILLA COMPATIBLE - dollarg needs "dollarg.c"
 ;
 #X obj -157 3279 cnv 15 15 15 empty empty empty 20 12 0 14 -258113
 -66577 0;
@@ -554,14 +544,10 @@ reset values;
 #X text 41 1718 Clone of the switch in MAX/MSP and Cyclone;
 #X text 27 3518 Prepend a list with another list \, symbol \, or float
 ;
-#X text 403 3518 NOT VANILLA COMPATIBLE - dollarg needs "dollarg.c"
-;
 #X obj -125 3519 cnv 15 15 15 empty empty empty 20 12 0 14 -258113
 -66577 0;
 #X obj -101 3518 lsplit;
 #X obj -104 2556 if != 5;
-#X text 407 2552 dollarg \, gswitch \, ggate. NOT VANILLA COMPATIBLE
-- "dollarg.c" is needed.;
 #X obj -108 176 adsr~;
 #X obj -125 416 autospectrum~;
 #X obj -108 3398 lqueue;
@@ -694,5 +680,16 @@ etc);
 #X text 9 290 Automatically read samples unpacked from a soundfont
 with import_sf.py;
 #X text 491 298 autosampler-voice~;
-#X connect 374 0 376 0;
-#X connect 479 0 480 0;
+#X text 405 1591 NOT VANILLA COMPATIBLE - ggate \, gswitch \, argv
+;
+#X text 465 1605 argv requires "argv.c";
+#X text 377 2511 for++ (in source/pd-extended) \, argv \, arg2method
+\, ladd3 \, lapp \, lset. NOT VANILLA COMPATIBLE - "argv.c" is needed.
+;
+#X text 377 2552 argv \, gswitch \, ggate. NOT VANILLA COMPATIBLE -
+"argv.c" is needed.;
+#X text 403 3278 NOT VANILLA COMPATIBLE - argv needs "argv.c";
+#X text 403 3318 NOT VANILLA COMPATIBLE - argv needs "argv.c";
+#X text 403 3518 NOT VANILLA COMPATIBLE - argv needs "argv.c";
+#X connect 369 0 371 0;
+#X connect 472 0 473 0;

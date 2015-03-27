@@ -1,0 +1,1 @@
+Externals compiled for Mac OS X 10.10.2 Yosemite
