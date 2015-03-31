@@ -85,7 +85,7 @@ void zerox_tilde_setup(void);
 
 void allsickles_setup(void)
 {
-    abs_tilde_setup();
+    //abs_tilde_setup();
     acos_tilde_setup();
     acosh_tilde_setup();
     allpass_tilde_setup();
@@ -106,7 +106,7 @@ void allsickles_setup(void)
     cartopol_tilde_setup();
     change_tilde_setup();
     click_tilde_setup();
-    Clip_tilde_setup();
+    //Clip_tilde_setup();
     comb_tilde_setup();
     cosh_tilde_setup();
     cosx_tilde_setup();
@@ -121,9 +121,9 @@ void allsickles_setup(void)
     framedelta_tilde_setup();
     index_tilde_setup();
     kink_tilde_setup();
-    Line_tilde_setup();
+    //Line_tilde_setup();
     linedrive_setup();
-    log_tilde_setup();
+    //log_tilde_setup();
     lookup_tilde_setup();
     lores_tilde_setup();
     matrix_tilde_setup();
@@ -141,7 +141,7 @@ void allsickles_setup(void)
     poke_tilde_setup();
     poltocar_tilde_setup();
     pong_tilde_setup();
-    pow_tilde_setup();
+    //pow_tilde_setup();
     rampsmooth_tilde_setup();
     rand_tilde_setup();
     record_tilde_setup();
@@ -152,7 +152,7 @@ void allsickles_setup(void)
     sinh_tilde_setup();
     sinx_tilde_setup();
     slide_tilde_setup();
-    Snapshot_tilde_setup();
+    //Snapshot_tilde_setup();
     spike_tilde_setup();
     svf_tilde_setup();
     tanh_tilde_setup();

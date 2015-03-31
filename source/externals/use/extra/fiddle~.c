@@ -90,30 +90,7 @@ static fts_symbol_t *dsp_symbol = 0;
 
 #endif /* FTS */
 
-#ifdef MAX26
-#define t_floatarg double
-#include "m_extern.h"
-#include "d_graph.h"
-#include "d_ugen.h"
-#endif /* MAX26 */
-
-#ifdef PD
 #include "m_pd.h"
-#endif /* PD */
-
-#ifdef MSP
-#define flog log
-#define fexp exp
-#define fsqrt sqrt
-#endif /* MSP */
-
-#ifdef MSP
-#define t_floatarg double
-#include "ext.h"
-#include "z_dsp.h"
-#include "fft_mayer.proto.h"
-
-#endif /* MSP */
 
 #include <math.h>
 

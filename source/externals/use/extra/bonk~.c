@@ -52,6 +52,7 @@ decay and other times in msec
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
+#include "m_pd.h"
 
 /* These pragmas are only used for MSVC, not MinGW or Cygwin <hans@at.or.at> */
 #ifdef _MSC_VER
@@ -181,30 +182,17 @@ typedef struct template
 typedef struct _insig
 {
     t_hist g_hist[MAXNFILTERS];    /* history for each filter */
-#ifdef PD
     t_outlet *g_outlet;         /* outlet for raw data */
-#endif
-#ifdef MSP
-    void *g_outlet;             /* outlet for raw data */
-#endif
     t_float *g_inbuf;           /* buffered input samples */
     t_float *g_invec;           /* new input samples */
 } t_insig;
 
 typedef struct _bonk
 {
-#ifdef PD
     t_object x_obj;
     t_outlet *x_cookedout;
     t_clock *x_clock;
     t_canvas *x_canvas;     /* ptr to current canvas --fbar */
-#endif /* PD */
-#ifdef MSP
-    t_pxobject x_obj;
-    void *obex;
-    void *x_cookedout;
-    void *x_clock;
-#endif /* MSP */
     /* parameters */
     int x_npoints;          /* number of points in input buffer */
     int x_period;           /* number of input samples between analyses */

@@ -9,18 +9,7 @@
     implement block ("-b") mode
 */
 
-#ifdef PD
 #include "m_pd.h"
-#endif
-#ifdef MSP
-#include "ext.h"
-#include "z_dsp.h"
-#include "ext_support.h"
-#include "ext_proto.h"
-#include "ext_obex.h"
-typedef double t_floatarg;
-#define t_resizebytes(a, b, c) t_resizebytes((char *)(a), (b), (c))
-#endif
 
 /* From here to the next "#ifdef PD" or "#ifdef Max" should be extractable
 and usable in other contexts.  The one external requirement is a real

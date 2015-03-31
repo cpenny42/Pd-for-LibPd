@@ -100,7 +100,6 @@ void argv_setup(void)
 {
     argv_class = class_new(gensym("argv"), (t_newmethod)argv_new,
                               (t_method)argv_free, sizeof(t_argv), 0, 0);
-    class_addcreator((t_newmethod)argv_new, gensym("$n"), 0);
     class_addbang(argv_class, (t_method)argv_bang);
     class_addfloat(argv_class, (t_method)argv_float);
 }

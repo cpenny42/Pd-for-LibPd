@@ -1,0 +1,99 @@
+#N canvas 551 67 817 552 10;
+#X obj 68 95 piano;
+#X msg 141 309 wave \$1;
+#X obj 141 286 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 392 286 vsl 30 150 0 127 0 1 empty empty Pitchbend 0 -9 0 10
+-59444 -262144 -1 7900 1;
+#X obj 480 416 nbx 5 14 -1e+37 1e+37 0 0 empty empty Range 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 545 442 print;
+#X obj 214 516 dac~;
+#X obj 554 298 loadbang;
+#X msg 554 327 \; pd dsp 1 \;;
+#X msg 392 442 pitchbend \$1;
+#X msg 480 441 range \$1;
+#X msg 278 414 flush;
+#X msg 68 310 note \$1 \$2;
+#N canvas 407 575 450 300 guiadsr 0;
+#X obj 104 102 hsl 150 15 2 127 0 1 empty empty Attack 65 8 0 10 -262144
+-1 -1 500 1;
+#X obj 104 117 hsl 150 15 3 127 0 1 empty empty Decay 68 8 0 10 -249661
+-1 -1 2200 1;
+#X obj 104 132 hsl 150 15 0 1 0 1 empty empty Sustain 62 8 0 10 -257983
+-1 -1 0 1;
+#X obj 104 147 hsl 150 15 3 127 0 1 empty empty Release 63 8 0 10 -228856
+-1 -1 0 1;
+#X obj 97 230 pack 0 0 0 0;
+#X obj 105 208 t b f;
+#X obj 150 210 t b f;
+#X obj 195 206 t b f;
+#X obj 98 270 outlet ADSR_list;
+#X obj 37 16 inlet;
+#X obj 93 72 loadbang;
+#X obj 42 36 route adsr attack decay sustain release on;
+#X obj 290 119 print GUI_ADSR_ERROR;
+#X obj 290 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 290 95 list prepend unknown command;
+#X obj 5 99 unpack 0 0 0 0;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 6 0 4 0;
+#X connect 6 1 4 2;
+#X connect 7 0 4 0;
+#X connect 7 1 4 3;
+#X connect 9 0 11 0;
+#X connect 10 0 0 0;
+#X connect 10 0 1 0;
+#X connect 10 0 2 0;
+#X connect 10 0 3 0;
+#X connect 11 0 4 0;
+#X connect 11 0 15 0;
+#X connect 11 1 0 0;
+#X connect 11 2 1 0;
+#X connect 11 3 2 0;
+#X connect 11 4 3 0;
+#X connect 11 6 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 15 0 0 0;
+#X connect 15 1 1 0;
+#X connect 15 2 2 0;
+#X connect 15 3 3 0;
+#X coords 0 -1 1 1 157 63 2 100 100;
+#X restore 216 285 pd guiadsr;
+#X msg 216 365 adsr \$1 \$2 \$3 \$4;
+#X obj 214 484 synth~;
+#X msg 84 442 play;
+#X obj 68 46 tgl 15 0 empty empty KEYBOARD_PLAYING 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 68 70 keys \$1;
+#X obj 54 6 loadbang;
+#X msg 54 26 0;
+#X text 193 44 <- toggle for musical typing;
+#X connect 0 0 12 0;
+#X connect 1 0 15 0;
+#X connect 2 0 1 0;
+#X connect 3 0 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 15 0;
+#X connect 7 0 8 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
+#X connect 15 1 6 1;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 18 0 0 0;
+#X connect 19 0 20 0;
+#X connect 20 0 17 0;

@@ -87,7 +87,7 @@ void allhammers_setup(void)
     Append_setup();
     Borax_setup();
     Bucket_setup();
-    Clip_setup();
+    //Clip_setup();
     Decode_setup();
     Histo_setup();
     MouseState_setup();

@@ -65,5 +65,4 @@ void accum_setup(void)
 		    gensym("ft2"), A_FLOAT, 0);
     class_addmethod(accum_class, (t_method)accum_set,
 		    gensym("set"), A_FLOAT, 0);
-    printf("fooot");
 }

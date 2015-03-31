@@ -3,7 +3,7 @@
 #X obj 176 112 ggate;
 #X obj 203 72 list length;
 #X obj 203 92 > 1;
-#X msg 297 189 NULL NULL \, 1 foo \,;
+#X msg 297 189 NULL NULL \,;
 #X obj 296 308 route x;
 #X obj 336 249 list split 1;
 #X obj 336 268 list prepend symbol;
@@ -13,7 +13,7 @@
 #X obj 436 90 t b b;
 #X msg 436 128 addcomma;
 #X obj 335 386 ladd3;
-#X msg 335 411 NULL NULL \, 1 foo \,;
+#X msg 335 411;
 #X msg 416 318 set;
 #X obj 296 350 list;
 #X obj 296 329 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -25,7 +25,7 @@
 #X obj 229 172 t b b;
 #X msg 256 193 set;
 #X obj 205 188 ladd3;
-#X msg 15 240 NULL NULL \, 1 foo \,;
+#X msg 15 240 NULL NULL \,;
 #X obj 99 279 list split 1;
 #X obj 44 281 f;
 #X obj 75 279 + 1;
@@ -41,7 +41,7 @@
 #X obj 82 430 f;
 #X obj 68 391 t b b;
 #X obj 82 452 sel 1;
-#X msg 171 383 NULL NULL \, 1 foo \,;
+#X msg 171 383 NULL NULL \,;
 #X obj 335 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 176 -21 inlet SET_&_GET;
@@ -69,7 +69,7 @@
 #X msg 634 53 1;
 #X obj 634 94 b;
 #X msg 634 113 list;
-#X msg 673 131 NULL NULL \, 1 foo \,;
+#X msg 673 131 NULL NULL \,;
 #X obj 540 19 spigot;
 #X obj 645 -3 t a a;
 #X obj 673 169 liter;
