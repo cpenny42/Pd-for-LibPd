@@ -10,6 +10,8 @@
 #import "PdExternals.h"
 
 extern void argv_setup(void);
+extern void soundfonts_setup(void);
+extern void tb_peakcomp_tilde_setup(void);
 extern void allhammers_setup(void);
 extern void allsickles_setup(void);
 
@@ -23,6 +25,8 @@ extern void allsickles_setup(void);
 +(void)setup {
     
     argv_setup();
+    soundfonts_setup();
+    tb_peakcomp_tilde_setup();
     allhammers_setup();
     allsickles_setup();
 }

@@ -1,0 +1,43 @@
+#N canvas 386 75 822 728 10;
+#X text 11 3 [soundfonts~] - polyphonic soundfont synth with amplitude
+;
+#X text 359 3 envelope;
+#X obj 40 136 piano;
+#X text 723 3 pd for libpd;
+#X text 74 44 This is a wrapper for [soundfonts] that gives you a polyphonic
+soundfont synth with an amplitude envelope.;
+#X text 75 82 Set the active soundfont with "set" - it needs the exact
+path to the soundfont you want to use.;
+#X text 450 44 Play a note by sending a key \, velocity pair;
+#X text 452 70 Set the adsr envelope with "adsr";
+#X obj 146 642 soundfonts~;
+#X obj 159 678 dac~;
+#X msg 112 321 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/LesPaul.SF2
+;
+#X msg 153 369 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/piano_1.sf2
+;
+#X obj 618 532 guiadsr;
+#X msg 617 620 adsr \$1 \$2 \$3 \$4;
+#X obj 598 12 pddp/dsp;
+#X text 499 328 <- replace with the path to your soundfonts;
+#X text 268 651 You will need to tweak [soundfonts~] to add filter
+envelopes or other features for individual voices.;
+#X msg 206 465 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/church_organ.sf2
+;
+#X msg 197 417 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/DCs_Mellotron_Flute.sf2
+;
+#X msg 205 517 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/beautiful_pad.sf2
+;
+#X msg 206 574 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/StomperSet.sf2
+;
+#X connect 2 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 8 0;
+#X connect 17 0 8 0;
+#X connect 18 0 8 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 0;

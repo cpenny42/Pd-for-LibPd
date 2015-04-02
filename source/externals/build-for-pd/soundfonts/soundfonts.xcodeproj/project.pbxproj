@@ -1,0 +1,1018 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA32A5CB1ACCE9E500FEC475 /* soundfonts.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A5CA1ACCE9E500FEC475 /* soundfonts.c */; };
+		FA32A8821ACCF25000FEC475 /* fluid_adriver.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7B21ACCF21300FEC475 /* fluid_adriver.c */; };
+		FA32A8831ACCF25000FEC475 /* fluid_adsr_env.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7B41ACCF21300FEC475 /* fluid_adsr_env.c */; };
+		FA32A8841ACCF25000FEC475 /* fluid_alsa.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7B61ACCF21300FEC475 /* fluid_alsa.c */; };
+		FA32A8851ACCF25000FEC475 /* fluid_aufile.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7B71ACCF21300FEC475 /* fluid_aufile.c */; };
+		FA32A8861ACCF25000FEC475 /* fluid_chan.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7B81ACCF21300FEC475 /* fluid_chan.c */; };
+		FA32A8871ACCF25000FEC475 /* fluid_chorus.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7BA1ACCF21300FEC475 /* fluid_chorus.c */; };
+		FA32A8881ACCF25000FEC475 /* fluid_cmd.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7BC1ACCF21300FEC475 /* fluid_cmd.c */; };
+		FA32A8891ACCF25000FEC475 /* fluid_conv.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7BE1ACCF21300FEC475 /* fluid_conv.c */; };
+		FA32A88A1ACCF25000FEC475 /* fluid_coreaudio.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C01ACCF21300FEC475 /* fluid_coreaudio.c */; };
+		FA32A88B1ACCF25000FEC475 /* fluid_coremidi.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C11ACCF21300FEC475 /* fluid_coremidi.c */; };
+		FA32A88C1ACCF25000FEC475 /* fluid_dart.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C21ACCF21300FEC475 /* fluid_dart.c */; };
+		FA32A88D1ACCF25000FEC475 /* fluid_defsfont.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C31ACCF21300FEC475 /* fluid_defsfont.c */; };
+		FA32A88E1ACCF25000FEC475 /* fluid_event_queue.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C71ACCF21300FEC475 /* fluid_event_queue.c */; };
+		FA32A88F1ACCF25000FEC475 /* fluid_event.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C51ACCF21300FEC475 /* fluid_event.c */; };
+		FA32A8901ACCF25000FEC475 /* fluid_filerenderer.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7C91ACCF21300FEC475 /* fluid_filerenderer.c */; };
+		FA32A8911ACCF25000FEC475 /* fluid_gen.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7CA1ACCF21300FEC475 /* fluid_gen.c */; };
+		FA32A8921ACCF25000FEC475 /* fluid_hash.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7CC1ACCF21300FEC475 /* fluid_hash.c */; };
+		FA32A8931ACCF25000FEC475 /* fluid_iir_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7CE1ACCF21300FEC475 /* fluid_iir_filter.c */; };
+		FA32A8941ACCF25000FEC475 /* fluid_ladspa.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7D01ACCF21300FEC475 /* fluid_ladspa.c */; };
+		FA32A8951ACCF25000FEC475 /* fluid_lfo.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7D21ACCF21300FEC475 /* fluid_lfo.c */; };
+		FA32A8961ACCF25000FEC475 /* fluid_list.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7D41ACCF21300FEC475 /* fluid_list.c */; };
+		FA32A8971ACCF25000FEC475 /* fluid_mdriver.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7D61ACCF21300FEC475 /* fluid_mdriver.c */; };
+		FA32A8981ACCF25000FEC475 /* fluid_midi_router.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7DA1ACCF21300FEC475 /* fluid_midi_router.c */; };
+		FA32A8991ACCF25000FEC475 /* fluid_midi.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7D81ACCF21300FEC475 /* fluid_midi.c */; };
+		FA32A89A1ACCF25000FEC475 /* fluid_midishare.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7DC1ACCF21300FEC475 /* fluid_midishare.c */; };
+		FA32A89B1ACCF25000FEC475 /* fluid_mod.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7DD1ACCF21300FEC475 /* fluid_mod.c */; };
+		FA32A89C1ACCF25000FEC475 /* fluid_oss.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7DF1ACCF21300FEC475 /* fluid_oss.c */; };
+		FA32A89D1ACCF25000FEC475 /* fluid_ramsfont.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7E11ACCF21300FEC475 /* fluid_ramsfont.c */; };
+		FA32A89E1ACCF25000FEC475 /* fluid_rev.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7E31ACCF21300FEC475 /* fluid_rev.c */; };
+		FA32A89F1ACCF25000FEC475 /* fluid_ringbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7E51ACCF21300FEC475 /* fluid_ringbuffer.c */; };
+		FA32A8A01ACCF25000FEC475 /* fluid_rtkit.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7E71ACCF21300FEC475 /* fluid_rtkit.c */; };
+		FA32A8A11ACCF25000FEC475 /* fluid_rvoice_dsp.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7EB1ACCF21300FEC475 /* fluid_rvoice_dsp.c */; };
+		FA32A8A21ACCF25000FEC475 /* fluid_rvoice_event.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7EC1ACCF21300FEC475 /* fluid_rvoice_event.c */; };
+		FA32A8A31ACCF25000FEC475 /* fluid_rvoice_handler.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7EE1ACCF21300FEC475 /* fluid_rvoice_handler.c */; };
+		FA32A8A41ACCF25000FEC475 /* fluid_rvoice_mixer.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7F01ACCF21300FEC475 /* fluid_rvoice_mixer.c */; };
+		FA32A8A51ACCF25000FEC475 /* fluid_rvoice.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7E91ACCF21300FEC475 /* fluid_rvoice.c */; };
+		FA32A8A61ACCF25000FEC475 /* fluid_seq.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7F21ACCF21300FEC475 /* fluid_seq.c */; };
+		FA32A8A71ACCF25000FEC475 /* fluid_seqbind.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7F31ACCF21300FEC475 /* fluid_seqbind.c */; };
+		FA32A8A81ACCF25000FEC475 /* fluid_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7F41ACCF21300FEC475 /* fluid_settings.c */; };
+		FA32A8A91ACCF25000FEC475 /* fluid_sndmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7F71ACCF21300FEC475 /* fluid_sndmgr.c */; };
+		FA32A8AA1ACCF25000FEC475 /* fluid_synth.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7F81ACCF21300FEC475 /* fluid_synth.c */; };
+		FA32A8AB1ACCF25000FEC475 /* fluid_sys.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7FA1ACCF21300FEC475 /* fluid_sys.c */; };
+		FA32A8AC1ACCF25000FEC475 /* fluid_tuning.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7FC1ACCF21300FEC475 /* fluid_tuning.c */; };
+		FA32A8AD1ACCF25000FEC475 /* fluid_voice.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A7FE1ACCF21300FEC475 /* fluid_voice.c */; };
+		FA32A8AE1ACCF25B00FEC475 /* asnprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8031ACCF21300FEC475 /* asnprintf.c */; };
+		FA32A8AF1ACCF25B00FEC475 /* printf-args.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8051ACCF21300FEC475 /* printf-args.c */; };
+		FA32A8B01ACCF25B00FEC475 /* printf-parse.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8071ACCF21300FEC475 /* printf-parse.c */; };
+		FA32A8B11ACCF25B00FEC475 /* printf.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8091ACCF21300FEC475 /* printf.c */; };
+		FA32A8B21ACCF25B00FEC475 /* vasnprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A80B1ACCF21300FEC475 /* vasnprintf.c */; };
+		FA32A8B31ACCF26300FEC475 /* localcharset.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A84D1ACCF21300FEC475 /* localcharset.c */; };
+		FA32A8B41ACCF27000FEC475 /* garray.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8501ACCF21300FEC475 /* garray.c */; };
+		FA32A8B51ACCF27000FEC475 /* gasyncqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8511ACCF21300FEC475 /* gasyncqueue.c */; };
+		FA32A8B61ACCF27000FEC475 /* gatomic.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8521ACCF21300FEC475 /* gatomic.c */; };
+		FA32A8B71ACCF27000FEC475 /* gbacktrace.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8531ACCF21300FEC475 /* gbacktrace.c */; };
+		FA32A8B81ACCF27000FEC475 /* gbytes.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8541ACCF21300FEC475 /* gbytes.c */; };
+		FA32A8B91ACCF27000FEC475 /* gcharset.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8551ACCF21300FEC475 /* gcharset.c */; };
+		FA32A8BA1ACCF27000FEC475 /* gconvert.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8561ACCF21300FEC475 /* gconvert.c */; };
+		FA32A8BB1ACCF27000FEC475 /* gdir.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8571ACCF21300FEC475 /* gdir.c */; };
+		FA32A8BC1ACCF27000FEC475 /* genviron.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8581ACCF21300FEC475 /* genviron.c */; };
+		FA32A8BD1ACCF27000FEC475 /* gerror.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8591ACCF21300FEC475 /* gerror.c */; };
+		FA32A8BE1ACCF27000FEC475 /* gfileutils.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A85A1ACCF21300FEC475 /* gfileutils.c */; };
+		FA32A8BF1ACCF27000FEC475 /* ggettext.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A85B1ACCF21300FEC475 /* ggettext.c */; };
+		FA32A8C01ACCF27000FEC475 /* ghash.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A85C1ACCF21300FEC475 /* ghash.c */; };
+		FA32A8C11ACCF27000FEC475 /* ghook.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A85D1ACCF21300FEC475 /* ghook.c */; };
+		FA32A8C21ACCF27000FEC475 /* giochannel.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A85E1ACCF21300FEC475 /* giochannel.c */; };
+		FA32A8C31ACCF27000FEC475 /* glib-init.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A85F1ACCF21300FEC475 /* glib-init.c */; };
+		FA32A8C41ACCF27000FEC475 /* glib-private.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8601ACCF21300FEC475 /* glib-private.c */; };
+		FA32A8C51ACCF27000FEC475 /* glib-unix.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8611ACCF21300FEC475 /* glib-unix.c */; };
+		FA32A8C61ACCF27000FEC475 /* glist.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8621ACCF21300FEC475 /* glist.c */; };
+		FA32A8C71ACCF27000FEC475 /* gmain.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8631ACCF21300FEC475 /* gmain.c */; };
+		FA32A8C81ACCF27000FEC475 /* gmem.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8641ACCF21300FEC475 /* gmem.c */; };
+		FA32A8C91ACCF27000FEC475 /* gmessages.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8651ACCF21300FEC475 /* gmessages.c */; };
+		FA32A8CA1ACCF27000FEC475 /* gnode.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8661ACCF21300FEC475 /* gnode.c */; };
+		FA32A8CB1ACCF27000FEC475 /* gpattern.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8671ACCF21300FEC475 /* gpattern.c */; };
+		FA32A8CC1ACCF27000FEC475 /* gpoll.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8681ACCF21300FEC475 /* gpoll.c */; };
+		FA32A8CD1ACCF27000FEC475 /* gprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8691ACCF21300FEC475 /* gprintf.c */; };
+		FA32A8CE1ACCF27000FEC475 /* gqsort.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A86A1ACCF21300FEC475 /* gqsort.c */; };
+		FA32A8CF1ACCF27000FEC475 /* gquark.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A86B1ACCF21300FEC475 /* gquark.c */; };
+		FA32A8D01ACCF27000FEC475 /* gqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A86C1ACCF21300FEC475 /* gqueue.c */; };
+		FA32A8D11ACCF27000FEC475 /* grand.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A86D1ACCF21300FEC475 /* grand.c */; };
+		FA32A8D21ACCF27000FEC475 /* gshell.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A86E1ACCF21300FEC475 /* gshell.c */; };
+		FA32A8D31ACCF27000FEC475 /* gslice.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A86F1ACCF21300FEC475 /* gslice.c */; };
+		FA32A8D41ACCF27000FEC475 /* gslist.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8701ACCF21300FEC475 /* gslist.c */; };
+		FA32A8D51ACCF27000FEC475 /* gspawn.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8711ACCF21300FEC475 /* gspawn.c */; };
+		FA32A8D61ACCF27000FEC475 /* gstdio.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8721ACCF21300FEC475 /* gstdio.c */; };
+		FA32A8D71ACCF27000FEC475 /* gstrfuncs.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8731ACCF21300FEC475 /* gstrfuncs.c */; };
+		FA32A8D81ACCF27000FEC475 /* gstring.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8741ACCF21300FEC475 /* gstring.c */; };
+		FA32A8D91ACCF27000FEC475 /* gstringchunk.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8751ACCF21300FEC475 /* gstringchunk.c */; };
+		FA32A8DA1ACCF27000FEC475 /* gtestutils.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8761ACCF21300FEC475 /* gtestutils.c */; };
+		FA32A8DB1ACCF27000FEC475 /* gthread-deprecated.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8771ACCF21300FEC475 /* gthread-deprecated.c */; };
+		FA32A8DC1ACCF27000FEC475 /* gthread-posix.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8781ACCF21300FEC475 /* gthread-posix.c */; };
+		FA32A8DD1ACCF27000FEC475 /* gthread.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8791ACCF21300FEC475 /* gthread.c */; };
+		FA32A8DE1ACCF27000FEC475 /* gthreadpool.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A87A1ACCF21300FEC475 /* gthreadpool.c */; };
+		FA32A8DF1ACCF27000FEC475 /* gtimer.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A87B1ACCF21300FEC475 /* gtimer.c */; };
+		FA32A8E01ACCF27000FEC475 /* gunicollate.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A87C1ACCF21300FEC475 /* gunicollate.c */; };
+		FA32A8E11ACCF27000FEC475 /* gunidecomp.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A87D1ACCF21300FEC475 /* gunidecomp.c */; };
+		FA32A8E21ACCF27000FEC475 /* guniprop.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A87E1ACCF21300FEC475 /* guniprop.c */; };
+		FA32A8E31ACCF27000FEC475 /* gutf8.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A87F1ACCF21300FEC475 /* gutf8.c */; };
+		FA32A8E41ACCF27000FEC475 /* gutils.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8801ACCF21300FEC475 /* gutils.c */; };
+		FA32A8E51ACCF27000FEC475 /* gwakeup.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8811ACCF21300FEC475 /* gwakeup.c */; };
+		FA32A8E71ACCF2DD00FEC475 /* gasyncqueueprivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FA32A8E61ACCF2DD00FEC475 /* gasyncqueueprivate.h */; };
+		FA32A8E91ACCF35100FEC475 /* gtrashstack.h in Headers */ = {isa = PBXBuildFile; fileRef = FA32A8E81ACCF35100FEC475 /* gtrashstack.h */; };
+		FA32A8EB1ACCF36100FEC475 /* gtrashstack.c in Sources */ = {isa = PBXBuildFile; fileRef = FA32A8EA1ACCF36100FEC475 /* gtrashstack.c */; };
+		FA32A8ED1ACCF39100FEC475 /* valgrind.h in Headers */ = {isa = PBXBuildFile; fileRef = FA32A8EC1ACCF39100FEC475 /* valgrind.h */; };
+		FA32A8EF1ACCF41200FEC475 /* gunichartables.h in Headers */ = {isa = PBXBuildFile; fileRef = FA32A8EE1ACCF41200FEC475 /* gunichartables.h */; };
+		FA32A8F11ACCF43A00FEC475 /* gmirroringtable.h in Headers */ = {isa = PBXBuildFile; fileRef = FA32A8F01ACCF43A00FEC475 /* gmirroringtable.h */; };
+		FA32A8F31ACCF47B00FEC475 /* gscripttable.h in Headers */ = {isa = PBXBuildFile; fileRef = FA32A8F21ACCF47B00FEC475 /* gscripttable.h */; };
+		FAC8CC171ACCE87E005D119E /* m_pd.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC8CC151ACCE87E005D119E /* m_pd.h */; };
+		FAE495421ACDC1D100023A31 /* gconstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE495411ACDC1D100023A31 /* gconstructor.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA32A5CA1ACCE9E500FEC475 /* soundfonts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = soundfonts.c; sourceTree = "<group>"; };
+		FA32A79E1ACCF21300FEC475 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		FA32A79F1ACCF21300FEC475 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		FA32A7A01ACCF21300FEC475 /* event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
+		FA32A7A11ACCF21300FEC475 /* gen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gen.h; sourceTree = "<group>"; };
+		FA32A7A21ACCF21300FEC475 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		FA32A7A31ACCF21300FEC475 /* midi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
+		FA32A7A41ACCF21300FEC475 /* misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
+		FA32A7A51ACCF21300FEC475 /* mod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mod.h; sourceTree = "<group>"; };
+		FA32A7A61ACCF21300FEC475 /* ramsfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ramsfont.h; sourceTree = "<group>"; };
+		FA32A7A71ACCF21300FEC475 /* seq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seq.h; sourceTree = "<group>"; };
+		FA32A7A81ACCF21300FEC475 /* seqbind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seqbind.h; sourceTree = "<group>"; };
+		FA32A7A91ACCF21300FEC475 /* settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = settings.h; sourceTree = "<group>"; };
+		FA32A7AA1ACCF21300FEC475 /* sfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sfont.h; sourceTree = "<group>"; };
+		FA32A7AB1ACCF21300FEC475 /* shell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shell.h; sourceTree = "<group>"; };
+		FA32A7AC1ACCF21300FEC475 /* synth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = synth.h; sourceTree = "<group>"; };
+		FA32A7AD1ACCF21300FEC475 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		FA32A7AE1ACCF21300FEC475 /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		FA32A7AF1ACCF21300FEC475 /* voice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = voice.h; sourceTree = "<group>"; };
+		FA32A7B01ACCF21300FEC475 /* fluidsynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluidsynth.h; sourceTree = "<group>"; };
+		FA32A7B21ACCF21300FEC475 /* fluid_adriver.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_adriver.c; sourceTree = "<group>"; };
+		FA32A7B31ACCF21300FEC475 /* fluid_adriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_adriver.h; sourceTree = "<group>"; };
+		FA32A7B41ACCF21300FEC475 /* fluid_adsr_env.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_adsr_env.c; sourceTree = "<group>"; };
+		FA32A7B51ACCF21300FEC475 /* fluid_adsr_env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_adsr_env.h; sourceTree = "<group>"; };
+		FA32A7B61ACCF21300FEC475 /* fluid_alsa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_alsa.c; sourceTree = "<group>"; };
+		FA32A7B71ACCF21300FEC475 /* fluid_aufile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_aufile.c; sourceTree = "<group>"; };
+		FA32A7B81ACCF21300FEC475 /* fluid_chan.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_chan.c; sourceTree = "<group>"; };
+		FA32A7B91ACCF21300FEC475 /* fluid_chan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_chan.h; sourceTree = "<group>"; };
+		FA32A7BA1ACCF21300FEC475 /* fluid_chorus.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_chorus.c; sourceTree = "<group>"; };
+		FA32A7BB1ACCF21300FEC475 /* fluid_chorus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_chorus.h; sourceTree = "<group>"; };
+		FA32A7BC1ACCF21300FEC475 /* fluid_cmd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_cmd.c; sourceTree = "<group>"; };
+		FA32A7BD1ACCF21300FEC475 /* fluid_cmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_cmd.h; sourceTree = "<group>"; };
+		FA32A7BE1ACCF21300FEC475 /* fluid_conv.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_conv.c; sourceTree = "<group>"; };
+		FA32A7BF1ACCF21300FEC475 /* fluid_conv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_conv.h; sourceTree = "<group>"; };
+		FA32A7C01ACCF21300FEC475 /* fluid_coreaudio.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_coreaudio.c; sourceTree = "<group>"; };
+		FA32A7C11ACCF21300FEC475 /* fluid_coremidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_coremidi.c; sourceTree = "<group>"; };
+		FA32A7C21ACCF21300FEC475 /* fluid_dart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_dart.c; sourceTree = "<group>"; };
+		FA32A7C31ACCF21300FEC475 /* fluid_defsfont.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_defsfont.c; sourceTree = "<group>"; };
+		FA32A7C41ACCF21300FEC475 /* fluid_defsfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_defsfont.h; sourceTree = "<group>"; };
+		FA32A7C51ACCF21300FEC475 /* fluid_event.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_event.c; sourceTree = "<group>"; };
+		FA32A7C61ACCF21300FEC475 /* fluid_event_priv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_event_priv.h; sourceTree = "<group>"; };
+		FA32A7C71ACCF21300FEC475 /* fluid_event_queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_event_queue.c; sourceTree = "<group>"; };
+		FA32A7C81ACCF21300FEC475 /* fluid_event_queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_event_queue.h; sourceTree = "<group>"; };
+		FA32A7C91ACCF21300FEC475 /* fluid_filerenderer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_filerenderer.c; sourceTree = "<group>"; };
+		FA32A7CA1ACCF21300FEC475 /* fluid_gen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_gen.c; sourceTree = "<group>"; };
+		FA32A7CB1ACCF21300FEC475 /* fluid_gen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_gen.h; sourceTree = "<group>"; };
+		FA32A7CC1ACCF21300FEC475 /* fluid_hash.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_hash.c; sourceTree = "<group>"; };
+		FA32A7CD1ACCF21300FEC475 /* fluid_hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_hash.h; sourceTree = "<group>"; };
+		FA32A7CE1ACCF21300FEC475 /* fluid_iir_filter.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_iir_filter.c; sourceTree = "<group>"; };
+		FA32A7CF1ACCF21300FEC475 /* fluid_iir_filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_iir_filter.h; sourceTree = "<group>"; };
+		FA32A7D01ACCF21300FEC475 /* fluid_ladspa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_ladspa.c; sourceTree = "<group>"; };
+		FA32A7D11ACCF21300FEC475 /* fluid_ladspa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_ladspa.h; sourceTree = "<group>"; };
+		FA32A7D21ACCF21300FEC475 /* fluid_lfo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_lfo.c; sourceTree = "<group>"; };
+		FA32A7D31ACCF21300FEC475 /* fluid_lfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_lfo.h; sourceTree = "<group>"; };
+		FA32A7D41ACCF21300FEC475 /* fluid_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_list.c; sourceTree = "<group>"; };
+		FA32A7D51ACCF21300FEC475 /* fluid_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_list.h; sourceTree = "<group>"; };
+		FA32A7D61ACCF21300FEC475 /* fluid_mdriver.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_mdriver.c; sourceTree = "<group>"; };
+		FA32A7D71ACCF21300FEC475 /* fluid_mdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_mdriver.h; sourceTree = "<group>"; };
+		FA32A7D81ACCF21300FEC475 /* fluid_midi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_midi.c; sourceTree = "<group>"; };
+		FA32A7D91ACCF21300FEC475 /* fluid_midi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_midi.h; sourceTree = "<group>"; };
+		FA32A7DA1ACCF21300FEC475 /* fluid_midi_router.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_midi_router.c; sourceTree = "<group>"; };
+		FA32A7DB1ACCF21300FEC475 /* fluid_midi_router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_midi_router.h; sourceTree = "<group>"; };
+		FA32A7DC1ACCF21300FEC475 /* fluid_midishare.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_midishare.c; sourceTree = "<group>"; };
+		FA32A7DD1ACCF21300FEC475 /* fluid_mod.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_mod.c; sourceTree = "<group>"; };
+		FA32A7DE1ACCF21300FEC475 /* fluid_mod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_mod.h; sourceTree = "<group>"; };
+		FA32A7DF1ACCF21300FEC475 /* fluid_oss.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_oss.c; sourceTree = "<group>"; };
+		FA32A7E01ACCF21300FEC475 /* fluid_phase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_phase.h; sourceTree = "<group>"; };
+		FA32A7E11ACCF21300FEC475 /* fluid_ramsfont.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_ramsfont.c; sourceTree = "<group>"; };
+		FA32A7E21ACCF21300FEC475 /* fluid_ramsfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_ramsfont.h; sourceTree = "<group>"; };
+		FA32A7E31ACCF21300FEC475 /* fluid_rev.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rev.c; sourceTree = "<group>"; };
+		FA32A7E41ACCF21300FEC475 /* fluid_rev.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_rev.h; sourceTree = "<group>"; };
+		FA32A7E51ACCF21300FEC475 /* fluid_ringbuffer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_ringbuffer.c; sourceTree = "<group>"; };
+		FA32A7E61ACCF21300FEC475 /* fluid_ringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_ringbuffer.h; sourceTree = "<group>"; };
+		FA32A7E71ACCF21300FEC475 /* fluid_rtkit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rtkit.c; sourceTree = "<group>"; };
+		FA32A7E81ACCF21300FEC475 /* fluid_rtkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_rtkit.h; sourceTree = "<group>"; };
+		FA32A7E91ACCF21300FEC475 /* fluid_rvoice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rvoice.c; sourceTree = "<group>"; };
+		FA32A7EA1ACCF21300FEC475 /* fluid_rvoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_rvoice.h; sourceTree = "<group>"; };
+		FA32A7EB1ACCF21300FEC475 /* fluid_rvoice_dsp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rvoice_dsp.c; sourceTree = "<group>"; };
+		FA32A7EC1ACCF21300FEC475 /* fluid_rvoice_event.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rvoice_event.c; sourceTree = "<group>"; };
+		FA32A7ED1ACCF21300FEC475 /* fluid_rvoice_event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_rvoice_event.h; sourceTree = "<group>"; };
+		FA32A7EE1ACCF21300FEC475 /* fluid_rvoice_handler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rvoice_handler.c; sourceTree = "<group>"; };
+		FA32A7EF1ACCF21300FEC475 /* fluid_rvoice_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_rvoice_handler.h; sourceTree = "<group>"; };
+		FA32A7F01ACCF21300FEC475 /* fluid_rvoice_mixer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_rvoice_mixer.c; sourceTree = "<group>"; };
+		FA32A7F11ACCF21300FEC475 /* fluid_rvoice_mixer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_rvoice_mixer.h; sourceTree = "<group>"; };
+		FA32A7F21ACCF21300FEC475 /* fluid_seq.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_seq.c; sourceTree = "<group>"; };
+		FA32A7F31ACCF21300FEC475 /* fluid_seqbind.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_seqbind.c; sourceTree = "<group>"; };
+		FA32A7F41ACCF21300FEC475 /* fluid_settings.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_settings.c; sourceTree = "<group>"; };
+		FA32A7F51ACCF21300FEC475 /* fluid_settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_settings.h; sourceTree = "<group>"; };
+		FA32A7F61ACCF21300FEC475 /* fluid_sfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_sfont.h; sourceTree = "<group>"; };
+		FA32A7F71ACCF21300FEC475 /* fluid_sndmgr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_sndmgr.c; sourceTree = "<group>"; };
+		FA32A7F81ACCF21300FEC475 /* fluid_synth.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_synth.c; sourceTree = "<group>"; };
+		FA32A7F91ACCF21300FEC475 /* fluid_synth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_synth.h; sourceTree = "<group>"; };
+		FA32A7FA1ACCF21300FEC475 /* fluid_sys.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_sys.c; sourceTree = "<group>"; };
+		FA32A7FB1ACCF21300FEC475 /* fluid_sys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_sys.h; sourceTree = "<group>"; };
+		FA32A7FC1ACCF21300FEC475 /* fluid_tuning.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_tuning.c; sourceTree = "<group>"; };
+		FA32A7FD1ACCF21300FEC475 /* fluid_tuning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_tuning.h; sourceTree = "<group>"; };
+		FA32A7FE1ACCF21300FEC475 /* fluid_voice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fluid_voice.c; sourceTree = "<group>"; };
+		FA32A7FF1ACCF21300FEC475 /* fluid_voice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluid_voice.h; sourceTree = "<group>"; };
+		FA32A8001ACCF21300FEC475 /* fluidsynth_priv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fluidsynth_priv.h; sourceTree = "<group>"; };
+		FA32A8031ACCF21300FEC475 /* asnprintf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asnprintf.c; sourceTree = "<group>"; };
+		FA32A8041ACCF21300FEC475 /* g-gnulib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "g-gnulib.h"; sourceTree = "<group>"; };
+		FA32A8051ACCF21300FEC475 /* printf-args.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "printf-args.c"; sourceTree = "<group>"; };
+		FA32A8061ACCF21300FEC475 /* printf-args.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "printf-args.h"; sourceTree = "<group>"; };
+		FA32A8071ACCF21300FEC475 /* printf-parse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "printf-parse.c"; sourceTree = "<group>"; };
+		FA32A8081ACCF21300FEC475 /* printf-parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "printf-parse.h"; sourceTree = "<group>"; };
+		FA32A8091ACCF21300FEC475 /* printf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = printf.c; sourceTree = "<group>"; };
+		FA32A80A1ACCF21300FEC475 /* printf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = printf.h; sourceTree = "<group>"; };
+		FA32A80B1ACCF21300FEC475 /* vasnprintf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vasnprintf.c; sourceTree = "<group>"; };
+		FA32A80C1ACCF21300FEC475 /* vasnprintf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vasnprintf.h; sourceTree = "<group>"; };
+		FA32A80E1ACCF21300FEC475 /* galloca.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = galloca.h; sourceTree = "<group>"; };
+		FA32A80F1ACCF21300FEC475 /* garray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = garray.h; sourceTree = "<group>"; };
+		FA32A8101ACCF21300FEC475 /* gasyncqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gasyncqueue.h; sourceTree = "<group>"; };
+		FA32A8111ACCF21300FEC475 /* gatomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gatomic.h; sourceTree = "<group>"; };
+		FA32A8121ACCF21300FEC475 /* gbacktrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gbacktrace.h; sourceTree = "<group>"; };
+		FA32A8131ACCF21300FEC475 /* gbytes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gbytes.h; sourceTree = "<group>"; };
+		FA32A8141ACCF21300FEC475 /* gcharset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcharset.h; sourceTree = "<group>"; };
+		FA32A8151ACCF21300FEC475 /* gcharsetprivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcharsetprivate.h; sourceTree = "<group>"; };
+		FA32A8161ACCF21300FEC475 /* gconvert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gconvert.h; sourceTree = "<group>"; };
+		FA32A8171ACCF21300FEC475 /* gdir.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gdir.h; sourceTree = "<group>"; };
+		FA32A8181ACCF21300FEC475 /* genviron.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genviron.h; sourceTree = "<group>"; };
+		FA32A8191ACCF21300FEC475 /* gerror.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gerror.h; sourceTree = "<group>"; };
+		FA32A81A1ACCF21300FEC475 /* gfileutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gfileutils.h; sourceTree = "<group>"; };
+		FA32A81B1ACCF21300FEC475 /* ggettext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ggettext.h; sourceTree = "<group>"; };
+		FA32A81C1ACCF21300FEC475 /* ghash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ghash.h; sourceTree = "<group>"; };
+		FA32A81D1ACCF21300FEC475 /* ghook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ghook.h; sourceTree = "<group>"; };
+		FA32A81E1ACCF21300FEC475 /* giochannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = giochannel.h; sourceTree = "<group>"; };
+		FA32A81F1ACCF21300FEC475 /* glib-init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-init.h"; sourceTree = "<group>"; };
+		FA32A8201ACCF21300FEC475 /* glib-private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-private.h"; sourceTree = "<group>"; };
+		FA32A8211ACCF21300FEC475 /* glib-unix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-unix.h"; sourceTree = "<group>"; };
+		FA32A8221ACCF21300FEC475 /* glib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glib.h; sourceTree = "<group>"; };
+		FA32A8231ACCF21300FEC475 /* glib_trace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glib_trace.h; sourceTree = "<group>"; };
+		FA32A8241ACCF21300FEC475 /* glibconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glibconfig.h; sourceTree = "<group>"; };
+		FA32A8251ACCF21300FEC475 /* glibintl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glibintl.h; sourceTree = "<group>"; };
+		FA32A8261ACCF21300FEC475 /* glist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glist.h; sourceTree = "<group>"; };
+		FA32A8271ACCF21300FEC475 /* gmacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmacros.h; sourceTree = "<group>"; };
+		FA32A8281ACCF21300FEC475 /* gmain-internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gmain-internal.h"; sourceTree = "<group>"; };
+		FA32A8291ACCF21300FEC475 /* gmain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmain.h; sourceTree = "<group>"; };
+		FA32A82A1ACCF21300FEC475 /* gmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmem.h; sourceTree = "<group>"; };
+		FA32A82B1ACCF21300FEC475 /* gmessages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmessages.h; sourceTree = "<group>"; };
+		FA32A82C1ACCF21300FEC475 /* gnode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gnode.h; sourceTree = "<group>"; };
+		FA32A82D1ACCF21300FEC475 /* gpattern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpattern.h; sourceTree = "<group>"; };
+		FA32A82E1ACCF21300FEC475 /* gpoll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gpoll.h; sourceTree = "<group>"; };
+		FA32A82F1ACCF21300FEC475 /* gprintf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gprintf.h; sourceTree = "<group>"; };
+		FA32A8301ACCF21300FEC475 /* gprintfint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gprintfint.h; sourceTree = "<group>"; };
+		FA32A8311ACCF21300FEC475 /* gqsort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gqsort.h; sourceTree = "<group>"; };
+		FA32A8321ACCF21300FEC475 /* gquark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gquark.h; sourceTree = "<group>"; };
+		FA32A8331ACCF21300FEC475 /* gqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gqueue.h; sourceTree = "<group>"; };
+		FA32A8341ACCF21300FEC475 /* grand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grand.h; sourceTree = "<group>"; };
+		FA32A8351ACCF21300FEC475 /* gshell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gshell.h; sourceTree = "<group>"; };
+		FA32A8361ACCF21300FEC475 /* gslice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gslice.h; sourceTree = "<group>"; };
+		FA32A8371ACCF21300FEC475 /* gslist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gslist.h; sourceTree = "<group>"; };
+		FA32A8381ACCF21300FEC475 /* gspawn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gspawn.h; sourceTree = "<group>"; };
+		FA32A8391ACCF21300FEC475 /* gstdio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gstdio.h; sourceTree = "<group>"; };
+		FA32A83A1ACCF21300FEC475 /* gstrfuncs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gstrfuncs.h; sourceTree = "<group>"; };
+		FA32A83B1ACCF21300FEC475 /* gstring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gstring.h; sourceTree = "<group>"; };
+		FA32A83C1ACCF21300FEC475 /* gstringchunk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gstringchunk.h; sourceTree = "<group>"; };
+		FA32A83D1ACCF21300FEC475 /* gtestutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gtestutils.h; sourceTree = "<group>"; };
+		FA32A83E1ACCF21300FEC475 /* gthread-depreciated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gthread-depreciated.h"; sourceTree = "<group>"; };
+		FA32A83F1ACCF21300FEC475 /* gthread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gthread.h; sourceTree = "<group>"; };
+		FA32A8401ACCF21300FEC475 /* gthreadpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gthreadpool.h; sourceTree = "<group>"; };
+		FA32A8411ACCF21300FEC475 /* gthreadprivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gthreadprivate.h; sourceTree = "<group>"; };
+		FA32A8421ACCF21300FEC475 /* gtimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gtimer.h; sourceTree = "<group>"; };
+		FA32A8431ACCF21300FEC475 /* gtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gtypes.h; sourceTree = "<group>"; };
+		FA32A8441ACCF21300FEC475 /* gunicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gunicode.h; sourceTree = "<group>"; };
+		FA32A8451ACCF21300FEC475 /* gunicodeprivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gunicodeprivate.h; sourceTree = "<group>"; };
+		FA32A8461ACCF21300FEC475 /* gunicomp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gunicomp.h; sourceTree = "<group>"; };
+		FA32A8471ACCF21300FEC475 /* gunidecomp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gunidecomp.h; sourceTree = "<group>"; };
+		FA32A8481ACCF21300FEC475 /* gutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gutils.h; sourceTree = "<group>"; };
+		FA32A8491ACCF21300FEC475 /* gversionmacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gversionmacros.h; sourceTree = "<group>"; };
+		FA32A84A1ACCF21300FEC475 /* gwakeup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gwakeup.h; sourceTree = "<group>"; };
+		FA32A84C1ACCF21300FEC475 /* libcharset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libcharset.h; sourceTree = "<group>"; };
+		FA32A84D1ACCF21300FEC475 /* localcharset.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = localcharset.c; sourceTree = "<group>"; };
+		FA32A84E1ACCF21300FEC475 /* localcharset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = localcharset.h; sourceTree = "<group>"; };
+		FA32A8501ACCF21300FEC475 /* garray.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = garray.c; sourceTree = "<group>"; };
+		FA32A8511ACCF21300FEC475 /* gasyncqueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gasyncqueue.c; sourceTree = "<group>"; };
+		FA32A8521ACCF21300FEC475 /* gatomic.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gatomic.c; sourceTree = "<group>"; };
+		FA32A8531ACCF21300FEC475 /* gbacktrace.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gbacktrace.c; sourceTree = "<group>"; };
+		FA32A8541ACCF21300FEC475 /* gbytes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gbytes.c; sourceTree = "<group>"; };
+		FA32A8551ACCF21300FEC475 /* gcharset.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gcharset.c; sourceTree = "<group>"; };
+		FA32A8561ACCF21300FEC475 /* gconvert.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gconvert.c; sourceTree = "<group>"; };
+		FA32A8571ACCF21300FEC475 /* gdir.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gdir.c; sourceTree = "<group>"; };
+		FA32A8581ACCF21300FEC475 /* genviron.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = genviron.c; sourceTree = "<group>"; };
+		FA32A8591ACCF21300FEC475 /* gerror.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gerror.c; sourceTree = "<group>"; };
+		FA32A85A1ACCF21300FEC475 /* gfileutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gfileutils.c; sourceTree = "<group>"; };
+		FA32A85B1ACCF21300FEC475 /* ggettext.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ggettext.c; sourceTree = "<group>"; };
+		FA32A85C1ACCF21300FEC475 /* ghash.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ghash.c; sourceTree = "<group>"; };
+		FA32A85D1ACCF21300FEC475 /* ghook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ghook.c; sourceTree = "<group>"; };
+		FA32A85E1ACCF21300FEC475 /* giochannel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = giochannel.c; sourceTree = "<group>"; };
+		FA32A85F1ACCF21300FEC475 /* glib-init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "glib-init.c"; sourceTree = "<group>"; };
+		FA32A8601ACCF21300FEC475 /* glib-private.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "glib-private.c"; sourceTree = "<group>"; };
+		FA32A8611ACCF21300FEC475 /* glib-unix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "glib-unix.c"; sourceTree = "<group>"; };
+		FA32A8621ACCF21300FEC475 /* glist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = glist.c; sourceTree = "<group>"; };
+		FA32A8631ACCF21300FEC475 /* gmain.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gmain.c; sourceTree = "<group>"; };
+		FA32A8641ACCF21300FEC475 /* gmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gmem.c; sourceTree = "<group>"; };
+		FA32A8651ACCF21300FEC475 /* gmessages.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gmessages.c; sourceTree = "<group>"; };
+		FA32A8661ACCF21300FEC475 /* gnode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gnode.c; sourceTree = "<group>"; };
+		FA32A8671ACCF21300FEC475 /* gpattern.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gpattern.c; sourceTree = "<group>"; };
+		FA32A8681ACCF21300FEC475 /* gpoll.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gpoll.c; sourceTree = "<group>"; };
+		FA32A8691ACCF21300FEC475 /* gprintf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gprintf.c; sourceTree = "<group>"; };
+		FA32A86A1ACCF21300FEC475 /* gqsort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gqsort.c; sourceTree = "<group>"; };
+		FA32A86B1ACCF21300FEC475 /* gquark.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gquark.c; sourceTree = "<group>"; };
+		FA32A86C1ACCF21300FEC475 /* gqueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gqueue.c; sourceTree = "<group>"; };
+		FA32A86D1ACCF21300FEC475 /* grand.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grand.c; sourceTree = "<group>"; };
+		FA32A86E1ACCF21300FEC475 /* gshell.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gshell.c; sourceTree = "<group>"; };
+		FA32A86F1ACCF21300FEC475 /* gslice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gslice.c; sourceTree = "<group>"; };
+		FA32A8701ACCF21300FEC475 /* gslist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gslist.c; sourceTree = "<group>"; };
+		FA32A8711ACCF21300FEC475 /* gspawn.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gspawn.c; sourceTree = "<group>"; };
+		FA32A8721ACCF21300FEC475 /* gstdio.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gstdio.c; sourceTree = "<group>"; };
+		FA32A8731ACCF21300FEC475 /* gstrfuncs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gstrfuncs.c; sourceTree = "<group>"; };
+		FA32A8741ACCF21300FEC475 /* gstring.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gstring.c; sourceTree = "<group>"; };
+		FA32A8751ACCF21300FEC475 /* gstringchunk.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gstringchunk.c; sourceTree = "<group>"; };
+		FA32A8761ACCF21300FEC475 /* gtestutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gtestutils.c; sourceTree = "<group>"; };
+		FA32A8771ACCF21300FEC475 /* gthread-deprecated.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "gthread-deprecated.c"; sourceTree = "<group>"; };
+		FA32A8781ACCF21300FEC475 /* gthread-posix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "gthread-posix.c"; sourceTree = "<group>"; };
+		FA32A8791ACCF21300FEC475 /* gthread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gthread.c; sourceTree = "<group>"; };
+		FA32A87A1ACCF21300FEC475 /* gthreadpool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gthreadpool.c; sourceTree = "<group>"; };
+		FA32A87B1ACCF21300FEC475 /* gtimer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gtimer.c; sourceTree = "<group>"; };
+		FA32A87C1ACCF21300FEC475 /* gunicollate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gunicollate.c; sourceTree = "<group>"; };
+		FA32A87D1ACCF21300FEC475 /* gunidecomp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gunidecomp.c; sourceTree = "<group>"; };
+		FA32A87E1ACCF21300FEC475 /* guniprop.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = guniprop.c; sourceTree = "<group>"; };
+		FA32A87F1ACCF21300FEC475 /* gutf8.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gutf8.c; sourceTree = "<group>"; };
+		FA32A8801ACCF21300FEC475 /* gutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gutils.c; sourceTree = "<group>"; };
+		FA32A8811ACCF21300FEC475 /* gwakeup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gwakeup.c; sourceTree = "<group>"; };
+		FA32A8E61ACCF2DD00FEC475 /* gasyncqueueprivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gasyncqueueprivate.h; sourceTree = "<group>"; };
+		FA32A8E81ACCF35100FEC475 /* gtrashstack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gtrashstack.h; sourceTree = "<group>"; };
+		FA32A8EA1ACCF36100FEC475 /* gtrashstack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gtrashstack.c; sourceTree = "<group>"; };
+		FA32A8EC1ACCF39100FEC475 /* valgrind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valgrind.h; sourceTree = "<group>"; };
+		FA32A8EE1ACCF41200FEC475 /* gunichartables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gunichartables.h; sourceTree = "<group>"; };
+		FA32A8F01ACCF43A00FEC475 /* gmirroringtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmirroringtable.h; sourceTree = "<group>"; };
+		FA32A8F21ACCF47B00FEC475 /* gscripttable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gscripttable.h; sourceTree = "<group>"; };
+		FAC8CC0D1ACCE83D005D119E /* soundfonts.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = soundfonts.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC8CC151ACCE87E005D119E /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
+		FAE495411ACDC1D100023A31 /* gconstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gconstructor.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAC8CC0A1ACCE83D005D119E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA32A7991ACCF21300FEC475 /* fluidsynth */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A79A1ACCF21300FEC475 /* fluidsynth */,
+				FA32A8011ACCF21300FEC475 /* glib */,
+			);
+			path = fluidsynth;
+			sourceTree = "<group>";
+		};
+		FA32A79A1ACCF21300FEC475 /* fluidsynth */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A79B1ACCF21300FEC475 /* fluidsynth */,
+			);
+			path = fluidsynth;
+			sourceTree = "<group>";
+		};
+		FA32A79B1ACCF21300FEC475 /* fluidsynth */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A79C1ACCF21300FEC475 /* include */,
+				FA32A7B11ACCF21300FEC475 /* src */,
+			);
+			path = fluidsynth;
+			sourceTree = "<group>";
+		};
+		FA32A79C1ACCF21300FEC475 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A79D1ACCF21300FEC475 /* fluidsynth */,
+				FA32A7B01ACCF21300FEC475 /* fluidsynth.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		FA32A79D1ACCF21300FEC475 /* fluidsynth */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A79E1ACCF21300FEC475 /* audio.h */,
+				FA32A79F1ACCF21300FEC475 /* config.h */,
+				FA32A7A01ACCF21300FEC475 /* event.h */,
+				FA32A7A11ACCF21300FEC475 /* gen.h */,
+				FA32A7A21ACCF21300FEC475 /* log.h */,
+				FA32A7A31ACCF21300FEC475 /* midi.h */,
+				FA32A7A41ACCF21300FEC475 /* misc.h */,
+				FA32A7A51ACCF21300FEC475 /* mod.h */,
+				FA32A7A61ACCF21300FEC475 /* ramsfont.h */,
+				FA32A7A71ACCF21300FEC475 /* seq.h */,
+				FA32A7A81ACCF21300FEC475 /* seqbind.h */,
+				FA32A7A91ACCF21300FEC475 /* settings.h */,
+				FA32A7AA1ACCF21300FEC475 /* sfont.h */,
+				FA32A7AB1ACCF21300FEC475 /* shell.h */,
+				FA32A7AC1ACCF21300FEC475 /* synth.h */,
+				FA32A7AD1ACCF21300FEC475 /* types.h */,
+				FA32A7AE1ACCF21300FEC475 /* version.h */,
+				FA32A7AF1ACCF21300FEC475 /* voice.h */,
+			);
+			path = fluidsynth;
+			sourceTree = "<group>";
+		};
+		FA32A7B11ACCF21300FEC475 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A7B21ACCF21300FEC475 /* fluid_adriver.c */,
+				FA32A7B41ACCF21300FEC475 /* fluid_adsr_env.c */,
+				FA32A7B61ACCF21300FEC475 /* fluid_alsa.c */,
+				FA32A7B71ACCF21300FEC475 /* fluid_aufile.c */,
+				FA32A7B81ACCF21300FEC475 /* fluid_chan.c */,
+				FA32A7BA1ACCF21300FEC475 /* fluid_chorus.c */,
+				FA32A7BC1ACCF21300FEC475 /* fluid_cmd.c */,
+				FA32A7BE1ACCF21300FEC475 /* fluid_conv.c */,
+				FA32A7C01ACCF21300FEC475 /* fluid_coreaudio.c */,
+				FA32A7C11ACCF21300FEC475 /* fluid_coremidi.c */,
+				FA32A7C21ACCF21300FEC475 /* fluid_dart.c */,
+				FA32A7C31ACCF21300FEC475 /* fluid_defsfont.c */,
+				FA32A7C71ACCF21300FEC475 /* fluid_event_queue.c */,
+				FA32A7C51ACCF21300FEC475 /* fluid_event.c */,
+				FA32A7C91ACCF21300FEC475 /* fluid_filerenderer.c */,
+				FA32A7CA1ACCF21300FEC475 /* fluid_gen.c */,
+				FA32A7CC1ACCF21300FEC475 /* fluid_hash.c */,
+				FA32A7CE1ACCF21300FEC475 /* fluid_iir_filter.c */,
+				FA32A7D01ACCF21300FEC475 /* fluid_ladspa.c */,
+				FA32A7D21ACCF21300FEC475 /* fluid_lfo.c */,
+				FA32A7D41ACCF21300FEC475 /* fluid_list.c */,
+				FA32A7D61ACCF21300FEC475 /* fluid_mdriver.c */,
+				FA32A7DA1ACCF21300FEC475 /* fluid_midi_router.c */,
+				FA32A7D81ACCF21300FEC475 /* fluid_midi.c */,
+				FA32A7DC1ACCF21300FEC475 /* fluid_midishare.c */,
+				FA32A7DD1ACCF21300FEC475 /* fluid_mod.c */,
+				FA32A7DF1ACCF21300FEC475 /* fluid_oss.c */,
+				FA32A7E11ACCF21300FEC475 /* fluid_ramsfont.c */,
+				FA32A7E31ACCF21300FEC475 /* fluid_rev.c */,
+				FA32A7E51ACCF21300FEC475 /* fluid_ringbuffer.c */,
+				FA32A7E71ACCF21300FEC475 /* fluid_rtkit.c */,
+				FA32A7EB1ACCF21300FEC475 /* fluid_rvoice_dsp.c */,
+				FA32A7EC1ACCF21300FEC475 /* fluid_rvoice_event.c */,
+				FA32A7EE1ACCF21300FEC475 /* fluid_rvoice_handler.c */,
+				FA32A7F01ACCF21300FEC475 /* fluid_rvoice_mixer.c */,
+				FA32A7E91ACCF21300FEC475 /* fluid_rvoice.c */,
+				FA32A7F21ACCF21300FEC475 /* fluid_seq.c */,
+				FA32A7F31ACCF21300FEC475 /* fluid_seqbind.c */,
+				FA32A7F41ACCF21300FEC475 /* fluid_settings.c */,
+				FA32A7F71ACCF21300FEC475 /* fluid_sndmgr.c */,
+				FA32A7F81ACCF21300FEC475 /* fluid_synth.c */,
+				FA32A7FA1ACCF21300FEC475 /* fluid_sys.c */,
+				FA32A7FC1ACCF21300FEC475 /* fluid_tuning.c */,
+				FA32A7FE1ACCF21300FEC475 /* fluid_voice.c */,
+				FA32A7B31ACCF21300FEC475 /* fluid_adriver.h */,
+				FA32A7B51ACCF21300FEC475 /* fluid_adsr_env.h */,
+				FA32A7B91ACCF21300FEC475 /* fluid_chan.h */,
+				FA32A7BB1ACCF21300FEC475 /* fluid_chorus.h */,
+				FA32A7BD1ACCF21300FEC475 /* fluid_cmd.h */,
+				FA32A7BF1ACCF21300FEC475 /* fluid_conv.h */,
+				FA32A7C41ACCF21300FEC475 /* fluid_defsfont.h */,
+				FA32A7C61ACCF21300FEC475 /* fluid_event_priv.h */,
+				FA32A7C81ACCF21300FEC475 /* fluid_event_queue.h */,
+				FA32A7CB1ACCF21300FEC475 /* fluid_gen.h */,
+				FA32A7CD1ACCF21300FEC475 /* fluid_hash.h */,
+				FA32A7CF1ACCF21300FEC475 /* fluid_iir_filter.h */,
+				FA32A7D11ACCF21300FEC475 /* fluid_ladspa.h */,
+				FA32A7D31ACCF21300FEC475 /* fluid_lfo.h */,
+				FA32A7D51ACCF21300FEC475 /* fluid_list.h */,
+				FA32A7D71ACCF21300FEC475 /* fluid_mdriver.h */,
+				FA32A7DB1ACCF21300FEC475 /* fluid_midi_router.h */,
+				FA32A7D91ACCF21300FEC475 /* fluid_midi.h */,
+				FA32A7DE1ACCF21300FEC475 /* fluid_mod.h */,
+				FA32A7E01ACCF21300FEC475 /* fluid_phase.h */,
+				FA32A7E21ACCF21300FEC475 /* fluid_ramsfont.h */,
+				FA32A7E41ACCF21300FEC475 /* fluid_rev.h */,
+				FA32A7E61ACCF21300FEC475 /* fluid_ringbuffer.h */,
+				FA32A7E81ACCF21300FEC475 /* fluid_rtkit.h */,
+				FA32A7ED1ACCF21300FEC475 /* fluid_rvoice_event.h */,
+				FA32A7EF1ACCF21300FEC475 /* fluid_rvoice_handler.h */,
+				FA32A7F11ACCF21300FEC475 /* fluid_rvoice_mixer.h */,
+				FA32A7EA1ACCF21300FEC475 /* fluid_rvoice.h */,
+				FA32A7F51ACCF21300FEC475 /* fluid_settings.h */,
+				FA32A7F61ACCF21300FEC475 /* fluid_sfont.h */,
+				FA32A7F91ACCF21300FEC475 /* fluid_synth.h */,
+				FA32A7FB1ACCF21300FEC475 /* fluid_sys.h */,
+				FA32A7FD1ACCF21300FEC475 /* fluid_tuning.h */,
+				FA32A7FF1ACCF21300FEC475 /* fluid_voice.h */,
+				FA32A8001ACCF21300FEC475 /* fluidsynth_priv.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FA32A8011ACCF21300FEC475 /* glib */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A8021ACCF21300FEC475 /* gnulib */,
+				FA32A80D1ACCF21300FEC475 /* include */,
+				FA32A84B1ACCF21300FEC475 /* libcharset */,
+				FA32A84F1ACCF21300FEC475 /* src */,
+			);
+			path = glib;
+			sourceTree = "<group>";
+		};
+		FA32A8021ACCF21300FEC475 /* gnulib */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A8031ACCF21300FEC475 /* asnprintf.c */,
+				FA32A8051ACCF21300FEC475 /* printf-args.c */,
+				FA32A8071ACCF21300FEC475 /* printf-parse.c */,
+				FA32A8091ACCF21300FEC475 /* printf.c */,
+				FA32A80B1ACCF21300FEC475 /* vasnprintf.c */,
+				FA32A8041ACCF21300FEC475 /* g-gnulib.h */,
+				FA32A8061ACCF21300FEC475 /* printf-args.h */,
+				FA32A8081ACCF21300FEC475 /* printf-parse.h */,
+				FA32A80A1ACCF21300FEC475 /* printf.h */,
+				FA32A80C1ACCF21300FEC475 /* vasnprintf.h */,
+			);
+			path = gnulib;
+			sourceTree = "<group>";
+		};
+		FA32A80D1ACCF21300FEC475 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A80E1ACCF21300FEC475 /* galloca.h */,
+				FA32A80F1ACCF21300FEC475 /* garray.h */,
+				FA32A8101ACCF21300FEC475 /* gasyncqueue.h */,
+				FA32A8E61ACCF2DD00FEC475 /* gasyncqueueprivate.h */,
+				FA32A8111ACCF21300FEC475 /* gatomic.h */,
+				FA32A8121ACCF21300FEC475 /* gbacktrace.h */,
+				FA32A8131ACCF21300FEC475 /* gbytes.h */,
+				FA32A8141ACCF21300FEC475 /* gcharset.h */,
+				FA32A8151ACCF21300FEC475 /* gcharsetprivate.h */,
+				FAE495411ACDC1D100023A31 /* gconstructor.h */,
+				FA32A8161ACCF21300FEC475 /* gconvert.h */,
+				FA32A8171ACCF21300FEC475 /* gdir.h */,
+				FA32A8181ACCF21300FEC475 /* genviron.h */,
+				FA32A8191ACCF21300FEC475 /* gerror.h */,
+				FA32A81A1ACCF21300FEC475 /* gfileutils.h */,
+				FA32A81B1ACCF21300FEC475 /* ggettext.h */,
+				FA32A81C1ACCF21300FEC475 /* ghash.h */,
+				FA32A81D1ACCF21300FEC475 /* ghook.h */,
+				FA32A81E1ACCF21300FEC475 /* giochannel.h */,
+				FA32A81F1ACCF21300FEC475 /* glib-init.h */,
+				FA32A8201ACCF21300FEC475 /* glib-private.h */,
+				FA32A8211ACCF21300FEC475 /* glib-unix.h */,
+				FA32A8221ACCF21300FEC475 /* glib.h */,
+				FA32A8231ACCF21300FEC475 /* glib_trace.h */,
+				FA32A8241ACCF21300FEC475 /* glibconfig.h */,
+				FA32A8251ACCF21300FEC475 /* glibintl.h */,
+				FA32A8261ACCF21300FEC475 /* glist.h */,
+				FA32A8271ACCF21300FEC475 /* gmacros.h */,
+				FA32A8281ACCF21300FEC475 /* gmain-internal.h */,
+				FA32A8291ACCF21300FEC475 /* gmain.h */,
+				FA32A82A1ACCF21300FEC475 /* gmem.h */,
+				FA32A82B1ACCF21300FEC475 /* gmessages.h */,
+				FA32A8F01ACCF43A00FEC475 /* gmirroringtable.h */,
+				FA32A82C1ACCF21300FEC475 /* gnode.h */,
+				FA32A82D1ACCF21300FEC475 /* gpattern.h */,
+				FA32A82E1ACCF21300FEC475 /* gpoll.h */,
+				FA32A82F1ACCF21300FEC475 /* gprintf.h */,
+				FA32A8301ACCF21300FEC475 /* gprintfint.h */,
+				FA32A8311ACCF21300FEC475 /* gqsort.h */,
+				FA32A8321ACCF21300FEC475 /* gquark.h */,
+				FA32A8331ACCF21300FEC475 /* gqueue.h */,
+				FA32A8341ACCF21300FEC475 /* grand.h */,
+				FA32A8F21ACCF47B00FEC475 /* gscripttable.h */,
+				FA32A8351ACCF21300FEC475 /* gshell.h */,
+				FA32A8361ACCF21300FEC475 /* gslice.h */,
+				FA32A8371ACCF21300FEC475 /* gslist.h */,
+				FA32A8381ACCF21300FEC475 /* gspawn.h */,
+				FA32A8391ACCF21300FEC475 /* gstdio.h */,
+				FA32A83A1ACCF21300FEC475 /* gstrfuncs.h */,
+				FA32A83B1ACCF21300FEC475 /* gstring.h */,
+				FA32A83C1ACCF21300FEC475 /* gstringchunk.h */,
+				FA32A83D1ACCF21300FEC475 /* gtestutils.h */,
+				FA32A83E1ACCF21300FEC475 /* gthread-depreciated.h */,
+				FA32A83F1ACCF21300FEC475 /* gthread.h */,
+				FA32A8401ACCF21300FEC475 /* gthreadpool.h */,
+				FA32A8411ACCF21300FEC475 /* gthreadprivate.h */,
+				FA32A8421ACCF21300FEC475 /* gtimer.h */,
+				FA32A8E81ACCF35100FEC475 /* gtrashstack.h */,
+				FA32A8431ACCF21300FEC475 /* gtypes.h */,
+				FA32A8EE1ACCF41200FEC475 /* gunichartables.h */,
+				FA32A8441ACCF21300FEC475 /* gunicode.h */,
+				FA32A8451ACCF21300FEC475 /* gunicodeprivate.h */,
+				FA32A8461ACCF21300FEC475 /* gunicomp.h */,
+				FA32A8471ACCF21300FEC475 /* gunidecomp.h */,
+				FA32A8481ACCF21300FEC475 /* gutils.h */,
+				FA32A8491ACCF21300FEC475 /* gversionmacros.h */,
+				FA32A84A1ACCF21300FEC475 /* gwakeup.h */,
+				FA32A8EC1ACCF39100FEC475 /* valgrind.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		FA32A84B1ACCF21300FEC475 /* libcharset */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A84C1ACCF21300FEC475 /* libcharset.h */,
+				FA32A84D1ACCF21300FEC475 /* localcharset.c */,
+				FA32A84E1ACCF21300FEC475 /* localcharset.h */,
+			);
+			path = libcharset;
+			sourceTree = "<group>";
+		};
+		FA32A84F1ACCF21300FEC475 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FA32A8501ACCF21300FEC475 /* garray.c */,
+				FA32A8511ACCF21300FEC475 /* gasyncqueue.c */,
+				FA32A8521ACCF21300FEC475 /* gatomic.c */,
+				FA32A8531ACCF21300FEC475 /* gbacktrace.c */,
+				FA32A8541ACCF21300FEC475 /* gbytes.c */,
+				FA32A8551ACCF21300FEC475 /* gcharset.c */,
+				FA32A8561ACCF21300FEC475 /* gconvert.c */,
+				FA32A8571ACCF21300FEC475 /* gdir.c */,
+				FA32A8581ACCF21300FEC475 /* genviron.c */,
+				FA32A8591ACCF21300FEC475 /* gerror.c */,
+				FA32A85A1ACCF21300FEC475 /* gfileutils.c */,
+				FA32A85B1ACCF21300FEC475 /* ggettext.c */,
+				FA32A85C1ACCF21300FEC475 /* ghash.c */,
+				FA32A85D1ACCF21300FEC475 /* ghook.c */,
+				FA32A85E1ACCF21300FEC475 /* giochannel.c */,
+				FA32A85F1ACCF21300FEC475 /* glib-init.c */,
+				FA32A8601ACCF21300FEC475 /* glib-private.c */,
+				FA32A8611ACCF21300FEC475 /* glib-unix.c */,
+				FA32A8621ACCF21300FEC475 /* glist.c */,
+				FA32A8631ACCF21300FEC475 /* gmain.c */,
+				FA32A8641ACCF21300FEC475 /* gmem.c */,
+				FA32A8651ACCF21300FEC475 /* gmessages.c */,
+				FA32A8661ACCF21300FEC475 /* gnode.c */,
+				FA32A8671ACCF21300FEC475 /* gpattern.c */,
+				FA32A8681ACCF21300FEC475 /* gpoll.c */,
+				FA32A8691ACCF21300FEC475 /* gprintf.c */,
+				FA32A86A1ACCF21300FEC475 /* gqsort.c */,
+				FA32A86B1ACCF21300FEC475 /* gquark.c */,
+				FA32A86C1ACCF21300FEC475 /* gqueue.c */,
+				FA32A86D1ACCF21300FEC475 /* grand.c */,
+				FA32A86E1ACCF21300FEC475 /* gshell.c */,
+				FA32A86F1ACCF21300FEC475 /* gslice.c */,
+				FA32A8701ACCF21300FEC475 /* gslist.c */,
+				FA32A8711ACCF21300FEC475 /* gspawn.c */,
+				FA32A8721ACCF21300FEC475 /* gstdio.c */,
+				FA32A8731ACCF21300FEC475 /* gstrfuncs.c */,
+				FA32A8741ACCF21300FEC475 /* gstring.c */,
+				FA32A8751ACCF21300FEC475 /* gstringchunk.c */,
+				FA32A8761ACCF21300FEC475 /* gtestutils.c */,
+				FA32A8771ACCF21300FEC475 /* gthread-deprecated.c */,
+				FA32A8781ACCF21300FEC475 /* gthread-posix.c */,
+				FA32A8791ACCF21300FEC475 /* gthread.c */,
+				FA32A87A1ACCF21300FEC475 /* gthreadpool.c */,
+				FA32A87B1ACCF21300FEC475 /* gtimer.c */,
+				FA32A8EA1ACCF36100FEC475 /* gtrashstack.c */,
+				FA32A87C1ACCF21300FEC475 /* gunicollate.c */,
+				FA32A87D1ACCF21300FEC475 /* gunidecomp.c */,
+				FA32A87E1ACCF21300FEC475 /* guniprop.c */,
+				FA32A87F1ACCF21300FEC475 /* gutf8.c */,
+				FA32A8801ACCF21300FEC475 /* gutils.c */,
+				FA32A8811ACCF21300FEC475 /* gwakeup.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FAC8CC041ACCE83D005D119E = {
+			isa = PBXGroup;
+			children = (
+				FA32A7991ACCF21300FEC475 /* fluidsynth */,
+				FA32A5CA1ACCE9E500FEC475 /* soundfonts.c */,
+				FAC8CC151ACCE87E005D119E /* m_pd.h */,
+				FAC8CC0E1ACCE83D005D119E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAC8CC0E1ACCE83D005D119E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAC8CC0D1ACCE83D005D119E /* soundfonts.pd_darwin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FAC8CC0B1ACCE83D005D119E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC8CC171ACCE87E005D119E /* m_pd.h in Headers */,
+				FAE495421ACDC1D100023A31 /* gconstructor.h in Headers */,
+				FA32A8EF1ACCF41200FEC475 /* gunichartables.h in Headers */,
+				FA32A8E71ACCF2DD00FEC475 /* gasyncqueueprivate.h in Headers */,
+				FA32A8E91ACCF35100FEC475 /* gtrashstack.h in Headers */,
+				FA32A8F31ACCF47B00FEC475 /* gscripttable.h in Headers */,
+				FA32A8ED1ACCF39100FEC475 /* valgrind.h in Headers */,
+				FA32A8F11ACCF43A00FEC475 /* gmirroringtable.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FAC8CC0C1ACCE83D005D119E /* soundfonts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC8CC111ACCE83D005D119E /* Build configuration list for PBXNativeTarget "soundfonts" */;
+			buildPhases = (
+				FAC8CC091ACCE83D005D119E /* Sources */,
+				FAC8CC0A1ACCE83D005D119E /* Frameworks */,
+				FAC8CC0B1ACCE83D005D119E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = soundfonts;
+			productName = soundfonts_tilde;
+			productReference = FAC8CC0D1ACCE83D005D119E /* soundfonts.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAC8CC051ACCE83D005D119E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Intrinsic Audio";
+				TargetAttributes = {
+					FAC8CC0C1ACCE83D005D119E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = FAC8CC081ACCE83D005D119E /* Build configuration list for PBXProject "soundfonts" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FAC8CC041ACCE83D005D119E;
+			productRefGroup = FAC8CC0E1ACCE83D005D119E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAC8CC0C1ACCE83D005D119E /* soundfonts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAC8CC091ACCE83D005D119E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA32A8B41ACCF27000FEC475 /* garray.c in Sources */,
+				FA32A8B51ACCF27000FEC475 /* gasyncqueue.c in Sources */,
+				FA32A8B61ACCF27000FEC475 /* gatomic.c in Sources */,
+				FA32A8B71ACCF27000FEC475 /* gbacktrace.c in Sources */,
+				FA32A8B81ACCF27000FEC475 /* gbytes.c in Sources */,
+				FA32A8B91ACCF27000FEC475 /* gcharset.c in Sources */,
+				FA32A8BA1ACCF27000FEC475 /* gconvert.c in Sources */,
+				FA32A8BB1ACCF27000FEC475 /* gdir.c in Sources */,
+				FA32A8BC1ACCF27000FEC475 /* genviron.c in Sources */,
+				FA32A8BD1ACCF27000FEC475 /* gerror.c in Sources */,
+				FA32A8BE1ACCF27000FEC475 /* gfileutils.c in Sources */,
+				FA32A8BF1ACCF27000FEC475 /* ggettext.c in Sources */,
+				FA32A8C01ACCF27000FEC475 /* ghash.c in Sources */,
+				FA32A8C11ACCF27000FEC475 /* ghook.c in Sources */,
+				FA32A8C21ACCF27000FEC475 /* giochannel.c in Sources */,
+				FA32A8C31ACCF27000FEC475 /* glib-init.c in Sources */,
+				FA32A8C41ACCF27000FEC475 /* glib-private.c in Sources */,
+				FA32A8C51ACCF27000FEC475 /* glib-unix.c in Sources */,
+				FA32A8C61ACCF27000FEC475 /* glist.c in Sources */,
+				FA32A8C71ACCF27000FEC475 /* gmain.c in Sources */,
+				FA32A8C81ACCF27000FEC475 /* gmem.c in Sources */,
+				FA32A8C91ACCF27000FEC475 /* gmessages.c in Sources */,
+				FA32A8CA1ACCF27000FEC475 /* gnode.c in Sources */,
+				FA32A8CB1ACCF27000FEC475 /* gpattern.c in Sources */,
+				FA32A8CC1ACCF27000FEC475 /* gpoll.c in Sources */,
+				FA32A8CD1ACCF27000FEC475 /* gprintf.c in Sources */,
+				FA32A8CE1ACCF27000FEC475 /* gqsort.c in Sources */,
+				FA32A8CF1ACCF27000FEC475 /* gquark.c in Sources */,
+				FA32A8D01ACCF27000FEC475 /* gqueue.c in Sources */,
+				FA32A8D11ACCF27000FEC475 /* grand.c in Sources */,
+				FA32A8D21ACCF27000FEC475 /* gshell.c in Sources */,
+				FA32A8D31ACCF27000FEC475 /* gslice.c in Sources */,
+				FA32A8D41ACCF27000FEC475 /* gslist.c in Sources */,
+				FA32A8D51ACCF27000FEC475 /* gspawn.c in Sources */,
+				FA32A8D61ACCF27000FEC475 /* gstdio.c in Sources */,
+				FA32A8D71ACCF27000FEC475 /* gstrfuncs.c in Sources */,
+				FA32A8D81ACCF27000FEC475 /* gstring.c in Sources */,
+				FA32A8D91ACCF27000FEC475 /* gstringchunk.c in Sources */,
+				FA32A8DA1ACCF27000FEC475 /* gtestutils.c in Sources */,
+				FA32A8DB1ACCF27000FEC475 /* gthread-deprecated.c in Sources */,
+				FA32A8DC1ACCF27000FEC475 /* gthread-posix.c in Sources */,
+				FA32A8DD1ACCF27000FEC475 /* gthread.c in Sources */,
+				FA32A8DE1ACCF27000FEC475 /* gthreadpool.c in Sources */,
+				FA32A8DF1ACCF27000FEC475 /* gtimer.c in Sources */,
+				FA32A8E01ACCF27000FEC475 /* gunicollate.c in Sources */,
+				FA32A8E11ACCF27000FEC475 /* gunidecomp.c in Sources */,
+				FA32A8E21ACCF27000FEC475 /* guniprop.c in Sources */,
+				FA32A8E31ACCF27000FEC475 /* gutf8.c in Sources */,
+				FA32A8E41ACCF27000FEC475 /* gutils.c in Sources */,
+				FA32A8E51ACCF27000FEC475 /* gwakeup.c in Sources */,
+				FA32A8B31ACCF26300FEC475 /* localcharset.c in Sources */,
+				FA32A8AE1ACCF25B00FEC475 /* asnprintf.c in Sources */,
+				FA32A8AF1ACCF25B00FEC475 /* printf-args.c in Sources */,
+				FA32A8B01ACCF25B00FEC475 /* printf-parse.c in Sources */,
+				FA32A8B11ACCF25B00FEC475 /* printf.c in Sources */,
+				FA32A8B21ACCF25B00FEC475 /* vasnprintf.c in Sources */,
+				FA32A8821ACCF25000FEC475 /* fluid_adriver.c in Sources */,
+				FA32A8831ACCF25000FEC475 /* fluid_adsr_env.c in Sources */,
+				FA32A8841ACCF25000FEC475 /* fluid_alsa.c in Sources */,
+				FA32A8851ACCF25000FEC475 /* fluid_aufile.c in Sources */,
+				FA32A8861ACCF25000FEC475 /* fluid_chan.c in Sources */,
+				FA32A8871ACCF25000FEC475 /* fluid_chorus.c in Sources */,
+				FA32A8881ACCF25000FEC475 /* fluid_cmd.c in Sources */,
+				FA32A8891ACCF25000FEC475 /* fluid_conv.c in Sources */,
+				FA32A88A1ACCF25000FEC475 /* fluid_coreaudio.c in Sources */,
+				FA32A88B1ACCF25000FEC475 /* fluid_coremidi.c in Sources */,
+				FA32A88C1ACCF25000FEC475 /* fluid_dart.c in Sources */,
+				FA32A88D1ACCF25000FEC475 /* fluid_defsfont.c in Sources */,
+				FA32A88E1ACCF25000FEC475 /* fluid_event_queue.c in Sources */,
+				FA32A88F1ACCF25000FEC475 /* fluid_event.c in Sources */,
+				FA32A8901ACCF25000FEC475 /* fluid_filerenderer.c in Sources */,
+				FA32A8911ACCF25000FEC475 /* fluid_gen.c in Sources */,
+				FA32A8921ACCF25000FEC475 /* fluid_hash.c in Sources */,
+				FA32A8931ACCF25000FEC475 /* fluid_iir_filter.c in Sources */,
+				FA32A8941ACCF25000FEC475 /* fluid_ladspa.c in Sources */,
+				FA32A8951ACCF25000FEC475 /* fluid_lfo.c in Sources */,
+				FA32A8961ACCF25000FEC475 /* fluid_list.c in Sources */,
+				FA32A8971ACCF25000FEC475 /* fluid_mdriver.c in Sources */,
+				FA32A8981ACCF25000FEC475 /* fluid_midi_router.c in Sources */,
+				FA32A8991ACCF25000FEC475 /* fluid_midi.c in Sources */,
+				FA32A89A1ACCF25000FEC475 /* fluid_midishare.c in Sources */,
+				FA32A89B1ACCF25000FEC475 /* fluid_mod.c in Sources */,
+				FA32A89C1ACCF25000FEC475 /* fluid_oss.c in Sources */,
+				FA32A8EB1ACCF36100FEC475 /* gtrashstack.c in Sources */,
+				FA32A89D1ACCF25000FEC475 /* fluid_ramsfont.c in Sources */,
+				FA32A89E1ACCF25000FEC475 /* fluid_rev.c in Sources */,
+				FA32A89F1ACCF25000FEC475 /* fluid_ringbuffer.c in Sources */,
+				FA32A8A01ACCF25000FEC475 /* fluid_rtkit.c in Sources */,
+				FA32A8A11ACCF25000FEC475 /* fluid_rvoice_dsp.c in Sources */,
+				FA32A8A21ACCF25000FEC475 /* fluid_rvoice_event.c in Sources */,
+				FA32A8A31ACCF25000FEC475 /* fluid_rvoice_handler.c in Sources */,
+				FA32A8A41ACCF25000FEC475 /* fluid_rvoice_mixer.c in Sources */,
+				FA32A8A51ACCF25000FEC475 /* fluid_rvoice.c in Sources */,
+				FA32A8A61ACCF25000FEC475 /* fluid_seq.c in Sources */,
+				FA32A8A71ACCF25000FEC475 /* fluid_seqbind.c in Sources */,
+				FA32A8A81ACCF25000FEC475 /* fluid_settings.c in Sources */,
+				FA32A8A91ACCF25000FEC475 /* fluid_sndmgr.c in Sources */,
+				FA32A8AA1ACCF25000FEC475 /* fluid_synth.c in Sources */,
+				FA32A8AB1ACCF25000FEC475 /* fluid_sys.c in Sources */,
+				FA32A8AC1ACCF25000FEC475 /* fluid_tuning.c in Sources */,
+				FA32A8AD1ACCF25000FEC475 /* fluid_voice.c in Sources */,
+				FA32A5CB1ACCE9E500FEC475 /* soundfonts.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FAC8CC0F1ACCE83D005D119E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FAC8CC101ACCE83D005D119E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FAC8CC121ACCE83D005D119E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				EXECUTABLE_PREFIX = "";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = soundfonts;
+				VALID_ARCHS = "i386 x86_64 ppc";
+			};
+			name = Debug;
+		};
+		FAC8CC131ACCE83D005D119E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				EXECUTABLE_PREFIX = "";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = soundfonts;
+				VALID_ARCHS = "i386 x86_64 ppc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAC8CC081ACCE83D005D119E /* Build configuration list for PBXProject "soundfonts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC8CC0F1ACCE83D005D119E /* Debug */,
+				FAC8CC101ACCE83D005D119E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC8CC111ACCE83D005D119E /* Build configuration list for PBXNativeTarget "soundfonts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC8CC121ACCE83D005D119E /* Debug */,
+				FAC8CC131ACCE83D005D119E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAC8CC051ACCE83D005D119E /* Project object */;
+}

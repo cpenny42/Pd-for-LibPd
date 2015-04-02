@@ -1,0 +1,34 @@
+#N canvas 348 160 873 601 10;
+#X text 3 1 [soundfonts] - a wavetable synth using soundfonts;
+#X text 780 3 pd for libpd;
+#X obj 48 204 piano;
+#X text 44 51 This gives you a sampler that will play soundfonts. It
+is polyphonic \, but there are no envelope controls - to use envelopes
+for multiple voices \, use multiple instances of [soundfonts] as individual
+monophonic voices in a polyphonic synth.;
+#X text 445 53 Set the soundfont with "set". You need the exact location
+of the soundfont for it to work.;
+#X obj 198 536 dac~;
+#X obj 185 501 soundfonts;
+#X msg 444 123 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/piano_1.sf2
+;
+#X text 447 97 Only works for my computer (replace it with your own
+path):;
+#X msg 185 392 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/piano_1.sf2
+;
+#X text 555 404 <- replace with the path to your soundfont;
+#X text 45 136 Play notes by sending a note \, velocity pair to the
+inlet;
+#X obj 65 493 unpack 0 0;
+#X floatatom 65 518 5 0 0 0 - - -;
+#X floatatom 122 519 5 0 0 0 - - -;
+#X msg 198 444 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/LesPaul.sf2
+;
+#X connect 2 0 6 0;
+#X connect 2 0 12 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 9 0 6 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 15 0 6 0;

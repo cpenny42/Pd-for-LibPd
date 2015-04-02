@@ -1,9 +1,0 @@
-python import_sf.py african_perc.sf2
-python import_sf.py casio_pd-68.sf2
-python import_sf.py church_organ.sf2
-python import_sf.py LesPaul.sf2
-python import_sf.py linn_drums.sf2
-python import_sf.py piano_1.sf2
-python import_sf.py retro_analog_bass.sf2
-python import_sf.py trumpet.sf2
-python import_sf.py vintage_drums.sf2
