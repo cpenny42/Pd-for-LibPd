@@ -687,8 +687,8 @@
 			isa = PBXGroup;
 			children = (
 				FA32A7991ACCF21300FEC475 /* fluidsynth */,
-				FA32A5CA1ACCE9E500FEC475 /* soundfonts.c */,
 				FAC8CC151ACCE87E005D119E /* m_pd.h */,
+				FA32A5CA1ACCE9E500FEC475 /* soundfonts.c */,
 				FAC8CC0E1ACCE83D005D119E /* Products */,
 			);
 			sourceTree = "<group>";

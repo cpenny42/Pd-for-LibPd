@@ -1,4 +1,4 @@
-#N canvas 363 23 689 579 10;
+#N canvas 363 23 678 705 10;
 #N canvas 901 56 412 397 README 0;
 #X text 12 99 Assume all patches are Vanilla-compatible unless otherwise
 specified.;
@@ -715,7 +715,6 @@ with import_sf.py;
 #X text 413 3528 NOT VANILLA COMPATIBLE - argv needs "argv.c";
 #X obj 35 4459 synth~;
 #X obj 129 4481 pitchbend~;
-#X obj 206 4482 soundfonts~;
 #X obj 215 4515 soundfonts;
 #X obj 177 4552 pitchshifter~;
 #X connect 369 0 371 0;
@@ -758,16 +757,14 @@ more;
 #X text -97 600 - simple synth \, automatically turns DSP off when
 not used;
 #X text -178 779 Soundfont unpacker - More on soundfonts TBD;
-#X text -211 59 Whats new - 4/2/15:;
-#X text -177 83 Soundfonts! - the [soundfonts] external (soundfonts.c)
-can be found in source/externals/use/pd-for-libpd. Include the whole
-/use folder to use these externals in libpd.;
-#X obj -173 212 soundfonts~;
-#X text -97 212 <- see help file for more info;
-#X text -179 241 Other Stuff:;
+#X text -211 209 Whats new - 4/2/15:;
+#X text -89 177 <- see help file for more info;
 #X obj -156 259 pitchbend~;
 #X obj -86 259 pitchshifter~;
-#X text -176 131 A compiled version of the external is in /compiled
-- if you add this folder to Pd's search path \, you will be able to
-use soundfonts. If this doesn't work \, you'll have to compile it yourself.
-source/externals/build-for-pd has the source code for this.;
+#X obj -165 177 soundfonts;
+#X text -211 59 Whats new - 4/7/15:;
+#X text -169 81 Soundfonts! - the [soundfonts] external will let you
+play them. A pre-compiled version for OS X is available in the /compiled
+folder;
+#X text -169 129 The code is available for use in libpd in the /source/externals
+folder;

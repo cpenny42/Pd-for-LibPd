@@ -1,34 +1,474 @@
-#N canvas 348 160 873 601 10;
-#X text 3 1 [soundfonts] - a wavetable synth using soundfonts;
-#X text 780 3 pd for libpd;
-#X obj 48 204 piano;
-#X text 44 51 This gives you a sampler that will play soundfonts. It
-is polyphonic \, but there are no envelope controls - to use envelopes
-for multiple voices \, use multiple instances of [soundfonts] as individual
-monophonic voices in a polyphonic synth.;
-#X text 445 53 Set the soundfont with "set". You need the exact location
+#N canvas 5 23 807 824 10;
+#X text 710 5 pd for libpd;
+#X obj 94 221 piano;
+#X text 233 84 Set the soundfont with "set". You need the exact location
 of the soundfont for it to work.;
-#X obj 198 536 dac~;
-#X obj 185 501 soundfonts;
-#X msg 444 123 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/piano_1.sf2
+#X msg 232 124 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/piano_1.sf2
 ;
-#X text 447 97 Only works for my computer (replace it with your own
-path):;
-#X msg 185 392 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/piano_1.sf2
-;
-#X text 555 404 <- replace with the path to your soundfont;
-#X text 45 136 Play notes by sending a note \, velocity pair to the
+#X text 238 184 Play notes by sending a note \, velocity pair to the
 inlet;
-#X obj 65 493 unpack 0 0;
-#X floatatom 65 518 5 0 0 0 - - -;
-#X floatatom 122 519 5 0 0 0 - - -;
-#X msg 198 444 set /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/LesPaul.sf2
+#X obj 624 7 pddp/dsp;
+#X obj 111 782 dac~;
+#X obj 194 685 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 194 705 sustain \$1;
+#X msg 284 711 flush;
+#X obj 361 697 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 358 716 volume \$1;
+#X obj 117 677 openpanel;
+#X obj 117 403 bng 15 250 50 0 empty empty Open_Other 17 7 0 10 -262144
+-1 -1;
+#X msg 117 700 set \$1;
+#X msg 161 468 LesPaul.SF2;
+#X msg 173 489 DCs_Mellotron_Flute.sf2;
+#X msg 182 510 church_organ.sf2;
+#X msg 190 531 StomperSet.sf2;
+#X msg 140 428 piano_1.sf2;
+#X msg 151 448 beautiful_pad.sf2;
+#X text 221 409 soundfonts taken from http://hammersound.net/cgi-bin/soundlink.pl
 ;
-#X connect 2 0 6 0;
-#X connect 2 0 12 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 9 0 6 0;
-#X connect 12 0 13 0;
-#X connect 12 1 14 0;
-#X connect 15 0 6 0;
+#X msg 199 552 jonnypad5.sf2;
+#X msg 208 573 jonnypad7.sf2;
+#X msg 217 594 jonnypad8.sf2;
+#X obj 140 642 makefilename /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/%s
+;
+#X obj 140 618 symbol;
+#X text 203 621 replace with the path to your soundfont folder:;
+#X text 231 45 [soundfonts] uses the Fluidsynth library for a wavetable
+sampler that reads soundfonts.;
+#X text 409 493 There are many other soundfont features available \,
+all of which have documentation in the soundfont specification:;
+#X text 437 536 http://freepats.zenvoid.org/sf2/sfspec24.pdf;
+#X text 482 571 Examples:;
+#N canvas 58 23 1372 834 more_examples 0;
+#X obj 31 706 s \$0-methods;
+#X msg 46 554 volume_attack \$1;
+#X msg 78 594 volume_decay \$1;
+#X msg 94 614 volume_sustain \$1;
+#X msg 111 634 volume_release \$1;
+#X text 150 553 time in ms;
+#X text 175 593 time in ms;
+#X text 223 634 time in ms;
+#X text 130 533 time in ms;
+#X msg 31 534 volume_delay \$1;
+#X msg 62 574 volume_hold \$1;
+#X text 153 573 time in ms;
+#X text 204 614 0 to 1;
+#X obj 31 421 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 46 438 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 62 455 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 78 472 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 94 489 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 111 506 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 412 202 s \$0-methods;
+#X obj 15 98 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 140 98 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 565 97 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 711 93 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 891 93 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X msg 15 128 volume \$1;
+#X msg 140 128 pan \$1;
+#X text 81 127 0 to 1;
+#X text 184 127 0 to 1;
+#X text 310 127 0 or 1 (toggle);
+#X msg 565 129 pitchbend \$1;
+#X text 644 128 0 to 127;
+#X msg 711 128 pitchbend_range \$1;
+#X text 828 128 0 to 127;
+#X msg 891 128 polyphony \$1;
+#X text 973 128 # of available voices;
+#X msg 239 128 sustain \$1;
+#X obj 539 68 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 23 194 dahdsr - delay \, attack \, hold \, decay \, sustain
+\, release;
+#X text 23 214 like adsr \, but with 2 extra features:;
+#X text 44 234 delay - time between the note-on & the start of the
+attack slope;
+#X text 45 271 hold - time held at the peak of the attack slope before
+starting the decay slope;
+#X obj 292 722 s \$0-methods;
+#X text 455 573 time in ms;
+#X text 480 613 time in ms;
+#X text 517 654 time in ms;
+#X text 435 553 time in ms;
+#X text 458 593 time in ms;
+#X text 503 634 0 to 1;
+#X text 127 422 Volume Envelope:;
+#X obj 871 622 s \$0-methods;
+#X obj 871 407 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 896 424 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 922 441 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 948 458 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 974 475 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X text 941 404 Mod LFO:;
+#X msg 871 494 mod_lfo_pitch \$1;
+#X msg 896 514 mod_lfo_filter \$1;
+#X msg 922 534 mod_lfo_volume \$1;
+#X msg 948 554 mod_lfo_delay \$1;
+#X msg 974 574 mod_lfo_frequency \$1;
+#X obj 239 99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 342 155 flush;
+#X text 380 154 Kill all notes & voices;
+#X text 631 177 MIDI Messages:;
+#X msg 563 289 cc \$1 \$2;
+#X obj 639 317 s \$0-methods;
+#X text 526 198 Continuous Controller:;
+#X obj 563 268 pack 0 0;
+#X floatatom 556 222 5 0 0 0 Channel - -;
+#X floatatom 595 223 5 0 0 1 Value - -;
+#X obj 581 245 t b f;
+#X floatatom 690 231 5 0 0 2 Selector - -;
+#X floatatom 748 232 5 0 0 2 MSB - -;
+#X obj 738 254 t b f;
+#X floatatom 787 232 5 0 0 2 LSB - -;
+#X obj 778 254 t b f;
+#X obj 720 277 pack 0 0 0;
+#X text 745 194 NRPN:;
+#X msg 720 298 nrpn \$1 \$2 \$3;
+#X msg 321 554 mod_env_delay \$1;
+#X msg 336 574 mod_env_attack \$1;
+#X msg 352 594 mod_env_hold \$1;
+#X msg 368 614 mod_env_decay \$1;
+#X msg 384 634 mod_env_sustain \$1;
+#X msg 118 660 500 10 0.2 5000;
+#X msg 118 681 volume_adsr \$1 \$2 \$3 \$4;
+#X text 219 660 ADSR list;
+#X msg 407 679 500 10 0.2 5000;
+#X text 505 679 ADSR list;
+#X msg 407 700 mod_adsr \$1 \$2 \$3 \$4;
+#X msg 401 654 mod_env_release \$1;
+#X obj 563 548 s \$0-methods;
+#X obj 563 397 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 590 418 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 616 435 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X text 582 369 Vibrato LFO:;
+#X text 674 459 0 - 127;
+#X text 709 479 0 - 127;
+#X text 748 490 0 - 127;
+#X text 982 493 0 - 127;
+#X text 1012 513 0 - 127;
+#X text 1035 533 0 - 127;
+#X text 1057 553 0 - 127;
+#X text 1106 574 0 - 127;
+#X text 1007 422 pitch \, filter \, volume are;
+#X text 1002 435 the amount of each sent to;
+#X text 1117 448 the LFO;
+#X msg 563 460 vib_lfo_amount \$1;
+#X obj 445 97 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X text 489 129 0 to 127;
+#X obj 399 68 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 445 129 mod \$1;
+#X obj 34 312 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 49 329 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 65 346 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 81 363 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 97 380 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 114 397 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 57 310 d;
+#X text 65 328 a;
+#X text 79 345 h;
+#X text 98 363 d;
+#X text 110 379 s;
+#X text 122 396 r;
+#X msg 292 511 mod_env_pitch \$1;
+#X msg 307 531 mod_env_filter \$1;
+#X obj 321 404 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 336 421 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 352 438 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 368 455 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 384 472 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 401 489 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 324 295 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 339 312 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 355 329 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 371 346 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 387 363 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 404 380 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 347 293 d;
+#X text 355 311 a;
+#X text 369 328 h;
+#X text 388 346 d;
+#X text 400 362 s;
+#X text 412 379 r;
+#X obj 292 370 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 307 387 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X text 396 510 amount - 0 to 127;
+#X text 416 530 amount - 0 to 127;
+#X msg 590 480 vib_lfo_delay \$1;
+#X msg 616 500 vib_lfo_frequency \$1;
+#X text 250 368 pitch:;
+#X text 252 383 filter:;
+#X text 53 9 The scaling for each value is defined in the soundfont
+format specification:;
+#X text 74 40 http://freepats.zenvoid.org/sf2/sfspec24.pdf;
+#X text 430 -17 Some scaling has been handled automatically by [soundfonts]:
+;
+#X text 483 15 frequenciy is in Hz;
+#X text 482 1 time is in ms;
+#X text 484 29 sustain level is from 0 to 1;
+#X text 688 5 The rest of the values have units that are scaled according
+to the soundfont spec. These have ranges that are from 0 - 127;
+#X obj 657 662 s \$0-methods;
+#X obj 657 584 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 684 601 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X msg 657 621 filter_frequency \$1;
+#X msg 684 641 filter_q \$1;
+#X obj 660 543 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 687 561 hsl 128 15 0 5 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 832 781 s \$0-methods;
+#X msg 755 740 velocity_range \$1 \$2;
+#X floatatom 799 667 5 0 0 2 Low - -;
+#X floatatom 837 667 5 0 0 2 High - -;
+#X obj 815 689 t b f;
+#X obj 794 713 pack 0 0;
+#X obj 908 714 pack 0 0;
+#X obj 929 690 t b f;
+#X floatatom 901 666 5 0 0 2 Low - -;
+#X floatatom 939 666 5 0 0 2 High - -;
+#X msg 896 743 key_range \$1 \$2;
+#X obj 887 158 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 902 175 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 918 192 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 934 209 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 950 226 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 967 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-262144 -1 -1 0 256;
+#X obj 887 379 s \$0-methods;
+#X msg 887 262 chorus_amount \$1;
+#X msg 902 282 chorus_depth \$1;
+#X msg 918 302 chorus_level \$1;
+#X msg 934 322 chorus_speed \$1;
+#X msg 950 342 chorus_n \$1;
+#X msg 967 362 chorus_type \$1;
+#X text 991 261 0 - 127;
+#X obj 1113 123 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+12 -262144 -1 -1 0 256;
+#X obj 1128 140 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+12 -262144 -1 -1 0 256;
+#X obj 1144 157 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+12 -262144 -1 -1 0 256;
+#X obj 1160 174 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+12 -262144 -1 -1 0 256;
+#X obj 1176 191 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+12 -262144 -1 -1 0 256;
+#X obj 1113 344 s \$0-methods;
+#X text 1217 226 0 - 127;
+#X msg 1113 227 reverb_amount \$1;
+#X text 417 405 Mod Envelope:;
+#X msg 1128 247 reverb_damping \$1;
+#X msg 1144 267 reverb_level \$1;
+#X msg 1160 287 reverb_size \$1;
+#X msg 1176 307 reverb_width \$1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 13 0 9 0;
+#X connect 14 0 1 0;
+#X connect 15 0 10 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 20 0 25 0;
+#X connect 21 0 26 0;
+#X connect 22 0 30 0;
+#X connect 23 0 32 0;
+#X connect 24 0 34 0;
+#X connect 25 0 19 0;
+#X connect 26 0 19 0;
+#X connect 30 0 19 0;
+#X connect 32 0 19 0;
+#X connect 34 0 19 0;
+#X connect 36 0 19 0;
+#X connect 37 0 22 0;
+#X connect 51 0 57 0;
+#X connect 52 0 58 0;
+#X connect 53 0 59 0;
+#X connect 54 0 60 0;
+#X connect 55 0 61 0;
+#X connect 57 0 50 0;
+#X connect 58 0 50 0;
+#X connect 59 0 50 0;
+#X connect 60 0 50 0;
+#X connect 61 0 50 0;
+#X connect 62 0 36 0;
+#X connect 63 0 19 0;
+#X connect 66 0 67 0;
+#X connect 69 0 66 0;
+#X connect 70 0 69 0;
+#X connect 71 0 72 0;
+#X connect 72 0 69 0;
+#X connect 72 1 69 1;
+#X connect 73 0 78 0;
+#X connect 74 0 75 0;
+#X connect 75 0 78 0;
+#X connect 75 1 78 1;
+#X connect 76 0 77 0;
+#X connect 77 0 78 0;
+#X connect 77 1 78 2;
+#X connect 78 0 80 0;
+#X connect 80 0 67 0;
+#X connect 81 0 42 0;
+#X connect 82 0 42 0;
+#X connect 83 0 42 0;
+#X connect 84 0 42 0;
+#X connect 85 0 42 0;
+#X connect 86 0 87 0;
+#X connect 87 0 0 0;
+#X connect 89 0 91 0;
+#X connect 91 0 42 0;
+#X connect 92 0 42 0;
+#X connect 94 0 109 0;
+#X connect 95 0 150 0;
+#X connect 96 0 151 0;
+#X connect 109 0 93 0;
+#X connect 110 0 113 0;
+#X connect 112 0 110 0;
+#X connect 113 0 19 0;
+#X connect 114 0 13 0;
+#X connect 115 0 14 0;
+#X connect 116 0 15 0;
+#X connect 117 0 16 0;
+#X connect 118 0 17 0;
+#X connect 119 0 18 0;
+#X connect 126 0 42 0;
+#X connect 127 0 42 0;
+#X connect 128 0 81 0;
+#X connect 129 0 82 0;
+#X connect 130 0 83 0;
+#X connect 131 0 84 0;
+#X connect 132 0 85 0;
+#X connect 133 0 92 0;
+#X connect 134 0 128 0;
+#X connect 135 0 129 0;
+#X connect 136 0 130 0;
+#X connect 137 0 131 0;
+#X connect 138 0 132 0;
+#X connect 139 0 133 0;
+#X connect 146 0 126 0;
+#X connect 147 0 127 0;
+#X connect 150 0 93 0;
+#X connect 151 0 93 0;
+#X connect 162 0 164 0;
+#X connect 163 0 165 0;
+#X connect 164 0 161 0;
+#X connect 165 0 161 0;
+#X connect 166 0 162 0;
+#X connect 167 0 163 0;
+#X connect 169 0 168 0;
+#X connect 170 0 173 0;
+#X connect 171 0 172 0;
+#X connect 172 0 173 0;
+#X connect 172 1 173 1;
+#X connect 173 0 169 0;
+#X connect 174 0 178 0;
+#X connect 175 0 174 0;
+#X connect 175 1 174 1;
+#X connect 176 0 174 0;
+#X connect 177 0 175 0;
+#X connect 178 0 168 0;
+#X connect 179 0 186 0;
+#X connect 180 0 187 0;
+#X connect 181 0 188 0;
+#X connect 182 0 189 0;
+#X connect 183 0 190 0;
+#X connect 184 0 191 0;
+#X connect 186 0 185 0;
+#X connect 187 0 185 0;
+#X connect 188 0 185 0;
+#X connect 189 0 185 0;
+#X connect 190 0 185 0;
+#X connect 191 0 185 0;
+#X connect 193 0 200 0;
+#X connect 194 0 202 0;
+#X connect 195 0 203 0;
+#X connect 196 0 204 0;
+#X connect 197 0 205 0;
+#X connect 200 0 198 0;
+#X connect 202 0 198 0;
+#X connect 203 0 198 0;
+#X connect 204 0 198 0;
+#X connect 205 0 198 0;
+#X restore 546 572 pd more_examples;
+#X obj 14 697 r \$0-methods;
+#X text 3 6 [soundfonts] - wavetable synth using soundfonts & fluidsynth
+;
+#X obj 94 755 soundfonts;
+#X connect 1 0 35 0;
+#X connect 7 0 8 0;
+#X connect 8 0 35 0;
+#X connect 9 0 35 0;
+#X connect 10 0 11 0;
+#X connect 11 0 35 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 35 0;
+#X connect 15 0 26 0;
+#X connect 16 0 26 0;
+#X connect 17 0 26 0;
+#X connect 18 0 26 0;
+#X connect 19 0 26 0;
+#X connect 20 0 26 0;
+#X connect 22 0 26 0;
+#X connect 23 0 26 0;
+#X connect 24 0 26 0;
+#X connect 25 0 14 0;
+#X connect 26 0 25 0;
+#X connect 33 0 35 0;
+#X connect 35 0 6 0;
+#X connect 35 1 6 1;

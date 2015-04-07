@@ -1,4 +1,4 @@
-#N canvas 391 112 966 663 10;
+#N canvas 392 112 966 663 10;
 #X text 878 0 pd for libpd;
 #X text 885 16 chris penny;
 #X obj 377 447 evaluate;
@@ -51,7 +51,7 @@ and unary operators that take 1:;
 #X msg 660 471 sqrt ( ( \$1 ^ 2 ) + ( \$2 ^ 2 ) );
 #X obj 408 635 s \$0-evaluate;
 #X obj 377 481 nbx 10 30 -1e+37 1e+37 0 0 empty empty empty 5 -8 1
-16 -245630 -1 -1 139.499 256;
+16 -245630 -1 -1 0 256;
 #X obj 660 491 s \$0-evaluate;
 #X text 503 140 mod and % are exactly the same;
 #X text 95 465 Constants:;
@@ -267,7 +267,7 @@ GPL license (and Vanilla/Libpd compatible).;
 #X connect 18 0 19 0;
 #X restore 481 -240 pd gate6 ______________;
 #X obj 481 -404 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
--1 -1 4;
+-1 -1 0;
 #X text 474 -424 Select Equation:;
 #X msg 508 -69 \$2 * ( \$1 ^ 2 ) + ( \$3 * \$1 ) + \$4;
 #X text 723 -70 ax^2 + bx + c;
@@ -282,9 +282,9 @@ GPL license (and Vanilla/Libpd compatible).;
 #X obj -2 -27 r \$0-graph.y;
 #X text 723 -127 \$1 is x;
 #X obj 265 -395 hsl 128 15 1 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9800 0;
+-1 -1 0 0;
 #X obj 115 -395 hsl 128 15 1 500 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8800 0;
+-1 -1 0 0;
 #N canvas 384 23 516 300 expscale 0;
 #X obj 14 18 inlet;
 #X obj 14 39 / 127;
@@ -341,6 +341,9 @@ GPL license (and Vanilla/Libpd compatible).;
 #X connect 4 0 6 0;
 #X connect 5 0 1 0;
 #X connect 7 0 1 1;
+#X connect 7 0 2 1;
+#X connect 7 0 3 1;
+#X connect 7 0 4 1;
 #X restore 643 107 pd lop~;
 #X obj 643 68 tabread~ \$0-plot;
 #X obj 643 3 phasor~;
@@ -350,12 +353,12 @@ GPL license (and Vanilla/Libpd compatible).;
 -1 -1 0 1;
 #X obj 643 -19 mtof;
 #X obj 685 89 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4700 1;
+-1 -1 0 1;
 #X obj 643 173 dac~;
 #X text 651 -123 a;
 #X text 561 -40 ax + b;
 #X obj 679 131 hsl 70 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6000 1;
+-1 -1 0 1;
 #X obj 616 -272 pack 0 1 1 1 1;
 #X msg 589 -171 ( \$2 * \$1 ) * sin ( \$2 * \$1 ) + ( rand \$3 / 10
 );

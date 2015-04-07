@@ -1,0 +1,17 @@
+#N canvas 604 343 450 300 10;
+#X text 8 8 [argv] - get arguments of a patch - External;
+#X text 365 0 pd for libpd;
+#X text 49 50 Gives you all the patch arguments as a list;
+#X text 47 71 Send a float to get that element in the list;
+#X obj 273 189 print INDEX;
+#X obj 122 196 print ELEMENT;
+#X obj 67 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 192 132 5 0 0 0 - - -;
+#X obj 119 167 argv-test foo bar baz;
+#X text 33 116 Get All:;
+#X text 110 114 Get individual (0 gets all):;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 8 1 4 0;
