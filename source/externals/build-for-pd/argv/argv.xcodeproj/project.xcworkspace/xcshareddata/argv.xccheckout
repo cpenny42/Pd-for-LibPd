@@ -14,7 +14,7 @@
 		<string>https://github.com/cpenny42/PD-for-LIBPD.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>source/externals/build-xcode/argv/argv.xcodeproj</string>
+	<string>source/externals/build-for-pd/argv/argv.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C99A26E4EBC8665905113A782DBCD6A7276F69EB</key>
