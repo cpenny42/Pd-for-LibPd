@@ -41,7 +41,7 @@ sampler that reads soundfonts.;
 all of which have documentation in the soundfont specification:;
 #X text 437 536 http://freepats.zenvoid.org/sf2/sfspec24.pdf;
 #X text 482 571 Examples:;
-#N canvas 58 23 1372 834 more_examples 0;
+#N canvas 0 23 1372 834 more_examples 0;
 #X obj 31 706 s \$0-methods;
 #X msg 46 554 volume_attack \$1;
 #X msg 78 594 volume_decay \$1;

@@ -237,13 +237,14 @@ void soundfonts_note(t_soundfonts *instance, t_symbol *s, int argc, t_atom *argv
         post("soundfonts error: need 2 values to play note (note, velocity pair).");
         return;
     }
-    else {
-        float note = atom_getfloatarg(0, argc, argv);
-        float velocity = atom_getfloatarg(1, argc, argv);
-        
+    
+    float note = atom_getfloatarg(0, argc, argv);
+    float velocity = atom_getfloatarg(1, argc, argv);
+    
+    if ( (note >= 0) && (note <= 127) && (velocity >= 0) && (velocity <= 127) ) {
+
         fluid_synth_noteon(instance->synth, 0, note, velocity);
         
-//        post("playing note: %f %f %f", note, velocity, 0);
     }
 }
 
@@ -274,7 +275,6 @@ void soundfonts_cc(t_soundfonts *instance, t_floatarg control, t_floatarg val)
     if((control <= 127) && (control >= 0) && (val <= 127) && (val >= 0))
     {
         fluid_synth_cc(instance->synth, 0, control, val);
-        post ("cc - %f %f", control, val);
     } else {
         post( "overflow - %f %f", control, val);
     }

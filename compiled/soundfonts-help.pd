@@ -1,4 +1,4 @@
-#N canvas 5 23 807 824 10;
+#N canvas 320 23 807 824 10;
 #X text 710 5 pd for libpd;
 #X obj 94 221 piano;
 #X text 233 84 Set the soundfont with "set". You need the exact location
@@ -41,7 +41,7 @@ sampler that reads soundfonts.;
 all of which have documentation in the soundfont specification:;
 #X text 437 536 http://freepats.zenvoid.org/sf2/sfspec24.pdf;
 #X text 482 571 Examples:;
-#N canvas 58 23 1372 834 more_examples 0;
+#N canvas 58 23 1372 834 more_examples 1;
 #X obj 31 706 s \$0-methods;
 #X msg 46 554 volume_attack \$1;
 #X msg 78 594 volume_decay \$1;
@@ -109,11 +109,11 @@ starting the decay slope;
 #X text 127 422 Volume Envelope:;
 #X obj 871 622 s \$0-methods;
 #X obj 871 407 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--262144 -1 -1 0 256;
+-262144 -1 -1 4 256;
 #X obj 896 424 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--262144 -1 -1 0 256;
+-262144 -1 -1 194 256;
 #X obj 922 441 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--262144 -1 -1 0 256;
+-262144 -1 -1 87 256;
 #X obj 948 458 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
 -262144 -1 -1 0 256;
 #X obj 974 475 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
@@ -449,6 +449,10 @@ to the soundfont spec. These have ranges that are from 0 - 127;
 #X text 3 6 [soundfonts] - wavetable synth using soundfonts & fluidsynth
 ;
 #X obj 94 755 soundfonts;
+#X obj 346 750 makefilename /Users/ChrisPenny/Desktop/Comp150/Pd-for-LibPd/soundfonts/%s
+;
+#X obj 344 791 print;
+#X msg 533 704 symbol piano_1.sr1;
 #X connect 1 0 35 0;
 #X connect 7 0 8 0;
 #X connect 8 0 35 0;
@@ -472,3 +476,5 @@ to the soundfont spec. These have ranges that are from 0 - 127;
 #X connect 33 0 35 0;
 #X connect 35 0 6 0;
 #X connect 35 1 6 1;
+#X connect 36 0 37 0;
+#X connect 38 0 36 0;
