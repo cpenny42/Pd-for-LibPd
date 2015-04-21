@@ -1,16 +1,14 @@
-#N canvas 657 248 209 143 10;
-#X obj 23 110 outlet~;
-#X obj 8 10 inlet~;
-#X obj 138 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 23 82 gswitch~;
-#X obj 60 10 inlet~ GAIN;
-#X obj 45 51 *~;
-#X obj 138 10 inlet on;
-#X connect 1 0 3 0;
+#N canvas 657 248 214 352 10;
+#X obj 43 269 outlet~;
+#X obj 43 107 inlet~;
+#X obj 101 102 vsl 25 80 0 1 0 0 empty empty empty 0 -9 0 10 -233206
+-1 -1 0 1;
+#X obj 78 215 line~;
+#X msg 78 194 \$1 5;
+#X obj 43 239 *~;
 #X connect 1 0 5 0;
-#X connect 2 0 3 2;
-#X connect 3 0 0 0;
-#X connect 4 0 5 1;
-#X connect 5 0 3 1;
-#X connect 6 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X coords 0 -1 1 1 27 85 2 100 100;
