@@ -139,6 +139,8 @@ enum SOUNDFONTS_NRPN {
     OVERRIDING_ROOT_KEY = 58
 };
 
+const int NUMSOUNDFONTS = 20;
+
 static t_class *soundfonts_class;
 
 typedef struct _soundfonts {
@@ -158,6 +160,9 @@ typedef struct _soundfonts {
     t_int reverb_width;
     t_int reverb_level;
     
+    t_int current_id;
+    t_int soundfonts[NUMSOUNDFONTS];
+    
     t_int sfont_id;
     t_int polyphony;
     
@@ -175,6 +180,10 @@ void *soundfonts_new(void)
     instance->settings = new_fluid_settings();
     instance->synth = new_fluid_synth(instance->settings);
     instance->sfont_id = -1;
+    instance->current_id = 0;
+    for(int i = 0; i < NUMSOUNDFONTS; i++) {
+        instance->soundfonts[i] = -1;
+    }
     
     instance->chorus_nr = FLUID_CHORUS_DEFAULT_N;
     instance->chorus_level = FLUID_CHORUS_DEFAULT_LEVEL;
@@ -226,9 +235,17 @@ void soundfonts_set(t_soundfonts *instance, t_symbol *soundfont)
     if ((instance != NULL) && (instance->synth != NULL)) {
 //        post("setting to: %s", soundfont->s_name);
         instance->sfont_id = fluid_synth_sfload(instance->synth, soundfont->s_name, 1);
+        instance->soundfonts[instance->current_id] = instance->sfont_id;
+        instance->current_id = (instance->current_id + 1) % NUMSOUNDFONTS;
     } else {
         post("Unable to set soundfont due to error.");
     }
+}
+
+void soundfonts_set2(t_soundfonts *instance, t_floatarg index)
+{
+    post("%d", instance->soundfonts[(int)index]);
+    fluid_synth_sfreload(instance->synth, instance->soundfonts[(int)index]);
 }
 
 void soundfonts_note(t_soundfonts *instance, t_symbol *s, int argc, t_atom *argv)
@@ -592,6 +609,7 @@ void soundfonts_setup(void)
     
     class_addmethod(soundfonts_class, (t_method)soundfonts_dsp, gensym("dsp"), 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_set, gensym("set"), A_DEFSYMBOL, 0);
+    class_addmethod(soundfonts_class, (t_method)soundfonts_set2, gensym("set2"), A_FLOAT, 0);
     
     class_addmethod(soundfonts_class, (t_method)soundfonts_polyphony, gensym("polyphony"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_cc, gensym("cc"), A_FLOAT, A_FLOAT, 0);

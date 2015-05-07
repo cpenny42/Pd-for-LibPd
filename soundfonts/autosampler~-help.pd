@@ -1,0 +1,28 @@
+#N canvas 306 129 751 468 10;
+#X text 9 4 [autosampler~] - automatically read from unpacked soundfonts
+;
+#X text 576 2 pd for libpd;
+#X obj 135 341 autosampler~;
+#X obj 19 49 piano;
+#X msg 122 284 set piano_1;
+#X obj 229 239 guiadsr;
+#X msg 170 314 adsr \$1 \$2 \$3 \$4;
+#X obj 133 394 dac~;
+#X text 393 250 [autosampler] reads from samples unpacked by import_sf.py
+;
+#X text 395 272 You must have the folder containing these samples in
+Pd's search path for this to work.;
+#X text 367 327 Send a note \, velocity pair to play a note \, send
+a "set" message to set the soundfont \, and send an "adsr" message
+to change the envelope.;
+#X obj 453 8 pddp/dsp;
+#X text 371 385 If you get an error message \, it probably can't find
+the folder containing the samples or the corresponding config.txt file
+created by the python script.;
+#X text 375 438 See the README.txt in /soundfonts for more info.;
+#X connect 2 0 7 0;
+#X connect 2 1 7 1;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;

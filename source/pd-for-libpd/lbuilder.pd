@@ -5,9 +5,9 @@
 #X obj 193 56 inlet RESET;
 #X obj 156 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 117 56 inlet BANG;
+#X obj 47 56 inlet BANG;
 #X obj 45 186 outlet;
-#X obj 47 52 inlet add;
+#X obj 127 56 inlet add;
 #X msg 47 155;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;

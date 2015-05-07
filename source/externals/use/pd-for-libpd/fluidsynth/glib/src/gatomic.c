@@ -661,11 +661,11 @@ gsize
 /* This error occurs when ./configure decided that we should be capable
  * of lock-free atomics but we find at compile-time that we are not.
  */
-#error G_ATOMIC_LOCK_FREE defined, but incapable of lock-free atomics.
+//#error G_ATOMIC_LOCK_FREE defined, but incapable of lock-free atomics.
 
 #endif /* defined (__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4) */
 
-#else /* G_ATOMIC_LOCK_FREE */
+//#else /* G_ATOMIC_LOCK_FREE */
 
 /* We are not permitted to call into any GLib functions from here, so we
  * can not use GMutex.

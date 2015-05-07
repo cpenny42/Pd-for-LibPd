@@ -225,6 +225,9 @@ void soundfonts_set(t_soundfonts *instance, t_symbol *soundfont)
 {
     if ((instance != NULL) && (instance->synth != NULL)) {
 //        post("setting to: %s", soundfont->s_name);
+        if(instance->sfont_id != -1) {
+            //fluid_synth_sfunload(instance->synth, instance->sfont_id, 1);
+        }
         instance->sfont_id = fluid_synth_sfload(instance->synth, soundfont->s_name, 1);
     } else {
         post("Unable to set soundfont due to error.");

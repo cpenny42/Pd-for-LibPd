@@ -1,4 +1,4 @@
-#N canvas 5 23 807 824 10;
+#N canvas 520 58 807 824 10;
 #X text 710 5 pd for libpd;
 #X obj 94 221 piano;
 #X text 233 84 Set the soundfont with "set". You need the exact location
@@ -449,6 +449,7 @@ to the soundfont spec. These have ranges that are from 0 - 127;
 #X text 3 6 [soundfonts] - wavetable synth using soundfonts & fluidsynth
 ;
 #X obj 94 755 soundfonts;
+#X msg 226 769 set2 1;
 #X connect 1 0 35 0;
 #X connect 7 0 8 0;
 #X connect 8 0 35 0;
@@ -472,3 +473,4 @@ to the soundfont spec. These have ranges that are from 0 - 127;
 #X connect 33 0 35 0;
 #X connect 35 0 6 0;
 #X connect 35 1 6 1;
+#X connect 36 0 35 0;

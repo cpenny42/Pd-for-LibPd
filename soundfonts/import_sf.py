@@ -10,7 +10,7 @@ if len(sys.argv) != 2:
 else:
 
 	notes = range(0, 127)
-	velocities = [1, 31, 61, 91, 111, 127]
+	velocities = [100]
 	fs = 44100
 	duration = 4
 	decay = 1
