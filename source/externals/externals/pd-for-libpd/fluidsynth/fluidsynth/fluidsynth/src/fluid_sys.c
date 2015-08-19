@@ -19,6 +19,7 @@
  */
 
 #include "fluid_sys.h"
+#include "gthreadprivate.h"
 
 
 #if WITH_READLINE
@@ -631,7 +632,9 @@ new_fluid_thread (fluid_thread_func_t func, void *data, int prio_level, int deta
     info->prio_level = prio_level;
     thread = g_thread_create (fluid_thread_high_prio, info, detach == FALSE, &err);
   }
-  else thread = g_thread_create ((GThreadFunc)func, data, detach == FALSE, &err);
+  else {
+    thread = g_thread_create ((GThreadFunc)func, data, detach == FALSE, &err);
+  }
 
   if (!thread)
   {
@@ -695,6 +698,9 @@ fluid_timer_run (void *data)
     if (delay > 0) g_usleep (delay * 1000);
   }
 
+    GRealThread *t = (GRealThread *)timer->thread;
+    free(t->thread);
+    
   FLUID_LOG (FLUID_DBG, "Timer thread finished");
 
   if (timer->auto_destroy)
@@ -746,6 +752,7 @@ delete_fluid_timer (fluid_timer_t *timer)
 
   timer->cont = 0;
   fluid_timer_join (timer);
+    
 
   /* Shouldn't access timer now if auto_destroy enabled, since it has been destroyed */
 

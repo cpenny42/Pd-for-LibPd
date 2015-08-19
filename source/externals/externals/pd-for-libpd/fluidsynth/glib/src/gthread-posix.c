@@ -1152,7 +1152,8 @@ g_system_thread_new (GThreadFunc   thread_func,
   gint ret;
 
   thread = g_slice_new0 (GThreadPosix);
-
+    
+    
   posix_check_cmd (pthread_attr_init (&attr));
 
 #ifdef HAVE_PTHREAD_ATTR_SETSTACKSIZE
@@ -1168,7 +1169,6 @@ g_system_thread_new (GThreadFunc   thread_func,
 #endif /* HAVE_PTHREAD_ATTR_SETSTACKSIZE */
 
   ret = pthread_create (&thread->system_thread, &attr, (void* (*)(void*))thread_func, thread);
-
   posix_check_cmd (pthread_attr_destroy (&attr));
 
   if (ret == EAGAIN)

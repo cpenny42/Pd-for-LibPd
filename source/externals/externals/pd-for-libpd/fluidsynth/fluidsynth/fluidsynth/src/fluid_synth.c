@@ -3179,7 +3179,9 @@ fluid_synth_sfont_unref (fluid_synth_t *synth, fluid_sfont_t *sfont)
       FLUID_FREE (sfont_info);
       FLUID_LOG (FLUID_DBG, "Unloaded SoundFont");
     } /* spin off a timer thread to unload the sfont later (SoundFont loader blocked unload) */
-    else new_fluid_timer (100, fluid_synth_sfunload_callback, sfont_info, TRUE, TRUE, FALSE);    
+    else {
+        new_fluid_timer (100, fluid_synth_sfunload_callback, sfont_info, TRUE, TRUE, FALSE);
+    }
   }
 }
 

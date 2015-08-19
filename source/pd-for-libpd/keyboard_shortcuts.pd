@@ -6,9 +6,9 @@
 #X text -14 83 Command-2: Create a new message;
 #X msg 179 85;
 #X text -14 104 Command-3: Create a new float;
-#X floatatom 177 106 5 0 0 0 - - -;
+#X floatatom 177 106 5 0 0 0 - - -, f 5;
 #X text -14 126 Command-4: Create a new symbol;
-#X symbolatom 177 127 10 0 0 0 - - -;
+#X symbolatom 177 127 10 0 0 0 - - -, f 10;
 #X text -36 27 For Windows \, substitute ctrl for Command;
 #X text -15 215 Command-Shift-B: Create a new Button;
 #X obj 218 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -30,7 +30,6 @@
 #X text -14 280 Command-Shift-U: Create a vu meter;
 #X text -14 148 Command-5: Create a new comment. Note that pure data
 won't preserve new lines or extra spaces when reopened.;
-#X text 256 59 DSP On: Command-/;
-#X text 250 72 DSP Off: Command-.;
-#X obj 366 67 pddp/dsp;
+#X text 313 57 DSP On: Command-/;
+#X text 307 70 DSP Off: Command-.;
 #X text 284 100 Preferences: Command- \,;

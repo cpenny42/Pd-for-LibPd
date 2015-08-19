@@ -43,6 +43,7 @@
 #include "gthreadprivate.h"
 
 #include <string.h>
+#include <stdlib.h>
 
 #ifdef G_OS_UNIX
 #include <unistd.h>
@@ -849,15 +850,18 @@ g_thread_new_internal (const gchar   *name,
   g_return_val_if_fail (func != NULL, NULL);
 
   G_LOCK (g_thread_new);
+
   thread = g_system_thread_new (proxy, stack_size, error);
+    thread->thread = malloc(sizeof(GThread));
+    thread->thread->priority = 0;
   if (thread)
     {
       thread->ref_count = 2;
       thread->ours = TRUE;
+      thread->name = g_strdup (name);
       thread->thread->joinable = TRUE;
       thread->thread->func = func;
       thread->thread->data = data;
-      thread->name = g_strdup (name);
     }
   G_UNLOCK (g_thread_new);
 
@@ -891,8 +895,8 @@ g_thread_exit (gpointer retval)
     g_error ("attempt to g_thread_exit() a thread not created by GLib");
 
   real->retval = retval;
-
   g_system_thread_exit ();
+
 }
 
 /**

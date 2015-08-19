@@ -10,6 +10,7 @@
 #include "fluidsynth.h"
 #include <string.h>
 #include <math.h>
+#include <stdlib.h>
 
 enum MIDI_CC {
     BANK_SELECT_MSB = 0x00,
@@ -139,6 +140,8 @@ enum SOUNDFONTS_NRPN {
     OVERRIDING_ROOT_KEY = 58
 };
 
+const int NUM_IDS = 16;
+
 static t_class *soundfonts_class;
 
 typedef struct _soundfonts {
@@ -160,6 +163,7 @@ typedef struct _soundfonts {
     
     t_int sfont_id;
     t_int polyphony;
+    t_int sfont_ids[NUM_IDS];
     
     // Outlets
     t_outlet *x_outL;
@@ -171,10 +175,14 @@ void *soundfonts_new(void)
 {
     // Get Class Instance
     t_soundfonts *instance = (t_soundfonts *)pd_new(soundfonts_class);
-
+    
     instance->settings = new_fluid_settings();
     instance->synth = new_fluid_synth(instance->settings);
     instance->sfont_id = -1;
+    
+    for(int i = 0; i < NUM_IDS; i++) {
+        instance->sfont_ids[i] = -1;
+    }
     
     instance->chorus_nr = FLUID_CHORUS_DEFAULT_N;
     instance->chorus_level = FLUID_CHORUS_DEFAULT_LEVEL;
@@ -198,7 +206,7 @@ void soundfonts_free(t_soundfonts *instance)
 {
     delete_fluid_settings(instance->settings);
     delete_fluid_synth(instance->synth);
-
+    
     outlet_free(instance->x_outL);
     outlet_free(instance->x_outR);
 }
@@ -221,12 +229,30 @@ void soundfonts_dsp(t_soundfonts *instance, t_signal **sp)
             sp[0]->s_vec, sp[1]->s_vec, sp[0]->s_n);
 }
 
+void soundfonts_cc(t_soundfonts *instance, t_floatarg control, t_floatarg val)
+{
+    
+    if((control <= 127) && (control >= 0) && (val <= 127) && (val >= 0))
+    {
+        fluid_synth_cc(instance->synth, 0, control, val);
+    } else {
+        post( "overflow - %f %f", control, val);
+    }
+}
+
+void soundfonts_flush(t_soundfonts *instance)
+{
+    soundfonts_cc(instance, ALL_SOUND_OFF, 0);
+}
+
 void soundfonts_set(t_soundfonts *instance, t_symbol *soundfont)
 {
     if ((instance != NULL) && (instance->synth != NULL)) {
-//        post("setting to: %s", soundfont->s_name);
+        //        post("setting to: %s", soundfont->s_name);
         if(instance->sfont_id != -1) {
-            //fluid_synth_sfunload(instance->synth, instance->sfont_id, 1);
+//            soundfonts_flush(instance);
+            fluid_synth_sfunload(instance->synth, instance->sfont_id, 0);
+            instance->sfont_id = -1;
         }
         instance->sfont_id = fluid_synth_sfload(instance->synth, soundfont->s_name, 1);
     } else {
@@ -245,7 +271,7 @@ void soundfonts_note(t_soundfonts *instance, t_symbol *s, int argc, t_atom *argv
     float velocity = atom_getfloatarg(1, argc, argv);
     
     if ( (note >= 0) && (note <= 127) && (velocity >= 0) && (velocity <= 127) ) {
-
+        
         fluid_synth_noteon(instance->synth, 0, note, velocity);
         
     }
@@ -269,17 +295,6 @@ void soundfonts_pitchbend_range(t_soundfonts *instance, t_floatarg range)
 {
     if ((range <= 72) && (range >= 0)) {
         fluid_synth_pitch_wheel_sens(instance->synth, 0, range);
-    }
-}
-
-void soundfonts_cc(t_soundfonts *instance, t_floatarg control, t_floatarg val)
-{
-    
-    if((control <= 127) && (control >= 0) && (val <= 127) && (val >= 0))
-    {
-        fluid_synth_cc(instance->synth, 0, control, val);
-    } else {
-        post( "overflow - %f %f", control, val);
     }
 }
 
@@ -318,7 +333,7 @@ float_t soundfonts_scale_power(t_floatarg power)
     if (power < 0)
         power = 0;
     
-    int split = 80;    
+    int split = 80;
     power = (127 - (power * 127));
     float_t transform;
     if (power <= split) {
@@ -328,11 +343,6 @@ float_t soundfonts_scale_power(t_floatarg power)
     }
     
     return transform;
-}
-
-void soundfonts_flush(t_soundfonts *instance)
-{
-    soundfonts_cc(instance, ALL_SOUND_OFF, 0);
 }
 
 void soundfonts_pan(t_soundfonts *instance, t_floatarg pan)
@@ -520,7 +530,7 @@ void soundfonts_key_range(t_soundfonts *instance, t_floatarg low, t_floatarg hig
 void soundfonts_chorus_amount(t_soundfonts *instance, t_floatarg amount)
 {
     soundfonts_cc(instance, EFFECTS_DEPTH3, amount);
-//    soundfonts_nrpn_extract_msb_lsb(instance, CHORUS_EFFECTS_SEND, amount);
+    //    soundfonts_nrpn_extract_msb_lsb(instance, CHORUS_EFFECTS_SEND, amount);
 }
 
 void soundfonts_chorus_level(t_soundfonts *instance, t_floatarg amount)
@@ -556,7 +566,7 @@ void soundfonts_chorus_type(t_soundfonts *instance, t_floatarg type)
 void soundfonts_reverb_amount(t_soundfonts *instance, t_floatarg amount)
 {
     soundfonts_cc(instance, EFFECTS_DEPTH1, amount);
-//    soundfonts_nrpn_extract_msb_lsb(instance, REVERB_EFFECTS_SEND, amount);
+    //    soundfonts_nrpn_extract_msb_lsb(instance, REVERB_EFFECTS_SEND, amount);
 }
 
 void soundfonts_reverb_size(t_soundfonts *instance, t_floatarg amount)
@@ -587,11 +597,11 @@ void soundfonts_reverb_level(t_soundfonts *instance, t_floatarg amount)
 void soundfonts_setup(void)
 {
     soundfonts_class = class_new(gensym("soundfonts"),
-                                       (t_newmethod)soundfonts_new,
-                                       0,
-                                       sizeof(t_soundfonts),
-                                       CLASS_DEFAULT,
-                                       0);
+                                 (t_newmethod)soundfonts_new,
+                                 0,
+                                 sizeof(t_soundfonts),
+                                 CLASS_DEFAULT,
+                                 0);
     
     class_addmethod(soundfonts_class, (t_method)soundfonts_dsp, gensym("dsp"), 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_set, gensym("set"), A_DEFSYMBOL, 0);
@@ -599,7 +609,7 @@ void soundfonts_setup(void)
     class_addmethod(soundfonts_class, (t_method)soundfonts_polyphony, gensym("polyphony"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_cc, gensym("cc"), A_FLOAT, A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_nrpn, gensym("nrpn"), A_FLOAT, A_FLOAT, A_FLOAT, 0);
-
+    
     class_addmethod(soundfonts_class, (t_method)soundfonts_flush, gensym("flush"), 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_sustain, gensym("sustain"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_volume, gensym("volume"), A_FLOAT, 0);
@@ -618,7 +628,7 @@ void soundfonts_setup(void)
     class_addmethod(soundfonts_class, (t_method)soundfonts_mod_lfo_volume, gensym("mod_lfo_volume"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_mod_lfo_delay, gensym("mod_lfo_delay"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_mod_lfo_freq, gensym("mod_lfo_frequency"), A_FLOAT, 0);
-  
+    
     class_addmethod(soundfonts_class, (t_method)soundfonts_mod_env_pitch, gensym("mod_env_pitch"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_mod_env_filter, gensym("mod_env_filter"), A_FLOAT, 0);
     class_addmethod(soundfonts_class, (t_method)soundfonts_mod_env_delay, gensym("mod_env_delay"), A_FLOAT, 0);
